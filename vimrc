@@ -84,5 +84,5 @@ nmap <F6> :!python3 %<CR>
 vnoremap <F5> :!python2<CR>
 vnoremap <F6> :!python3<CR>
 
-source ~/Documents/djangodetect.vim 
+source ~/.vim/djangodetect.vim 
 autocmd FileType python call FindDjangoSettings2()
