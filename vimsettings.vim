@@ -67,7 +67,7 @@ endif
 let mapleader=","             " change the leader to be a comma vs slash
 """ Skroty klawiszowe
 
-
+nnoremap <leader>r :so $MYVIMRC
 
 
 " Paste from clipboard
@@ -145,7 +145,6 @@ nnoremap <Space> :
 nmap <S-Enter> O<Esc> 
 nmap <CR> o<Esc>
 
-
 " nmap <F5> :!python2 %<CR>
 "
 " nmap <F6> :!python3 %<CR>
@@ -167,3 +166,21 @@ imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
 map <C-n> :NERDTreeToggle<CR>
+
+let g:EasyMotion_mapping_f = 'f'
+let g:EasyMotion_mapping_F = 'F'
+
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+map <Leader>j <Plug>(easymotion-lineforward)
+map <Leader>k <Plug>(easymotion-j)
+map <Leader>l <Plug>(easymotion-k)
+map <Leader>; <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_smartcase = 1
