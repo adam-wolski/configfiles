@@ -6,7 +6,7 @@ syntax enable
 " komentuje bo chyba nie potrzebuje teraz na archu set rtp+=~/git/powerline/powerline/bindings/vim
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " let Vundle manage Vundle
 " required! 
