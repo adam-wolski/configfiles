@@ -67,14 +67,12 @@ endif
 let mapleader=","             " change the leader to be a comma vs slash
 """ Skroty klawiszowe
 
+" Reload vimrc
 nnoremap <leader>r :so $MYVIMRC
-
 
 " Paste from clipboard
 map <leader>p "+p
 map <leader>y "+y
-
-
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
@@ -113,54 +111,28 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 " window navigation with alt + arrows
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-
-" window navigation with ctrl + k l
-map <C-K> <C-W>k<C-W>_
-map <C-J> <C-W>l<C-W>_
-set wmh=0
-
+nmap <silent> <A-l> :wincmd k<CR>
+nmap <silent> <A-k> :wincmd j<CR>
+nmap <silent> <A-j> :wincmd h<CR>
+nmap <silent> <A-;> :wincmd l<CR>
 
 " ctrl o jako ctrlenter w inert mode
 inoremap <C-O> <C-o>o
 inoremap <C-K> <C-o>o
 inoremap <C-L> <C-o>O
 
-
-
 " zeby odpalic makro nagrane jako q 
 nnoremap Q @q 
 
 " Spacja do insert mode
-nmap <S-Space> i 
+nmap <S-Space> i <Esc>
 
 " Spacja do komend
 nnoremap <Space> :
 
 " Shift + Enter nowa linia bez wchodzenia do inserta
-nmap <S-Enter> O<Esc> 
-nmap <CR> o<Esc>
-
-" nmap <F5> :!python2 %<CR>
-"
-" nmap <F6> :!python3 %<CR>
-
-" vnoremap <F5> :!python2<CR>
-
-nnoremap Y y$ " Shift Y kopiuje cala linie
-
-" remap j and k to scroll by visual lines
-" nnoremap j gj
-" nnoremap k gk
-
-" kompletowanie bracketow
-"
-:vnoremap _( <Esc>`>a)<Esc>`<i(<Esc>
-:vnoremap _" <Esc>`>a"<Esc>`<i"<Esc>
+nnoremap <S-Enter> O<Esc> 
+nnoremap <CR> o<Esc>
 
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
