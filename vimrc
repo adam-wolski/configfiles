@@ -30,6 +30,8 @@ Bundle 'wincent/Command-T'
 
 Bundle 'lambdalisue/vim-django-support'
 
+Bundle 'tpope/vim-fugitive'
+
 " Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-repeat'
@@ -43,12 +45,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'altercation/vim-colors-solarized'
-" Bundle 'wincent/Command-T'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 " non-GitHub repos
-" Bundle 'git://git.wincent.com/command-t.git'
 " Git repos on your local machine (i.e. when working on your own plugin)
 " Bundle 'file:///Users/gmarik/path/to/plugin'
 " ...
