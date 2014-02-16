@@ -18,7 +18,13 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 
-" Optional:
+
+" Koloruje nawiasy
+Bundle 'kien/rainbow_parentheses.vim' 
+" Zarzadza hisotria kopiowania
+Bundle 'maxbrunsfeld/vim-yankstack' 
+
+
 Bundle "honza/vim-snippets"
 Bundle 'Raimondi/delimitMate'
 
@@ -86,3 +92,11 @@ vnoremap <F6> :!python3<CR>
 
 source ~/.vim/djangodetect.vim 
 autocmd FileType python call FindDjangoSettings2()
+
+" fix meta-keys which generate <Esc>a .. <Esc>z
+let c='a'
+while c <= 'z'
+  exec "set <M-".toupper(c).">=\e".c
+  exec "imap \e".c." <M-".toupper(c).">"
+  let c = nr2char(1+char2nr(c))
+endw

@@ -111,8 +111,8 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 " window navigation with alt + arrows
-nmap <silent> <A-l> :wincmd k<CR>
-nmap <silent> <A-k> :wincmd j<CR>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-l> :wincmd j<CR>
 nmap <silent> <A-j> :wincmd h<CR>
 nmap <silent> <A-;> :wincmd l<CR>
 
@@ -131,8 +131,8 @@ nmap <S-Space> i <Esc>
 nnoremap <Space> :
 
 " Shift + Enter nowa linia bez wchodzenia do inserta
-nnoremap <S-Enter> O<Esc> 
-nnoremap <CR> o<Esc>
+"nnoremap <S-Enter> O<Esc> 
+"nnoremap <CR> o<Esc>
 
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
@@ -162,3 +162,9 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
 let g:ycm_csharp_server_port = 2000
+
+" zaladuj rainbow parentheses:
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
