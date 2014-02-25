@@ -4,6 +4,7 @@ URxvt.intensityStyles: false
 
 URxvt*font: xft:Liberation Mono for Powerline:pixelsize=16:antialias=true:hinting=true
 URxvt.scrollBar: false
+urxvt*meta8: True
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
