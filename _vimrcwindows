@@ -24,7 +24,10 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-
+" Koloruje nawiasy
+Bundle 'kien/rainbow_parentheses.vim' 
+" Zarzadza hisotria kopiowania
+Bundle 'maxbrunsfeld/vim-yankstack' 
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -77,8 +80,7 @@ filetype plugin indent on     " required!
 nmap <F5> :!python %<CR>
 vnoremap <F5> :!python<CR>
 
-source E:\GDrive\Configs\vimsettings.vim
-
+source E:\mgit\configfiles\vimsettings.vim
 
 
 
