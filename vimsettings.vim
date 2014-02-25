@@ -138,12 +138,6 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 
 map <C-n> :NERDTreeToggle<CR>
 
-<<<<<<< HEAD
-=======
-let g:EasyMotion_mapping_f = '<leader>f'
-let g:EasyMotion_mapping_F = '<leader>F'
-
->>>>>>> b446e2e38920ec6f14cd33cc53322d68af1548bd
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 map  / <Plug>(easymotion-sn)
