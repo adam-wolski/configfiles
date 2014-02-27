@@ -61,6 +61,7 @@ if has('gui_running')
 	:set go-=r
 	:set go-=T
 	:set go-=m
+	:set guiheadroom=0
 endif
 
 
@@ -164,5 +165,4 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
 
