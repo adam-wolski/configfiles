@@ -39,7 +39,7 @@ Bundle 'lambdalisue/vim-django-support'
 Bundle 'tpope/vim-fugitive'
 
 " Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-repeat'
 Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
@@ -81,7 +81,7 @@ cmap w!! w !sudo tee % >/dev/null
 set mouse=a
 
 if has('gui_running')
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
 
 nmap <F5> :!python2 %<CR>
@@ -90,6 +90,5 @@ nmap <F6> :!python3 %<CR>
 vnoremap <F5> :!python2<CR>
 vnoremap <F6> :!python3<CR>
 
-source ~/.vim/djangodetect.vim 
+source ~/mgit/configfiles/better-django-detection.vim
 autocmd FileType python call FindDjangoSettings2()
-
