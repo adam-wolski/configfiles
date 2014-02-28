@@ -18,11 +18,10 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 
-
 " Koloruje nawiasy
 Bundle 'kien/rainbow_parentheses.vim' 
 " Zarzadza hisotria kopiowania
-Bundle 'maxbrunsfeld/vim-yankstack' 
+" Bundle 'maxbrunsfeld/vim-yankstack' 
 
 
 Bundle "honza/vim-snippets"
