@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Aliases
+#
+# Script shortcut aliases
+alias cdv='. /home/miniu/bin/cdDoClipboard'
+alias aclc='cautoclick -r 1 -n 99999 -p 2000 -i '
+alias herbbach='python "/home/miniu/Documents/Programy/CzasNaHerbate/Herbata.py"'
+alias reloadMASTER='source /home/miniu/bin/MASTERSCRIPT'
+alias autoAUR='python3 /home/miniu/Documents/Programy/AURauto.py'
+alias reloadZSH='source ~/.zshrc'
+
+# Vim aliases
+alias vimvim='vim /home/miniu/.vimrc' 
+alias vimvimvim='vim ~/mgit/configfiles/vimsettings.vim'
+alias vimMASTER='vim /home/miniu/bin/MASTERSCRIPT'
+alias vimzsh='vim ~/.zshrc'
+alias v='vim'
+
+# cd aliases
+alias cdbin='cd /home/miniu/bin/'
+alias cdb='cd /home/miniu/builds/'
+
+# pacman aliases
+alias pupg='sudo pacman -Syu'        # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias p='sudo pacman -S'              
+alias pu='sudo pacman -U'             
+alias prem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias prepinfo='pacman -Si'              # Display information about a given package in the repositories
+alias preps='pacman -Ss'             # Search for package(s) in the repositories
+alias pinfo='pacman -Qi'              # Display information about a given package in the local database
+alias psearch='pacman -Qs'             # Search for package(s) in the local database
+
+# Python and Django related aliases
+alias activateVE='source bin/activate'
+alias djman='python ~VIRTUAL_ENV/src/manage.py'
+alias s='sudo'                        
+
+# other aliases
+alias sshpi='ssh -p 22 miniu@192.168.1.103'
+alias msambae='sudo mount /home/miniu/samba_e'
+alias mountftp='curlftpfs ftp://89.73.66.218 /home/miniu/ftp_pi/ -o user=miniu:pomidorll,uid=1000,gid=100,allow_other'
+alias httpgit='https://github.com/'
+
+
