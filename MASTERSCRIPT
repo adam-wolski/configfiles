@@ -20,6 +20,7 @@ alias v='vim'
 # cd aliases
 alias cdbin='cd /home/miniu/bin/'
 alias cdb='cd /home/miniu/builds/'
+alias cdc='cd ~/mgit/configfiles'
 
 # pacman aliases
 alias pupg='sudo pacman -Syu'        # Synchronize with repositories and then upgrade packages that are out of date on the local system.
@@ -34,12 +35,9 @@ alias psearch='pacman -Qs'             # Search for package(s) in the local data
 # Python and Django related aliases
 alias activateVE='source bin/activate'
 alias djman='python ~VIRTUAL_ENV/src/manage.py'
-alias s='sudo'                        
 
 # other aliases
-alias sshpi='ssh -p 22 miniu@192.168.1.103'
-alias msambae='sudo mount /home/miniu/samba_e'
-alias mountftp='curlftpfs ftp://89.73.66.218 /home/miniu/ftp_pi/ -o user=miniu:pomidorll,uid=1000,gid=100,allow_other'
-alias httpgit='https://github.com/'
+alias s='sudo'                        
+alias ra='ranger'
 
 
