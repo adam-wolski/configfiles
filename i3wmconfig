@@ -28,6 +28,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+bindsym $mod+x kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -78,7 +80,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -141,15 +143,12 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bar {
-	mode hide
-}
-
 
 bindsym $mod+r mode "resize"
+bindsym $mod+space exec chromium
 
 # class                 border  backgr. text    indicator
-client.focused          #444444 #444444 #ffffff #2e9ef4
+client.focused          #000000 #000000 #888888 #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
@@ -158,4 +157,8 @@ client.urgent           #2f343a #900000 #ffffff #900000
 # finds out, if available)
 bar {
         status_command i3status
+    	mode hide
+    	hidden_state hide
 }
+exec redshift-gtk
+exec /usr/bin/pa-applet
