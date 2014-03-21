@@ -1,68 +1,42 @@
 set encoding=utf-8
-set nocompatible              " be iMproved
+
+" NeoBundle Start
 filetype off                  " required!
 syntax enable
 
-" komentuje bo chyba nie potrzebuje teraz na archu set rtp+=~/git/powerline/powerline/bindings/vim
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" execute pathogen#infect()
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+" Required:
+call neobundle#rc(expand('~/.vim/bundle/'))
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My bundles here:
-"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-
-" Koloruje nawiasy
-Bundle 'kien/rainbow_parentheses.vim' 
-" Zarzadza hisotria kopiowania
-" Bundle 'maxbrunsfeld/vim-yankstack' 
-
-
-Bundle "honza/vim-snippets"
-Bundle 'Raimondi/delimitMate'
-
-Bundle 'scrooloose/nerdtree'
-
-Bundle 'tpope/vim-dispatch'
-
-Bundle 'wincent/Command-T'
-
-Bundle 'lambdalisue/vim-django-support'
-
-Bundle 'tpope/vim-fugitive'
-
-Bundle 'tpope/vim-repeat'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'altercation/vim-colors-solarized'
-
-" non-GitHub repos
-" Git repos on your local machine (i.e. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
+NeoBundle 'kien/rainbow_parentheses.vim' 
+NeoBundle "honza/vim-snippets"
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'lambdalisue/vim-django-support'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'terryma/vim-expand-region'
 
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ"
-" NOTE: comments after Bundle commands are not allowed.
+NeoBundleCheck
+" NeoBundle End
 
 source ~/mgit/configfiles/vimsettings.vim
 
@@ -86,3 +60,7 @@ vnoremap <F6> :!python3<CR>
 
 source ~/mgit/configfiles/better-django-detection.vim
 autocmd FileType python call FindDjangoSettings2()
+
+" Przyspieszenie ctrl p dla projektow w gitcie
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching = 0
