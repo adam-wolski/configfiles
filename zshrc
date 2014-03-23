@@ -109,3 +109,5 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+PATH=/home/miniu/bin:$PATH
