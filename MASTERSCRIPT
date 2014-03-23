@@ -10,11 +10,12 @@ alias reloadMASTER='source /home/miniu/bin/MASTERSCRIPT'
 alias autoAUR='python3 /home/miniu/Documents/Programy/AURauto.py'
 alias reloadZSH='source ~/.zshrc'
 alias timerScript='cd /home/miniu/Documents/Programy/Timer && python2 /home/miniu/Documents/Programy/Timer/Timer.py'
+alias ww='sh /home/miniu/.config/wacomconfig'
 
 # Vim aliases
 alias vimvim='vim /home/miniu/.vimrc' 
 alias vimvimvim='vim ~/mgit/configfiles/vimsettings.vim'
-alias vimMASTER='vim /home/miniu/bin/MASTERSCRIPT'
+alias vimMASTER='vim /home/miniu/mgit/configfiles/MASTERSCRIPT'
 alias vimzsh='vim ~/.zshrc'
 alias v='vim'
 
@@ -43,3 +44,5 @@ alias ra='ranger'
 alias mSmbTut='sudo mount -t cifs //MINIU-PC/Tuts /home/miniu/mnt/smb -o user=miniu,workgroup=WORKGROUP,ip=192.168.0.21'
 alias heartstone="wine /home/miniu/.wine/drive_c/Program\ Files\ \(x86\)/Hearthstone/Hearthstone\ Beta\ Launcher.exe"
 alias wylaczScreenSaver='xset -dpms; xset s off; setterm -blank 0 -powerdown 0'
+alias n='ncmpcpp'
+alias shutup='sudo shutdown -h now'
