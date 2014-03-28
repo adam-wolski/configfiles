@@ -65,21 +65,37 @@ if has('gui_running')
 endif
 
 
-let mapleader=","             " change the leader to be a comma vs slash
+let mapleader="\<Space>"
 """ Skroty klawiszowe
 
 " Reload vimrc
 nnoremap <leader>r :so $MYVIMRC
 
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
+" spamowanie v dla vim-expand-region plugin
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 " Paste from clipboard
-map <leader>p "+p
-map <leader>y "+y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Te zeby kursor byl na koncu po wklejeniu
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
 
 " hide matches on <leader>space
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>/ :nohlsearch<cr>
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
@@ -87,8 +103,6 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Skroty do chowania interfejsu w gvimie
 nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR> 
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
-
-
 
 " Zmiana navigacji
 
@@ -102,6 +116,11 @@ vnoremap k j
 vnoremap l k
 vnoremap ; l
 
+" bo nadpisalem
+vnoremap , ; 
+
+noremap D 15<down>
+noremap U 15<up>
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -123,16 +142,6 @@ inoremap <C-L> <C-o>O
 
 " zeby odpalic makro nagrane jako q 
 nnoremap Q @q 
-
-" Spacja do insert mode
-nmap <S-Space> i <Esc>
-
-" Spacja do komend
-nnoremap <Space> :
-
-" Shift + Enter nowa linia bez wchodzenia do inserta
-"nnoremap <S-Enter> O<Esc> 
-"nnoremap <CR> o<Esc>
 
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
@@ -166,5 +175,4 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-noremap D 15<down>
-noremap U 15<up>
+

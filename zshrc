@@ -53,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export KEYTIMEOUT=1
 
-source "/home/miniu/bin/MASTERSCRIPT"
+source "/home/miniu/mgit/configfiles/MASTERSCRIPT"
 source "/home/miniu/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Custom Keybindings
@@ -84,12 +84,12 @@ bindkey -a ';' vi-forward-char
 export PATH="/home/miniu/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,3 +97,17 @@ export PATH="/home/miniu/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/co
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+#Skrypt aby ctrl z dzialalo jako toggle do zsylania do tla i do wracania
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+    zle redisplay
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+PATH=/home/miniu/bin:$PATH
