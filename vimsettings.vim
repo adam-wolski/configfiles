@@ -105,6 +105,8 @@ nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 
 " Zmiana navigacji
+nnoremap < ,
+nnoremap , ;
 
 nnoremap j h
 nnoremap k gj
@@ -115,9 +117,6 @@ vnoremap j <left>
 vnoremap k j
 vnoremap l k
 vnoremap ; l
-
-" bo nadpisalem
-vnoremap , ; 
 
 noremap D 15<down>
 noremap U 15<up>
