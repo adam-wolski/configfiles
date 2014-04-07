@@ -28,19 +28,19 @@ set wrap                    " Wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
-" set tabstop=4               " <tab> inserts 4 spaces 
-" set shiftwidth=4            " but an indent level is 2 spaces wide.
-" set softtabstop=4           " <BS> over an autoindent deletes both spaces.
-" set expandtab               " Use spaces, not tabs, for autoindent/tab key.
-" set shiftround              " rounds indent to a multiple of shiftwidth
+set tabstop=4               " <tab> inserts 4 spaces 
+set shiftwidth=4            " but an indent level is 2 spaces wide.
+set softtabstop=4           " <BS> over an autoindent deletes both spaces.
+set expandtab               " Use spaces, not tabs, for autoindent/tab key.
+set shiftround              " rounds indent to a multiple of shiftwidth
 set formatoptions=tcroql    " Setting text and comment formatting to auto
-" set textwidth=80            " Lines are automatically wrapped after 80 columns
+set textwidth=80            " Lines are automatically wrapped after 80 columns
 
 set ls=2                    " allways show status line
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
-" set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
+set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
 
@@ -105,6 +105,8 @@ nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 
 " Zmiana navigacji
+nnoremap < ,
+nnoremap , ;
 
 nnoremap j h
 nnoremap k gj
@@ -115,9 +117,6 @@ vnoremap j <left>
 vnoremap k j
 vnoremap l k
 vnoremap ; l
-
-" bo nadpisalem
-vnoremap , ; 
 
 noremap D 15<down>
 noremap U 15<up>
