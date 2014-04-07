@@ -154,6 +154,10 @@ bindsym $mod+shift+Right move workspace to output right
 bindsym $mod+space exec chromium
 bindsym $mod+t exec thunar
 
+#Tablet shortcuts
+bindsym $mod+shift+a exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
+bindsym $mod+shift+d exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
+
 # other shortcuts
 bindsym XF86AudioPrev exec ncmpcpp prev
 bindsym XF86AudioNext exec ncmpcpp next
@@ -178,6 +182,6 @@ bar {
 
 
 # autostart
+exec ~/bin/AutoStartScripts
 exec redshift-gtk
-
-
+exec mpdscribble &
