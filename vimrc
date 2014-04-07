@@ -52,11 +52,8 @@ if has('gui_running')
 	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
 
-nmap <F5> :!python2 %<CR>
-nmap <F6> :!python3 %<CR>
-
-vnoremap <F5> :!python2<CR>
-vnoremap <F6> :!python3<CR>
+nmap <F5> :!python %<CR>
+nmap <F6> :!python2 %<CR>
 
 source ~/mgit/configfiles/better-django-detection.vim
 autocmd FileType python call FindDjangoSettings2()
