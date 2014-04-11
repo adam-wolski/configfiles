@@ -15,8 +15,9 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/rainbow_parentheses.vim' 
-NeoBundle "honza/vim-snippets"
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-dispatch'
