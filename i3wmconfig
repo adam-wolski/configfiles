@@ -180,8 +180,11 @@ bar {
 	tray_output primary
 }
 
+workspace 5 output DVI-I-1
 
 # autostart
 exec ~/bin/AutoStartScripts
-exec redshift-gtk
+exec redshift-gtk &
+exec mpd &
 exec mpdscribble &
+exec "thunar --daemon"
