@@ -153,15 +153,16 @@ bindsym $mod+shift+Right move workspace to output right
 # application shortcuts
 bindsym $mod+space exec chromium
 bindsym $mod+t exec thunar
+bindsym $mod+n exec "gnome-terminal --execute ncmpcpp"
 
 #Tablet shortcuts
 bindsym $mod+shift+a exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
 bindsym $mod+shift+d exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
 
 # other shortcuts
-bindsym XF86AudioPrev exec ncmpcpp prev
-bindsym XF86AudioNext exec ncmpcpp next
-bindsym XF86AudioPlay exec ncmpcpp toggle
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
 
@@ -183,8 +184,9 @@ bar {
 workspace 5 output DVI-I-1
 
 # autostart
-exec ~/bin/AutoStartScripts
-exec redshift-gtk &
-exec mpd &
-exec mpdscribble &
-exec "thunar --daemon"
+exec --no-startup-id "compton --config /home/miniu/.config/.compton.conf -b"
+exec --no-startup-id ~/bin/AutoStartScripts
+exec --no-startup-id redshift-gtk &
+#exec --no-startup-id mpd &
+#exec --no-startup-id mpdscribble &
+exec --no-startup-id "thunar --daemon"
