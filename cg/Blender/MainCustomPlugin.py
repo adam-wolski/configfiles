@@ -1,8 +1,8 @@
-bl_info = {'name': 'My main tools',
-        'description': 'Custom often used tools',
+bl_info = {'name': 'Miniu tools',
+        'description': 'Custom often used tools and scripts',
         'author': 'miniu',
-        'version': (0, 3),
-        'blender': (2,70,0),
+        'version': (0, 4, 1),
+        'blender': (2,71,0),
         'category': 'Mine',
         }
 
@@ -18,6 +18,7 @@ class MainCustomMenu(bpy.types.Menu):
         layout.operator('mine.origintoselectedscript', text='Origin to selected')
         layout.operator('mine.disabledoublesidedforselected', text='Disable Double Side')
         layout.operator('mine.separateselectionwithoutdeleting', text='Separate Selection without deleting')
+        layout.operator('mine.seamsfromsharpedges', text='Create seams from sharp')
 
 class OriginToSelectedScript(bpy.types.Operator):
     bl_idname = 'mine.origintoselectedscript'
@@ -52,6 +53,17 @@ class SeparateSelectionWithoutDeleting(bpy.types.Operator):
         bpy.ops.mesh.separate(type='SELECTED')
         return {'FINISHED'}
         
+class SeamsFromSharpEdges(bpy.types.Operator):
+    bl_idname = 'mine.seamsfromsharpedges'
+    bl_label = 'Create seams from edges marked as sharp'
+    bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, context):
+        for edge in bpy.context.active_object.data.edges:
+            if edge.use_edge_sharp == True:
+                edge.use_seam = True
+        return {'FINISHED'}
+
 class GroupScript(bpy.types.Operator):
     bl_label = "Group from empty"
     bl_idname = "mine.groupscriptop"
@@ -90,6 +102,7 @@ def register():
     bpy.utils.register_class(GroupScript)
     bpy.utils.register_class(CtrlDScript)
     bpy.utils.register_class(SeparateSelectionWithoutDeleting)
+    bpy.utils.register_class(SeamsFromSharpEdges)
     
 def unregister():
     bpy.utils.unregister_class(MainCustomMenu)
@@ -98,6 +111,7 @@ def unregister():
     bpy.utils.unregister_class(GroupScript)
     bpy.utils.unregister_class(CtrlDScript)
     bpy.utils.unregister_class(SeparateSelectionWithoutDeleting)
+    bpy.utils.unregister_class(SeamsFromSharpEdges)
 
 if __name__ == '__main__':
     register()
