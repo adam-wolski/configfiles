@@ -1,0 +1,7 @@
+//startup
+
+[If,1,
+[IPress,Macro:Macros:Mine:mineStartup]
+]
+[pd]
+ 
