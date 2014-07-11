@@ -18,7 +18,7 @@ set $mod Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 10
+font pango:Open Sans 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -33,7 +33,7 @@ bindsym $mod+q kill
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -156,18 +156,18 @@ bindsym $mod+t exec thunar
 bindsym $mod+n exec "gnome-terminal --execute ncmpcpp"
 
 #Tablet shortcuts
-bindsym $mod+shift+a exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
-bindsym $mod+shift+d exec "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
+bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
+bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
 
 # other shortcuts
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
 
 # class                 border  backgr. text    indicator
-client.focused          #000000 #000000 #888888 #2e9ef4
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #555555 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+client.focused          #2d2d2d #2d2d2d #c5c5c5 #d64937
+client.focused_inactive #333333 #333333 #777777 #333333
+client.unfocused        #333333 #333333 #777777 #333333
+client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -183,9 +183,9 @@ workspace 5 output DVI-I-1
 # MPD
 exec --no-startup-id mpd &
 exec --no-startup-id mpdscribble &
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 
 
 # autostart
