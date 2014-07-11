@@ -163,19 +163,30 @@ bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylu
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
 
-# class                 border  backgr. text    indicator
+## class                 border  backgr. text    indicator
 client.focused          #2d2d2d #2d2d2d #c5c5c5 #d64937
 client.focused_inactive #333333 #333333 #777777 #333333
 client.unfocused        #333333 #333333 #777777 #333333
 client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
         status_command python /home/miniu/.config/i3pystatusconfig.py
     	mode hide
     	hidden_state hide
-	tray_output primary
+	    tray_output primary
+        colors {
+            # Background color of the bar.
+            background #333333
+            # Text color to be used for the statusline.
+            statusline #c5c5c5
+            # Text color to be used for the separator.
+            separator #d64937
+            # class                 border  backgr. text    
+            focused_workspace       #2d2d2d #2d2d2d #c5c5c5 
+            active_workspace        #333333 #333333 #777777 
+            inactive_workspace      #333333 #333333 #777777 
+            urgent_workspace        #d64937 #d64937 #f9f9f9          
+            }
 }
 
 workspace 5 output DVI-I-1
