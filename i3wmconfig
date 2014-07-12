@@ -202,6 +202,8 @@ bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 
 
 # autostart
+#exec --no-startup-id xrdb /home/miniu/.Xresources
+#exec --no-startup-id sh ~/.fehbg &
 exec --no-startup-id "compton --config /home/miniu/.config/.compton.conf -b"
 exec --no-startup-id ~/bin/AutoStartScripts
 exec --no-startup-id redshift-gtk &
