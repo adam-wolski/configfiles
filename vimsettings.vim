@@ -1,11 +1,9 @@
-"""Mine Settings
-
-" let g:CSApprox_loaded = 1
 set t_Co=256
 
 colorscheme solarized
 set background=dark
 
+" I took this part from someone long time ago don't remember who for credit :(
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
 filetype plugin indent on     " enable loading indent file for filetype
@@ -28,20 +26,18 @@ set wrap                    " Wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces 
+set tabstop=4               " <tab> inserts 4 spaces
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set formatoptions=tcroql    " Setting text and comment formatting to auto
-set textwidth=80            " Lines are automatically wrapped after 80 columns
+" set textwidth=80            " Lines are automatically wrapped after 80 columns
 
 set ls=2                    " allways show status line
-set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
-set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
 
 """ Searching and Patterns
@@ -54,7 +50,7 @@ set incsearch               " Incrementally search while typing a /regex
 
 set backspace=indent,eol,start
 
-" aby przejscie z insert do normal bylo szybsze 
+" aby przejscie z insert do normal bylo szybsze
 set timeoutlen=1000 ttimeoutlen=0
 
 if has('gui_running')
@@ -64,7 +60,6 @@ if has('gui_running')
 	:set guiheadroom=0
 endif
 
-
 let mapleader="\<Space>"
 """ Skroty klawiszowe
 
@@ -73,10 +68,6 @@ nnoremap <leader>r :so $MYVIMRC
 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
-nmap <Leader><Leader> V
-" spamowanie v dla vim-expand-region plugin
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 " Paste from clipboard
 vmap <Leader>y "+y
@@ -101,7 +92,7 @@ nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Skroty do chowania interfejsu w gvimie
-nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR> 
+nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 
 " Zmiana navigacji
@@ -120,6 +111,7 @@ vnoremap ; l
 
 noremap D 15<down>
 noremap U 15<up>
+
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
@@ -139,13 +131,11 @@ inoremap <C-O> <C-o>o
 inoremap <C-K> <C-o>o
 inoremap <C-L> <C-o>O
 
-" zeby odpalic makro nagrane jako q 
-nnoremap Q @q 
+" zeby odpalic makro nagrane jako q
+nnoremap Q @q
 
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
-
-map <C-n> :NERDTreeToggle<CR>
 
 nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
@@ -167,11 +157,4 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
 let g:ycm_csharp_server_port = 2000
-
-" zaladuj rainbow parentheses:
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 
