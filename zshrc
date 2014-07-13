@@ -37,7 +37,7 @@ ZSH_THEME="sunrise"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -74,10 +74,10 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 #rebing navigation to homerow
-bindkey -a 'j' vi-backward-char
-bindkey -a 'k' down-line-or-history
-bindkey -a 'l' up-line-or-history
-bindkey -a ';' vi-forward-char
+#bindkey -a 'j' vi-backward-char
+#bindkey -a 'k' down-line-or-history
+#bindkey -a 'l' up-line-or-history
+#bindkey -a ';' vi-forward-char
 
 #
 
