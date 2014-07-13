@@ -95,22 +95,25 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 
-" Zmiana navigacji
-nnoremap < ,
-nnoremap , ;
+" " Zmiana navigacji
+" nnoremap < ,
+" nnoremap , ;
+"
+" nnoremap j h
+" nnoremap k gj
+" nnoremap l gk
+" nnoremap ; l
+"
+" vnoremap j <left>
+" vnoremap k j
+" vnoremap l k
+" vnoremap ; l
 
-nnoremap j h
-nnoremap k gj
-nnoremap l gk
-nnoremap ; l
-
-vnoremap j <left>
-vnoremap k j
-vnoremap l k
-vnoremap ; l
-
-noremap D 15<down>
-noremap U 15<up>
+" window navigation with alt + arrows
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
 
 " tab navigation like firefox
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -119,12 +122,6 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-
-" window navigation with alt + arrows
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-l> :wincmd j<CR>
-nmap <silent> <A-j> :wincmd h<CR>
-nmap <silent> <A-;> :wincmd l<CR>
 
 " ctrl o jako ctrlenter w inert mode
 inoremap <C-O> <C-o>o
@@ -144,10 +141,10 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-map <Leader>j <Plug>(easymotion-lineforward)
-map <Leader>k <Plug>(easymotion-j)
-map <Leader>l <Plug>(easymotion-k)
-map <Leader>; <Plug>(easymotion-linebackward)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
