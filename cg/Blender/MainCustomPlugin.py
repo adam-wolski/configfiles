@@ -1,7 +1,7 @@
 bl_info = {'name': 'Miniu tools',
         'description': 'Custom often used tools and scripts',
         'author': 'miniu',
-        'version': (0, 4, 3),
+        'version': (0, 4, 4),
         'blender': (2,71,0),
         'category': 'Mine',
         }
@@ -115,6 +115,24 @@ class ToggleSubD(bpy.types.Operator):
 
         return {'FINISHED'}
 
+class ToggleSubDCage(bpy.types.Operator):
+    bl_idname = "mine.togglesubdcage"
+    bl_label = "Toggle show on cage subd"
+    
+    def execute(self, context):
+        for obj in bpy.context.selected_objects:
+            try:
+                if obj.modifiers["Subsurf"].show_on_cage == False:
+                    obj.modifiers["Subsurf"].show_on_cage = True
+                else:
+                    obj.modifiers["Subsurf"].show_on_cage = False
+                    
+            except KeyError:
+                bpy.ops.object.modifier_add(type='SUBSURF')
+
+
+        return {'FINISHED'}
+
 class DrawMesh(bpy.types.Operator):
     """Copied and edited from booltool plugin"""
     bl_idname = "mine.drawmesh"
@@ -189,6 +207,102 @@ class DrawMesh(bpy.types.Operator):
             self.report({'WARNING'}, "No active object, could not finish")
             return {'CANCELLED'}
         
+class CreatePrimitive(bpy.types.Operator):
+    bl_idname = 'mine.createprimitive'
+    bl_label = 'Create Primitive Script'
+    bl_options = {'REGISTER', 'UNDO'}
+    
+    numbers = ('ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE')
+
+    def customProperties(self):
+        bpy.context.object.data.use_auto_smooth = True
+        bpy.context.object.data.auto_smooth_angle = 0.872665
+        bpy.ops.object.shade_smooth()
+
+    def modal(self, context, event):
+        print(event.type)
+
+        if event.type == 'C':
+            bpy.ops.mesh.primitive_cube_add(radius=5)
+            self.dodalem = 'Cube'
+            self.customProperties()
+            return {'FINISHED'}
+
+        if event.type == 'E':
+            me = bpy.data.meshes.new('emptyMesh')
+            ob = bpy.data.objects.new('emptyObject', me)
+            bpy.context.scene.objects.link(ob)
+            bpy.context.scene.objects.active = ob
+            ob.select = True
+            self.customProperties()
+            return {'FINISHED'}
+
+        if event.type == 'Y' and event.value == 'RELEASE':
+            bpy.ops.mesh.primitive_cylinder_add()
+            self.dodalem = 'Cylinder'
+
+        if event.type == 'S' and event.value == 'RELEASE':
+            bpy.ops.mesh.primitive_uv_sphere_add()
+            self.dodalem = 'Sphere'
+
+        if event.type in self.numbers and event.value == 'RELEASE' and self.dodalem:
+            self.iloscVertow += str(self.numbers.index(event.type))
+            bpy.ops.object.delete(use_global=False)
+            if int(self.iloscVertow) >= 100:
+                self.iloscVertow = '100'
+            if self.dodalem == 'Cylinder':
+                bpy.ops.mesh.primitive_cylinder_add(vertices = int(self.iloscVertow))
+            if self.dodalem == 'Sphere':
+                bpy.ops.mesh.primitive_uv_sphere_add(segments=int(self.iloscVertow), ring_count=int(self.iloscVertow))
+
+        if event.type == 'BACK_SPACE' and event.value == 'RELEASE' and self.dodalem:
+            self.iloscVertow = self.iloscVertow[:-1]
+            if self.iloscVertow == '':
+                self.iloscVertow = '1'
+            bpy.ops.object.delete(use_global=False)
+            if self.dodalem == 'Cylinder':
+                bpy.ops.mesh.primitive_cylinder_add(vertices = int(self.iloscVertow))
+            if self.dodalem == 'Sphere':
+                bpy.ops.mesh.primitive_uv_sphere_add(segments=int(self.iloscVertow), ring_count=int(self.iloscVertow))
+
+        if event.type == 'MINUS' and self.dodalem and event.value != 'RELEASE':
+            if self.iloscVertow == '':
+                self.iloscVertow = '20'
+            self.iloscVertow = int(self.iloscVertow) - 1
+            if int(self.iloscVertow) <= 1:
+                self.iloscVertow = '1'
+            bpy.ops.object.delete(use_global=False)
+            if self.dodalem == 'Cylinder':
+                bpy.ops.mesh.primitive_cylinder_add(vertices = int(self.iloscVertow))
+            if self.dodalem == 'Sphere':
+                bpy.ops.mesh.primitive_uv_sphere_add(segments=int(self.iloscVertow), ring_count=int(self.iloscVertow))
+
+
+        if event.type == 'EQUAL' and self.dodalem and event.value != 'RELEASE':
+            if self.iloscVertow == '':
+                self.iloscVertow = '20'
+            self.iloscVertow = int(self.iloscVertow) + 1
+            if int(self.iloscVertow) >= 100:
+                self.iloscVertow = '100'
+            bpy.ops.object.delete(use_global=False)
+            if self.dodalem == 'Cylinder':
+                bpy.ops.mesh.primitive_cylinder_add(vertices = int(self.iloscVertow))
+            if self.dodalem == 'Sphere':
+                bpy.ops.mesh.primitive_uv_sphere_add(segments=int(self.iloscVertow), ring_count=int(self.iloscVertow))
+
+
+
+        if event.type not in ('C', 'S', 'Y', 'TIMER', 'NONE', 'MOUSEMOVE', 'INBETWEEN_MOUSEMOVE', 'BACK_SPACE', 'MINUS', 'EQUAL') and event.type not in self.numbers and self.dodalem:
+            self.customProperties()
+            return {'FINISHED'}
+
+        return {'RUNNING_MODAL'}
+
+    def invoke(self, context, event):
+        self.dodalem = None
+        self.iloscVertow = ''
+        context.window_manager.modal_handler_add(self)
+        return {'RUNNING_MODAL'}
 
 def register():
     bpy.utils.register_class(MainCustomMenu)
@@ -199,7 +313,9 @@ def register():
     bpy.utils.register_class(SeparateSelectionWithoutDeleting)
     bpy.utils.register_class(SeamsFromSharpEdges)
     bpy.utils.register_class(ToggleSubD)
+    bpy.utils.register_class(ToggleSubDCage)
     bpy.utils.register_class(DrawMesh)
+    bpy.utils.register_class(CreatePrimitive)
 
 def unregister():
     bpy.utils.unregister_class(MainCustomMenu)
@@ -210,7 +326,9 @@ def unregister():
     bpy.utils.unregister_class(SeparateSelectionWithoutDeleting)
     bpy.utils.unregister_class(SeamsFromSharpEdges)
     bpy.utils.unregister_class(ToggleSubD)
+    bpy.utils.unregister_class(ToggleSubDCage)
     bpy.utils.unregister_class(DrawMesh)
+    bpy.utils.unregister_class(CreatePrimitive)
 
 if __name__ == '__main__':
     register()
