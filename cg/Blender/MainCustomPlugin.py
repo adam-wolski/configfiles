@@ -1,7 +1,7 @@
 bl_info = {'name': 'Miniu tools',
         'description': 'Custom often used tools and scripts',
         'author': 'miniu',
-        'version': (0, 4, 4),
+        'version': (0, 5, 0),
         'blender': (2,71,0),
         'category': 'Mine',
         }
@@ -15,18 +15,19 @@ class MainCustomMenu(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-        layout.operator('mine.origintoselectedscript', text='Origin to selected')
-        layout.operator('mine.disabledoublesidedforselected', text='Disable Double Side')
-        layout.operator('mine.separateselectionwithoutdeleting', text='Separate Selection without deleting')
-        layout.operator('mine.seamsfromsharpedges', text='Create seams from sharp')
+        layout.operator('mine.origintoselectedscript', text='Origin to selected', icon = 'LAYER_ACTIVE')
+        layout.operator('mine.disabledoublesidedforselected', text='Disable Double Side', icon='POSE_HLT')
+        layout.operator('mine.separateselectionwithoutdeleting', text='Separate Selection without deleting', icon='ORTHO')
+        layout.operator('mine.seamsfromsharpedges', text='Create seams from sharp', icon='PARTICLE_PATH')
         layout.operator_context = 'INVOKE_DEFAULT'
         layout.operator(DrawMesh.bl_idname, text='Draw Mesh', icon = "LINE_DATA")
+        layout.operator('mine.importui', text='Quick Import', icon = "IMPORT")
 
 class OriginToSelectedScript(bpy.types.Operator):
     bl_idname = 'mine.origintoselectedscript'
     bl_label = 'Take origin to selection'
     bl_options = {'REGISTER', 'UNDO'}
-    
+
     def execute(self, context):
         bpy.ops.view3d.snap_cursor_to_selected()
         bpy.ops.object.editmode_toggle()
@@ -86,21 +87,21 @@ class CtrlDScript(bpy.types.Operator):
     bl_idname = "mine.ctrldscript"
     bl_label = "Ctrl D to do things"
     bl_options = {'REGISTER', 'UNDO'}
-    
+
     def execute(self, context):
         obj=bpy.context.object
         if obj.mode == 'EDIT':
             bpy.ops.mesh.extrude_region()
-        
+
         else:
             bpy.ops.object.duplicate()
-            
+
         return {'FINISHED'}
 
 class ToggleSubD(bpy.types.Operator):
     bl_idname = "mine.togglesubd"
     bl_label = "Toggle SubDMod visibility"
-    
+
     def execute(self, context):
         for obj in bpy.context.selected_objects:
             try:
@@ -108,7 +109,7 @@ class ToggleSubD(bpy.types.Operator):
                     obj.modifiers["Subsurf"].show_viewport = True
                 else:
                     obj.modifiers["Subsurf"].show_viewport = False
-                    
+
             except KeyError:
                 bpy.ops.object.modifier_add(type='SUBSURF')
 
@@ -118,7 +119,7 @@ class ToggleSubD(bpy.types.Operator):
 class ToggleSubDCage(bpy.types.Operator):
     bl_idname = "mine.togglesubdcage"
     bl_label = "Toggle show on cage subd"
-    
+
     def execute(self, context):
         for obj in bpy.context.selected_objects:
             try:
@@ -126,7 +127,7 @@ class ToggleSubDCage(bpy.types.Operator):
                     obj.modifiers["Subsurf"].show_on_cage = True
                 else:
                     obj.modifiers["Subsurf"].show_on_cage = False
-                    
+
             except KeyError:
                 bpy.ops.object.modifier_add(type='SUBSURF')
 
@@ -139,7 +140,7 @@ class DrawMesh(bpy.types.Operator):
     bl_label = "Draw Mesh With Pencil"
 
     count=0
-    
+
     @classmethod
     def poll(cls, context):
         return context.active_object is not None
@@ -152,7 +153,7 @@ class DrawMesh(bpy.types.Operator):
             bpy.ops.gpencil.draw('INVOKE_DEFAULT',mode ="DRAW")
 
         if event.type in {'RET', 'NUMPAD_ENTER', 'E'}:
-            
+
             bpy.ops.gpencil.convert(type='POLY')
             for obj in context.selected_objects:
                 if obj.type == "CURVE":
@@ -179,8 +180,8 @@ class DrawMesh(bpy.types.Operator):
                     bpy.context.object.data.use_auto_smooth = True
                     bpy.context.object.data.auto_smooth_angle = 0.872665
 
-                    obj["BoolToolPolyBrush"] = True             
-            
+                    obj["BoolToolPolyBrush"] = True
+
                     bpy.ops.object.select_all(action='DESELECT')
                     bpy.context.scene.objects.active = actObj
                     bpy.context.scene.update()
@@ -188,14 +189,14 @@ class DrawMesh(bpy.types.Operator):
                     obj.select = True
                     actObj.grease_pencil.clear()
                     bpy.ops.gpencil.data_unlink()
-                    
-            
+
+
             return {'FINISHED'}
 
         if event.type in {'ESC'}:
             bpy.ops.ed.undo() # remove o Grease Pencil
             return {'CANCELLED'}
-        
+
         return {'RUNNING_MODAL'}
 
 
@@ -206,12 +207,12 @@ class DrawMesh(bpy.types.Operator):
         else:
             self.report({'WARNING'}, "No active object, could not finish")
             return {'CANCELLED'}
-        
+
 class CreatePrimitive(bpy.types.Operator):
     bl_idname = 'mine.createprimitive'
     bl_label = 'Create Primitive Script'
     bl_options = {'REGISTER', 'UNDO'}
-    
+
     numbers = ('ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE')
 
     def customProperties(self):
@@ -222,26 +223,27 @@ class CreatePrimitive(bpy.types.Operator):
     def modal(self, context, event):
         print(event.type)
 
-        if event.type == 'C':
+        if event.type == 'C' and not self.dodalem:
             bpy.ops.mesh.primitive_cube_add(radius=5)
             self.dodalem = 'Cube'
             self.customProperties()
             return {'FINISHED'}
 
-        if event.type == 'E':
+        if event.type == 'E' and not self.dodalem:
             me = bpy.data.meshes.new('emptyMesh')
             ob = bpy.data.objects.new('emptyObject', me)
             bpy.context.scene.objects.link(ob)
             bpy.context.scene.objects.active = ob
             ob.select = True
             self.customProperties()
+            bpy.ops.object.editmode_toggle()
             return {'FINISHED'}
 
-        if event.type == 'Y' and event.value == 'RELEASE':
+        if event.type == 'Y' and event.value == 'RELEASE' and not self.dodalem:
             bpy.ops.mesh.primitive_cylinder_add()
             self.dodalem = 'Cylinder'
 
-        if event.type == 'S' and event.value == 'RELEASE':
+        if event.type == 'S' and event.value == 'RELEASE' and not self.dodalem:
             bpy.ops.mesh.primitive_uv_sphere_add()
             self.dodalem = 'Sphere'
 
