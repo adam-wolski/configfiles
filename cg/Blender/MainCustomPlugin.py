@@ -1,13 +1,37 @@
 bl_info = {'name': 'Miniu tools',
         'description': 'Custom often used tools and scripts',
         'author': 'miniu',
-        'version': (0, 5, 0),
-        'blender': (2,71,0),
+        'version': (0, 6, 0),
+        'blender': (2,71,4),
         'category': 'Mine',
         }
 
 
 import bpy
+
+class MainPieMenu(bpy.types.Menu):
+    bl_idname = 'mine.mainpiemenu'
+    bl_label = 'Main Pie'
+
+    def draw(self, context):
+        layout = self.layout.menu_pie()
+        layout.operator_context = 'INVOKE_DEFAULT'
+#left
+        layout.operator('mine.importui', text='Quick Import', icon = "IMPORT")
+#right
+        layout.operator('mine.disabledoublesidedforselected', text='Disable Double Side', icon='POSE_HLT')
+#down
+        layout.operator('mine.separateselectionwithoutdeleting', text='Separate Selection without deleting', icon='ORTHO')
+#up
+        layout.operator('mine.origintoselectedscript', text='Origin to selected', icon = 'LAYER_ACTIVE')
+#leftUp
+        layout.operator(DrawMesh.bl_idname, text='Draw Mesh', icon = "LINE_DATA")
+#RightUp
+#LeftDown?
+        layout.operator('mine.seamsfromsharpedges', text='Create seams from sharp', icon='PARTICLE_PATH')
+
+#RightDown?
+
 
 class MainCustomMenu(bpy.types.Menu):
     bl_idname = 'OBJECT_MT_MainCustomMenu'
@@ -306,7 +330,34 @@ class CreatePrimitive(bpy.types.Operator):
         context.window_manager.modal_handler_add(self)
         return {'RUNNING_MODAL'}
 
+class ScreenPieMenu(bpy.types.Menu):
+    bl_label = 'Screen Pie'
+    bl_idname = 'mine.screenpiemenu'
+
+    def draw(self, context):
+        layout = self.layout
+
+        pie = layout.menu_pie()
+
+        i = 0
+        for scr in bpy.data.screens:
+            i += 1
+            if i > 8:
+                break
+            pie.operator(ChangeScreen.bl_idname,text=scr.name).nazwa = scr.name
+
+class ChangeScreen(bpy.types.Operator):
+    bl_idname = 'mine.changescreen'
+    bl_label = 'Change Screen Script for pie menu'
+
+    nazwa = bpy.props.StringProperty()
+
+    def execute(self,context):
+        bpy.context.window.screen=bpy.data.screens[self.nazwa]
+        return{'FINISHED'}
+
 def register():
+    bpy.utils.register_class(MainPieMenu)
     bpy.utils.register_class(MainCustomMenu)
     bpy.utils.register_class(OriginToSelectedScript)
     bpy.utils.register_class(DisableDoubleSidedForSelectedScript)
@@ -318,8 +369,11 @@ def register():
     bpy.utils.register_class(ToggleSubDCage)
     bpy.utils.register_class(DrawMesh)
     bpy.utils.register_class(CreatePrimitive)
+    bpy.utils.register_class(ScreenPieMenu)
+    bpy.utils.register_class(ChangeScreen)
 
 def unregister():
+    bpy.utils.unregister_class(MainPieMenu)
     bpy.utils.unregister_class(MainCustomMenu)
     bpy.utils.unregister_class(OriginToSelectedScript)
     bpy.utils.unregister_class(DisableDoubleSidedForSelectedScript)
@@ -331,6 +385,8 @@ def unregister():
     bpy.utils.unregister_class(ToggleSubDCage)
     bpy.utils.unregister_class(DrawMesh)
     bpy.utils.unregister_class(CreatePrimitive)
+    bpy.utils.unregister_class(ScreenPieMenu)
+    bpy.utils.unregister_class(ChangeScreen)
 
 if __name__ == '__main__':
     register()
