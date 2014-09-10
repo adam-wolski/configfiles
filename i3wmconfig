@@ -170,7 +170,8 @@ client.unfocused        #333333 #333333 #777777 #333333
 client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
 
 bar {
-        status_command python /home/miniu/.config/i3pystatusconfig.py
+        # status_command python /home/miniu/.config/i3pystatusconfig.py
+        status_command i3status
     	mode hide
     	hidden_state hide
 	    tray_output primary
