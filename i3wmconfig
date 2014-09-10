@@ -170,9 +170,8 @@ client.unfocused        #333333 #333333 #777777 #333333
 client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
 
 bar {
-        # status_command python /home/miniu/.config/i3pystatusconfig.py
-        status_command ~/mgit/configfiles/i3status.sh
-    	mode hide
+        status_command python /home/miniu/.config/i3pystatusconfig.py
+    	mode dock
     	hidden_state hide
 	    tray_output primary
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
