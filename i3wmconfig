@@ -171,6 +171,8 @@ client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
 
 bar {
         status_command python /home/miniu/.config/i3pystatusconfig.py
+        workspace_buttons yes
+        position bottom
     	mode dock
     	hidden_state hide
 	    tray_output primary
@@ -191,7 +193,7 @@ bar {
             }
 }
 
-workspace 5 output DVI-I-1
+workspace 5 output DVI-I-0
 
 # MPD
 exec --no-startup-id mpd &
@@ -208,3 +210,4 @@ exec --no-startup-id "compton --config /home/miniu/.config/.compton.conf -b"
 exec --no-startup-id ~/bin/AutoStartScripts
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id "thunar --daemon"
+exec --no-startup-id megasync
