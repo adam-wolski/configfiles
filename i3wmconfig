@@ -75,7 +75,7 @@ bindsym $mod+f fullscreen
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -152,7 +152,7 @@ bindsym $mod+shift+Right move workspace to output right
 
 # application shortcuts
 bindsym $mod+space exec chromium
-bindsym $mod+t exec thunar
+bindsym $mod+e exec thunar
 bindsym $mod+n exec "gnome-terminal --execute ncmpcpp"
 
 #Tablet shortcuts

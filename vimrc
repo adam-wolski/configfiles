@@ -12,8 +12,11 @@ Plug 'tpope/vim-surround'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-eunuch'
+" Themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'chankaward/vim-railscasts-theme'
 
 call plug#end()
 

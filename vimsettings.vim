@@ -1,6 +1,7 @@
 set t_Co=256
+set exrc
 
-colorscheme solarized
+colorscheme railscasts
 set background=dark
 
 " I took this part from someone long time ago don't remember who for credit :(
@@ -150,6 +151,7 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
