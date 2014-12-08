@@ -117,11 +117,11 @@ nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
 " tab navigation like firefox
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-h> <Esc>:tabprevious<CR>i
+inoremap <C-l>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 " ctrl o jako ctrlenter w inert mode
