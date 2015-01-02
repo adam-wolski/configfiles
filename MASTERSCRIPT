@@ -19,6 +19,11 @@ alias vimMASTER='vim /home/miniu/mgit/configfiles/MASTERSCRIPT'
 alias vimzsh='vim ~/.zshrc'
 alias v='vim'
 
+# GIT aliases
+alias pull='git pull'
+alias push='git push origin master'
+alias status='git status'
+
 # cd aliases
 alias cdbin='cd /home/miniu/bin/'
 alias cdb='cd /home/miniu/builds/'
