@@ -19,6 +19,12 @@ alias vimMASTER='vim /home/miniu/mgit/configfiles/MASTERSCRIPT'
 alias vimzsh='vim ~/.zshrc'
 alias v='vim'
 
+# GIT aliases
+alias pull='git pull'
+alias push='git push origin master'
+alias status='git status'
+alias commit='git commit -a -m'
+
 # cd aliases
 alias cdbin='cd /home/miniu/bin/'
 alias cdb='cd /home/miniu/builds/'
@@ -40,3 +46,4 @@ alias wylaczScreenSaver='xset -dpms; xset s off; setterm -blank 0 -powerdown 0'
 alias n='ncmpcpp'
 alias shutup='sudo shutdown -h now'
 alias sus='sudo systemctl suspend'
+alias xbox='sudo xboxdrv -D --detach-kernel-driver'
