@@ -2,21 +2,32 @@ set encoding=utf-8
 
 call plug#begin()
 
-Plug 'bling/vim-airline'
+" Navigation
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+
+" Completation
+Plug 'Valloric/YouCompleteMe'
 Plug 'honza/vim-snippets'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-repeat'
-Plug 'kien/ctrlp.vim'
-Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-surround'
-Plug 'Lokaltog/vim-easymotion'
+
+" Error Checking
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe'
-Plug 'tpope/vim-eunuch'
+
+" Visual
+Plug 'bling/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
+
 " Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'chankaward/vim-railscasts-theme'
+
+" Other
+Plug 'tpope/vim-eunuch'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
