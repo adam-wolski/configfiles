@@ -135,7 +135,7 @@ inoremap <C-O> <C-o>o
 nnoremap Q @q
 
 " Szybki zapis sesji
-nnoremap <C-S> :mksession .vimsession.vim
+nnoremap <C-S> :mksession! .vimsession.vim
 
 " imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 " smap <C-J> <Plug>snipMateNextOrTrigger
