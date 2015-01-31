@@ -9,6 +9,7 @@ Plug 'Lokaltog/vim-easymotion'
 " Completation
 Plug 'Valloric/YouCompleteMe'
 Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 
@@ -37,8 +38,5 @@ source ~/mgit/configfiles/vimsettings.vim
 cmap w!! SudoWrite
 
 set mouse=a
-
-nmap <F5> :!python %<CR>
-nmap <F6> :!python2 %<CR>
 
 let g:ycm_global_ycm_extra_conf = '~/mgit/configfiles/ycm_extra_conf.py'

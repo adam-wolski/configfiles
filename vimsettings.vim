@@ -54,6 +54,10 @@ set backspace=indent,eol,start
 " aby przejscie z insert do normal bylo szybsze
 set timeoutlen=1000 ttimeoutlen=0
 
+" Nie zapamietywanie configa przy zapisaniu sesji
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+
 if has('gui_running')
 	:set go-=r
 	:set go-=T
@@ -126,14 +130,18 @@ inoremap <C-t>     <Esc>:tabnew<CR>
 
 " ctrl o jako ctrlenter w inert mode
 inoremap <C-O> <C-o>o
-inoremap <C-K> <C-o>o
-inoremap <C-L> <C-o>O
 
 " zeby odpalic makro nagrane jako q
 nnoremap Q @q
 
-imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
+" Szybki zapis sesji
+nnoremap <C-S> :mksession .vimsession.vim
+
+" imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+" smap <C-J> <Plug>snipMateNextOrTrigger
+let g:UltiSnipsExpandTrigger='<c-s>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 nmap s <Plug>(easymotion-s2)
 nmap <Leader>s <Plug>(easymotion-s2)
