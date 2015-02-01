@@ -115,10 +115,10 @@ nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<
 " vnoremap ; l
 
 " window navigation with alt + arrows
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-j> :wincmd j<CR>
-nmap <silent> <A-h> :wincmd h<CR>
-nmap <silent> <A-l> :wincmd l<CR>
+nmap <silent> <C-K> :wincmd k<CR>
+nmap <silent> <C-J> :wincmd j<CR>
+nmap <silent> <C-H> :wincmd h<CR>
+nmap <silent> <C-L> :wincmd l<CR>
 
 " tab navigation like firefox
 nnoremap <C-h> :tabprevious<CR>

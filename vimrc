@@ -20,6 +20,7 @@ Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'beyondmarc/opengl.vim'
+Plug 'tikhomirov/vim-glsl'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
