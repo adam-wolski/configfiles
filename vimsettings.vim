@@ -1,5 +1,6 @@
 set t_Co=256
 set exrc
+set hidden
 
 colorscheme railscasts
 set background=dark
@@ -100,33 +101,19 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>M :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 nnoremap <leader>T :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 
-" " Zmiana navigacji
-" nnoremap < ,
-" nnoremap , ;
-"
-" nnoremap j h
-" nnoremap k gj
-" nnoremap l gk
-" nnoremap ; l
-"
-" vnoremap j <left>
-" vnoremap k j
-" vnoremap l k
-" vnoremap ; l
+" window navigation
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
 
-" window navigation with alt + arrows
-nmap <silent> <C-K> :wincmd k<CR>
-nmap <silent> <C-J> :wincmd j<CR>
-nmap <silent> <C-H> :wincmd h<CR>
-nmap <silent> <C-L> :wincmd l<CR>
-
-" tab navigation like firefox
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-h> <Esc>:tabprevious<CR>i
-inoremap <C-l>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+" tab navigation
+" nnoremap <C-h> :tabprevious<CR>
+" nnoremap <C-l>   :tabnext<CR>
+" nnoremap <C-t>     :tabnew<CR>
+" inoremap <C-h> <Esc>:tabprevious<CR>i
+" inoremap <C-l>   <Esc>:tabnext<CR>i
+" inoremap <C-t>     <Esc>:tabnew<CR>
 
 " ctrl o jako ctrlenter w inert mode
 inoremap <C-O> <C-o>o
@@ -151,6 +138,7 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 map <Leader>f <Plug>(easymotion-f)
+map <Leader>F <Plug>(easymotion-F)
 
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
@@ -162,7 +150,7 @@ let g:EasyMotion_smartcase = 1
 
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-let g:ycm_auto_start_csharp_server = 1
-let g:ycm_auto_stop_csharp_server = 1
-let g:ycm_csharp_server_port = 2000
+" let g:ycm_auto_start_csharp_server = 1
+" let g:ycm_auto_stop_csharp_server = 1
+" let g:ycm_csharp_server_port = 2000
 
