@@ -60,12 +60,6 @@ flags = [
 '-x',
 'c++',
 '-isystem',
-'../BoostParts',
-'-isystem',
-# This path will only work on OS X, but extra paths that don't exist are not
-# harmful
-'/System/Library/Frameworks/Python.framework/Headers',
-'-isystem',
 '../llvm/include',
 '-isystem',
 '../llvm/tools/clang/include',
@@ -73,22 +67,12 @@ flags = [
 '.',
 '-I',
 './ClangCompleter',
-'-isystem',
-'./tests/gmock/gtest',
-'-isystem',
-'./tests/gmock/gtest/include',
-'-isystem',
-'./tests/gmock',
-'-isystem',
-'./tests/gmock/include',
+'-I',
+'/home/miniu/Projects/include',
 '-isystem',
 '/usr/include',
 '-isystem',
 '/usr/local/include',
-'-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1',
-'-isystem',
-'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 ]
 
 
