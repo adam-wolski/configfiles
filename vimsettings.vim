@@ -124,12 +124,14 @@ nnoremap Q @q
 " Szybki zapis sesji
 nnoremap <C-S> :mksession! .vimsession.vim
 
+
 " imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 " smap <C-J> <Plug>snipMateNextOrTrigger
 let g:UltiSnipsExpandTrigger='<c-s>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
+" easymotion settings
 nmap s <Plug>(easymotion-s2)
 nmap <Leader>s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
@@ -154,3 +156,5 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " let g:ycm_auto_stop_csharp_server = 1
 " let g:ycm_csharp_server_port = 2000
 
+" Semantic Highlight plugin settings
+source ~/mgit/configfiles/semanticHighlightPluginSettings.vim
