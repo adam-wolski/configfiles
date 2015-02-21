@@ -21,8 +21,8 @@ Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'beyondmarc/opengl.vim'
 Plug 'tikhomirov/vim-glsl'
-" Plug 'vim-scripts/SemanticHL'
 Plug 'jaxbot/semantic-highlight.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'

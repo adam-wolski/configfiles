@@ -59,6 +59,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 
+
 if has('gui_running')
 	:set go-=r
 	:set go-=T
@@ -74,6 +75,9 @@ nnoremap <leader>r :so $MYVIMRC
 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
+
+" Add ; on end line
+imap <C-t> <ESC>$a;
 
 " Paste from clipboard
 vmap <Leader>y "+y
@@ -158,3 +162,11 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Semantic Highlight plugin settings
 source ~/mgit/configfiles/semanticHighlightPluginSettings.vim
+
+" Rainbow Parentheses
+nmap <leader>rp :RainbowParenthesesToggle <cr>
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
