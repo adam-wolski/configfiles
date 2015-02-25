@@ -160,9 +160,6 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " let g:ycm_auto_stop_csharp_server = 1
 " let g:ycm_csharp_server_port = 2000
 
-" Semantic Highlight plugin settings
-source ~/mgit/configfiles/semanticHighlightPluginSettings.vim
-
 " Rainbow Parentheses
 nmap <leader>rp :RainbowParenthesesToggle <cr>
 au VimEnter * RainbowParenthesesToggle

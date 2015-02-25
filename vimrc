@@ -44,3 +44,6 @@ cmap w!! SudoWrite
 set mouse=a
 
 let g:ycm_global_ycm_extra_conf = '~/mgit/configfiles/ycm_extra_conf.py'
+
+" Semantic Highlight plugin settings
+source ~/mgit/configfiles/semanticHighlightPluginSettings.vim
