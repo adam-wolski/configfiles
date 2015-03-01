@@ -128,6 +128,13 @@ nnoremap Q @q
 " Szybki zapis sesji
 nnoremap <C-S> :mksession! .vimsession.vim
 
+"Tagbar Plugin
+nnoremap <leader>tb :TagbarToggle<cr>
+
+"FSwitch Plugin
+nnoremap <leader>fs :FSHere<cr>
+au! BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
+au! BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
 
 " imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 " smap <C-J> <Plug>snipMateNextOrTrigger

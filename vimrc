@@ -33,6 +33,7 @@ Plug 'chankaward/vim-railscasts-theme'
 Plug 'tpope/vim-eunuch'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
+Plug 'derekwyatt/vim-fswitch'
 
 call plug#end()
 
