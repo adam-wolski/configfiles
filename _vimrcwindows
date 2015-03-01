@@ -1,87 +1,51 @@
+" VIM WINDOWS CONFIG
 
-
-set nocompatible              " be iMproved
-filetype off                  " required!
-syntax enable
-
-execute pathogen#infect()
-
-
-"Powerline configuration
 set encoding=utf-8
-set laststatus=2
-set guifont=Consolas\ for\ Powerline\ FixedD:h12:cANSI
-set t_Co=256
-let g:Powerline_symbols = "fancy"
-"anti menu garbled
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 
-set rtp+=~/vimfiles/bundle/vundle/
-call vundle#rc()
+call plug#begin()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" Navigation
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
 
-" Koloruje nawiasy
-Bundle 'kien/rainbow_parentheses.vim' 
-" Zarzadza hisotria kopiowania
-Bundle 'maxbrunsfeld/vim-yankstack' 
+" Completation
+" Plug 'Valloric/YouCompleteMe'
+Plug 'ervandew/supertab'
+Plug 'davidhalter/jedi-vim'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+" Error Checking
+Plug 'scrooloose/syntastic'
 
-" Optional:
-Bundle "honza/vim-snippets"
+" Visual
+Plug 'bling/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'beyondmarc/opengl.vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
-Bundle 'scrooloose/nerdtree'
+" Themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'chankaward/vim-railscasts-theme'
 
-Bundle 'tpope/vim-surround'
+" Other
+Plug 'tpope/vim-eunuch'
+Plug 'sjl/gundo.vim'
+Plug 'majutsushi/tagbar'
 
-Bundle 'tpope/vim-dispatch'
-"
-Bundle 'Shougo/vimproc.vim'
+call plug#end()
 
-" My bundles here:
-"
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-repeat'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'sjl/gundo.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/powerline'
-" original repos on GitHub
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-" non-GitHub repos
-" Git repos on your local machine (i.e. when working on your own plugin)
-" ...
+source C:\git\configfiles\vimsettings.vim
 
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ"
-" NOTE: comments after Bundle commands are not allowed.
-nmap <F5> :!python %<CR>
-vnoremap <F5> :!python<CR>
+" Sudo write
+cmap w!! SudoWrite
 
-source E:\mgit\configfiles\vimsettings.vim
+set mouse=a
 
-
-
-
+" Semantic Highlight plugin settings
+source C:\git\configfiles\semanticHighlightPluginSettings.vim
