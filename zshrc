@@ -53,10 +53,11 @@ source $ZSH/oh-my-zsh.sh
 
 export KEYTIMEOUT=1
 
-source "~/git/configfiles/MASTERSCRIPT"
-source "~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/home/miniu/git/configfiles/MASTERSCRIPT"
+#source "home/miniu/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
-# Custom Keybindings
+#Custom Keybindings
 #
 # Use vim cli mode
 bindkey '^P' up-history
