@@ -53,8 +53,8 @@ source $ZSH/oh-my-zsh.sh
 
 export KEYTIMEOUT=1
 
-source "/home/miniu/mgit/configfiles/MASTERSCRIPT"
-source "/home/miniu/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "~/git/configfiles/MASTERSCRIPT"
+source "~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Custom Keybindings
 #
@@ -81,7 +81,7 @@ bindkey '^r' history-incremental-search-backward
 
 #
 
-export PATH="/home/miniu/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
+export PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor for local and remote sessions

@@ -5,17 +5,14 @@
 # Script shortcut aliases
 alias cdv='. /home/miniu/bin/cdDoClipboard'
 alias aclc='cautoclick -r 1 -n 99999 -p 2000 -i '
-alias herbbach='python "/home/miniu/Documents/Programy/CzasNaHerbate/Herbata.py"'
 alias reloadMASTER='source /home/miniu/bin/MASTERSCRIPT'
-alias autoAUR='python3 /home/miniu/Documents/Programy/AURauto.py'
 alias reloadZSH='source ~/.zshrc'
-alias timerScript='cd /home/miniu/Documents/Programy/Timer && python2 /home/miniu/Documents/Programy/Timer/Timer.py'
 alias ww='sh /home/miniu/.config/wacomconfig'
 
 # Vim aliases
 alias vimvim='vim /home/miniu/.vimrc' 
-alias vimvimvim='vim ~/mgit/configfiles/vimsettings.vim'
-alias vimMASTER='vim /home/miniu/mgit/configfiles/MASTERSCRIPT'
+alias vimvimvim='vim ~/git/configfiles/vimsettings.vim'
+alias vimMASTER='vim ~/git/configfiles/MASTERSCRIPT'
 alias vimzsh='vim ~/.zshrc'
 alias v='vim'
 
@@ -28,7 +25,7 @@ alias commit='git commit -a -m'
 # cd aliases
 alias cdbin='cd /home/miniu/bin/'
 alias cdb='cd /home/miniu/builds/'
-alias cdc='cd ~/mgit/configfiles'
+alias cdc='cd ~/git/configfiles'
 
 # pacman aliases
 alias pupg='sudo pacman -Syu'        # Synchronize with repositories and then upgrade packages that are out of date on the local system.
