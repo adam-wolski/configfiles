@@ -161,7 +161,7 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let g:EasyMotion_smartcase = 1
 
-nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>d :YcmCompleter GoTo<CR>
 
 " let g:ycm_auto_start_csharp_server = 1
 " let g:ycm_auto_stop_csharp_server = 1
