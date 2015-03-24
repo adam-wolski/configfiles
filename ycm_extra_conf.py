@@ -69,6 +69,8 @@ flags = [
 './ClangCompleter',
 '-I',
 '/home/miniu/Projects/include',
+'-I',
+'external/SOIL2/src',
 '-isystem',
 '/usr/include',
 '-isystem',

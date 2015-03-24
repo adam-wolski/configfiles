@@ -34,6 +34,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
