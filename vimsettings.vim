@@ -75,6 +75,12 @@ nnoremap <leader>r :so $MYVIMRC
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
 
+" Line Navigation, so it moves line down even with wrapping
+nnoremap j gj
+nnoremap k gk
+xnoremap j gj
+xnoremap k gk
+
 " Add ; on end line
 imap <C-t> <ESC>$a;
 

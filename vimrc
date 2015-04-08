@@ -30,6 +30,7 @@ Plug 'tomasr/molokai'
 Plug 'chankaward/vim-railscasts-theme'
 
 " Other
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
