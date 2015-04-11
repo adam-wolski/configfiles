@@ -59,7 +59,6 @@ set timeoutlen=1000 ttimeoutlen=0
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 
-
 if has('gui_running')
 	:set go-=r
 	:set go-=T
@@ -75,6 +74,12 @@ nnoremap <leader>r :so $MYVIMRC
 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
+
+" Line Navigation, so it moves line down even with wrapping
+nnoremap j gj
+nnoremap k gk
+xnoremap j gj
+xnoremap k gk
 
 " Add ; on end line
 imap <C-t> <ESC>$a;
@@ -127,6 +132,9 @@ nnoremap Q @q
 
 " Szybki zapis sesji
 nnoremap <C-S> :mksession! .vimsession.vim
+
+" Number Toggle from relative to absolute
+let g:NumberToggleTrigger="<leader>nt"
 
 "Tagbar Plugin
 nnoremap <leader>tb :TagbarToggle<cr>

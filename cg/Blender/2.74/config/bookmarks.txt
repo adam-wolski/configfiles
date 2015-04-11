@@ -1,3 +1,9 @@
 [Bookmarks]
+/home/miniu/Downloads/
 [Recent]
+/home/miniu/git/learnogl/models/
+/run/media/miniu/Mobilny/i/resources/Textury/HDRki/Old_Industrial_Hall/
+/home/miniu/Downloads/
+/home/miniu/Downloads/super_grouper/super_grouper/
+/home/miniu/git/Plugins/Blender/
 E:\mgit\Plugins\Blender\
