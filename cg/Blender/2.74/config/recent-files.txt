@@ -1,10 +1,1 @@
-D:\PVP_Local\Most\NowyMost.blend
-D:\PVP_Local\Most\MostBLocking7.blend
-D:\Perforce\pvp\etc\gfx\objects\escort_bridge\escort_bridge.blend
-D:\Perforce\speedway\gfx\objects\speedway_electric_box\tex\electric_box_texturing.blend
-D:\Perforce\pvp\etc\gfx\objects\pvp_conquest_explosives\tex\pvp_conquest_explosives_texturing.blend
-D:\Perforce\pvp\etc\gfx\objects\pvp_conquest_explosives\pvp_assault_explosives1.blend
-D:\Perforce\speedway\gfx\objects\fence and barriers\barrier.blend
-D:\Perforce\speedway\gfx\objects\fence and barriers\fence.blend
-D:\Perforce\pvp\etc\gfx\objects\cannon\cannon_placeholder.blend
-D:\Perforce\speedway\gfx\objects\flag_stand\flag_stand.blend
+/home/miniu/windows/MAIN/CG/Generator/LP_End2.blend

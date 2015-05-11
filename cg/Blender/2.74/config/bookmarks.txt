@@ -1,18 +1,9 @@
 [Bookmarks]
-D:\Perforce\pvp\etc\gfx\
-D:\Speedway_Local\
-D:\Perforce\speedway\build\DW\Data\Objects\speedway\
-D:\Perforce\speedway\gfx\
-C:\Users\awolski\Downloads\
-C:\Users\awolski\Pictures\
+/home/miniu/Downloads/
 [Recent]
-D:\PVP_Local\Most\obj\
-C:\git\Plugins\Blender\
-d:\perforce\pvp\build\pvp\data\objects\village_well\
-D:\Perforce\pvp\build\pvp\Data\Objects\pvp\temp\
-D:\Perforce\pvp\build\pvp\Data\Textures\pvp\decal\
-C:\Users\awolski\Desktop\
-D:\Perforce\pvp\build\pvp\Data\Objects\constructions\catacombs\
-d:\perforce\pvp\build\pvp\data\textures\
-D:\PVP_Local\Most\
-C:\Users\awolski\Documents\Odebrane Pliki\arkadiusz.wozniak@jabber.techland.pl\
+/home/miniu/git/learnogl/models/
+/run/media/miniu/Mobilny/i/resources/Textury/HDRki/Old_Industrial_Hall/
+/home/miniu/Downloads/
+/home/miniu/Downloads/super_grouper/super_grouper/
+/home/miniu/git/Plugins/Blender/
+E:\mgit\Plugins\Blender\
