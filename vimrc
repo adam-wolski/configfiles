@@ -21,6 +21,7 @@ Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'beyondmarc/opengl.vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'rust-lang/rust.vim'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
@@ -36,6 +37,7 @@ Plug 'sjl/gundo.vim'
 Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'LucHermitte/VimFold4C'
 
 call plug#end()
 
