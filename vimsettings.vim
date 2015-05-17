@@ -59,11 +59,14 @@ set timeoutlen=1000 ttimeoutlen=0
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 
+set nofoldenable    " Disable folds on start, toggle with zi
+
 if has('gui_running')
 	:set go-=r
 	:set go-=T
 	:set go-=m
 	:set guiheadroom=0
+    :set guifont=Monospace\ 9
 endif
 
 let mapleader="\<Space>"
@@ -128,7 +131,8 @@ nmap <silent> <C-l> :wincmd l<CR>
 inoremap <C-O> <C-o>o
 
 " zeby odpalic makro nagrane jako q
-nnoremap Q @q
+nnoremap QQ @q
+nnoremap Q @
 
 " Szybki zapis sesji
 nnoremap <C-S> :mksession! .vimsession.vim
