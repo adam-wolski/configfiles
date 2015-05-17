@@ -5,6 +5,9 @@ call plug#begin()
 " Navigation
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'rhysd/clever-f.vim'
+Plug 'majutsushi/tagbar'
+Plug 'derekwyatt/vim-fswitch'
 
 " Completation
 Plug 'Valloric/YouCompleteMe'
@@ -19,25 +22,26 @@ Plug 'scrooloose/syntastic'
 " Visual
 Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'kien/rainbow_parentheses.vim'
+
+" Language specific
 Plug 'beyondmarc/opengl.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'rust-lang/rust.vim'
-Plug 'jaxbot/semantic-highlight.vim'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'LucHermitte/VimFold4C'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'chankaward/vim-railscasts-theme'
+Plug 'jaapie/vim-colours-dusk'
 
 " Other
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'sjl/gundo.vim'
-Plug 'majutsushi/tagbar'
-Plug 'derekwyatt/vim-fswitch'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'LucHermitte/VimFold4C'
 
 call plug#end()
 
