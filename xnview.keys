@@ -145,6 +145,7 @@ cmd_zoomIn +
 cmd_zoomOut -
 
 [View]
+cmd_8bf 
 cmd_align 
 cmd_animation 
 cmd_autoContrast Ctrl+Alt+O
@@ -162,7 +163,7 @@ cmd_copyFilename
 cmd_copyImage Ctrl+Shift+C
 cmd_copyName 
 cmd_copyPathname 
-cmd_crop Shift+X
+cmd_crop C
 cmd_cut Ctrl+X
 cmd_deleteFile 
 cmd_enhance Shift+E
