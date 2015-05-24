@@ -1,3 +1,0 @@
-nnoremap <F5> :make!<cr> :!./main<cr>
-
-set makeprg=make\ main
