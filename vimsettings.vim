@@ -48,7 +48,8 @@ set smartcase               " unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
-
+" Override setting for .h files, which default to cpp for me.
+au BufRead,BufNewFile *.h set filetype=c
 
 set backspace=indent,eol,start
 
