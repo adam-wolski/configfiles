@@ -1,7 +1,6 @@
 #!/bin/bash
 export CONFIG_FOLDER="~/git/configfiles"
 
-
 # ==============
 # Aliases
 # ==============
@@ -13,10 +12,10 @@ alias reloadZSH='source ~/.zshrc'
 alias ww='sh ~/.config/wacomconfig'
 
 # Vim aliases
-alias vimvim='vim ~/.vimrc' 
-alias vimvimvim='vim $CONFIG_FOLDER/vimsettings.vim'
-alias vimMASTER='vim $CONFIG_FOLDER/MASTERSCRIPT'
-alias vimzsh='vim ~/.zshrc'
+alias vimvim='$EDITOR ~/.vimrc' 
+alias vimvimvim='$EDITOR $CONFIG_FOLDER/vimsettings.vim'
+alias vimMASTER='$EDITOR $CONFIG_FOLDER/MASTERSCRIPT'
+alias vimzsh='$EDITOR ~/.zshrc'
 alias v='vim'
 
 # GIT aliases
