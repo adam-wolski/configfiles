@@ -30,7 +30,7 @@ ZSH_THEME="sunrise"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -53,7 +53,6 @@ source $ZSH/oh-my-zsh.sh
 
 export KEYTIMEOUT=1
 
-source "/home/miniu/git/configfiles/MASTERSCRIPT"
 #source "home/miniu/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
@@ -74,14 +73,6 @@ bindkey '^w' backward-kill-word
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 
-#rebing navigation to homerow
-#bindkey -a 'j' vi-backward-char
-#bindkey -a 'k' down-line-or-history
-#bindkey -a 'l' up-line-or-history
-#bindkey -a ';' vi-forward-char
-
-#
-
 export PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -89,7 +80,7 @@ export PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='gvim'
+  export EDITOR='qvim'
 fi
 
 # Compilation flags
@@ -116,3 +107,5 @@ PATH=/home/miniu/.gem/ruby/2.1.0/bin:$PATH
 
 #aby ctrl s bylo wolne dla vima
 stty -ixon 
+
+source "/home/miniu/git/configfiles/MASTERSCRIPT"
