@@ -15,6 +15,9 @@ set title                           " Show title in console title bar
 set mouse=a                         " Mouse, sometimes usefull
 set timeoutlen=1000 ttimeoutlen=0   " Faster insert to normal jump
 set nofoldenable                    " Disable folds on start, toggle with zi
+set wildmenu                        " Menu completion in command mode on <Tab>
+set wildmode=full                   " <Tab> cycles between all matching choices.
+
 
 let CONFIG_FOLDER=$CONFIG_FOLDER    " Read config folder location from env
 
@@ -82,6 +85,13 @@ call plug#end()
 " Sudo write
 cmap w!! SudoWrite
 
+""              Fugitive
+" Shortcuts
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gc :Gcommit<CR>
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gw :Gwrite<CR>
+
 
 ""              FSwitch
 " Shortcut
@@ -121,10 +131,10 @@ au Syntax * RainbowParenthesesLoadBraces
 ""              Easymotion
 " Shortcuts
 nmap <Leader>s <Plug>(easymotion-s2)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
 map <Leader>l <Plug>(easymotion-lineforward)
@@ -160,6 +170,19 @@ set scrolloff=5             " Keep x context lines above and below the cursor
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set tabstop=4               " <tab> inserts x spaces
 set textwidth=90            " Lines are automatically wrapped after x columns
+
+
+"
+" =====================================
+"              Searching
+" =====================================
+"
+
+
+set ignorecase              " Default to using case insensitive searches,
+set smartcase               " unless uppercase letters are used in the regex.
+set hlsearch                " Highlight searches by default.
+set incsearch               " Incrementally search while typing a /regex
 
 
 "

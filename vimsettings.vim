@@ -1,8 +1,5 @@
 
 " I took this part from someone long time ago don't remember who for credit :(
-set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
-
 
 set ruler                   " show the cursor position all the time
 set nostartofline           " Avoid moving cursor to BOL when jumping around
@@ -17,13 +14,6 @@ set showcmd                 " Show incomplete normal mode commands as I type.
 set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set laststatus=2            " Always show statusline, even if only 1 window.
-
-""" Searching and Patterns
-set ignorecase              " Default to using case insensitive searches,
-set smartcase               " unless uppercase letters are used in the regex.
-set hlsearch                " Highlight searches by default.
-set incsearch               " Incrementally search while typing a /regex
-
 
 set backspace=indent,eol,start
 
