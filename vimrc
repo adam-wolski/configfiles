@@ -17,7 +17,7 @@ set timeoutlen=1000 ttimeoutlen=0   " Faster insert to normal jump
 set nofoldenable                    " Disable folds on start, toggle with zi
 set wildmenu                        " Menu completion in command mode on <Tab>
 set wildmode=full                   " <Tab> cycles between all matching choices.
-
+set backspace=indent,eol,start
 
 let CONFIG_FOLDER=$CONFIG_FOLDER    " Read config folder location from env
 
@@ -210,7 +210,7 @@ if has('gui_running')
 	:set go-=T
 	:set go-=m
 	:set guiheadroom=0
-    :set guifont=Monospace\ 9
+    :set guifont=Droid\ Sans\ Mono\ 9
 endif
 
 
