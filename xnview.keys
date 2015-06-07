@@ -145,7 +145,6 @@ cmd_zoomIn +
 cmd_zoomOut -
 
 [View]
-cmd_8bf 
 cmd_align 
 cmd_animation 
 cmd_autoContrast Ctrl+Alt+O
