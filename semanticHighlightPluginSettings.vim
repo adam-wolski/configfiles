@@ -1,5 +1,5 @@
 nnoremap <Leader>sh :SemanticHighlightToggle<cr>
-let g:semanticEnableFileTypes = {'cpp': 'cpp','header': 'hpp', 'python': 'py'}
+let g:semanticEnableFileTypes = {'cpp': 'cpp','header': 'hpp', 'python': 'py', 'c': 'c', 'h': 'h'}
 
 let g:semanticBlacklistOverride = {
     \   'cpp': [
@@ -3473,5 +3473,44 @@ let g:semanticBlacklistOverride = {
     \   'unpackUnorm2x16',
     \   'unpackUnorm4x8',
     \   'usubBorrow',
-    \]
+    \],
+	\ 'c': [
+	\	'auto',
+	\	'break',
+	\	'case',
+	\	'char',
+	\	'const',
+	\	'continue',
+	\	'default',
+	\	'do',
+	\	'double',
+	\	'else',
+	\	'enum',
+	\	'extern',
+	\	'float',
+	\	'for',
+	\	'goto',
+	\	'if',
+	\	'int',
+	\	'long',
+	\	'register',
+	\	'return',
+	\	'short',
+	\	'signed',
+	\	'sizeof',
+	\	'static',
+	\	'struct',
+	\	'switch',
+	\	'typedef',
+	\	'union',
+	\	'unsigned',
+	\	'void',
+	\	'volatile',
+	\	'while',
+	\	'define',
+	\	'ifdef',
+	\	'ifndef',
+    \	'endif',
+	\	'include',
+	\],
     \}
