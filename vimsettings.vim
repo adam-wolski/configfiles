@@ -15,8 +15,6 @@ set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set laststatus=2            " Always show statusline, even if only 1 window.
 
-set backspace=indent,eol,start
-
 
 " Nie zapamietywanie configa przy zapisaniu sesji
 set ssop-=options    " do not store global and local values in a session
