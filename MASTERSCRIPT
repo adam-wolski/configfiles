@@ -1,5 +1,6 @@
 #!/bin/bash
-export CONFIG_FOLDER="~/git/configfiles"
+export CONFIG_FOLDER="/home/miniu/git/configfiles"
+export QT_STYLE_OVERRIDE=GTK+
 
 # ==============
 # Aliases
@@ -13,9 +14,11 @@ alias ww='sh ~/.config/wacomconfig'
 
 # Vim aliases
 alias vimvim='$EDITOR ~/.vimrc' 
+alias vimnvim='$EDITOR ~/.nvimrc' 
 alias vimvimvim='$EDITOR $CONFIG_FOLDER/vimsettings.vim'
 alias vimMASTER='$EDITOR $CONFIG_FOLDER/MASTERSCRIPT'
 alias vimzsh='$EDITOR ~/.zshrc'
+alias vimi3='$EDITOR $CONFIG_FOLDER/i3wmconfig'
 alias v='vim'
 
 # GIT aliases
@@ -47,6 +50,11 @@ alias n='ncmpcpp'
 alias shutup='sudo shutdown -h now'
 alias sus='sudo systemctl suspend'
 alias xbox='sudo xboxdrv -D --detach-kernel-driver'
-alias valg='valgrind --track-origins=yes'
+alias valg='valgrind --track-origins=yes --leak-check=full'
+alias valgv='valgrind --track-origins=yes --leak-check=full -v'
+alias valgs='valgrind --track-origins=yes'
 alias rnm='sudo systemctl restart NetworkManager'
 alias cower='cower --sort votes'
+alias py='python'
+alias e='$EDITOR'
+alias ev='pynvim' #Editor gui

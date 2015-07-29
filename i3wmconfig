@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -33,7 +34,8 @@ bindsym $mod+q kill
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -nb \#333333 -nf \#f9f9f9 -sb \#333333 -sf \#d64937 -i
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -160,24 +162,39 @@ bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylu
 bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
 
 # other shortcuts
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
+bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
+
+# Numix colors
+set $num_white f9f9f9
+set $num_grey dedede
+set $num_orange d64937
+set $num_darkgrey 333333
+set $num_black 2d2d2d
+#Window Colors
 ## class                 border  backgr. text    indicator
-client.focused          #2d2d2d #2d2d2d #c5c5c5 #d64937
-client.focused_inactive #333333 #333333 #777777 #333333
-client.unfocused        #333333 #333333 #777777 #333333
-client.urgent           #d64937 #d64937 #f9f9f9 #2d2d2d
+# Numix like
+client.focused          #333333 #333333 #f9f9f9 #d64937
+client.focused_inactive #333333 #333333 #dedede #333333
+client.unfocused        #2d2d2d #2d2d2d #666666 #2d2d2d
+client.urgent           #d64937 #d64937 #dedede #2d2d2d
 
 bar {
-        status_command python /home/miniu/.config/i3pystatusconfig.py
+        status_command "python ~/.i3/i3pystatus_config.py"
         workspace_buttons yes
         position bottom
     	mode dock
     	hidden_state hide
-	    tray_output primary
+#	    tray_output primary
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Open Sans 9
+
         colors {
             # Background color of the bar.
             background #333333
@@ -196,8 +213,6 @@ bar {
 workspace 5 output DVI-I-0
 
 # MPD
-exec --no-startup-id mpd &
-exec --no-startup-id mpdscribble &
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
@@ -205,10 +220,14 @@ bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 
 # autostart
 #exec --no-startup-id xrdb /home/miniu/.Xresources
-#exec --no-startup-id sh ~/.fehbg &
-exec --no-startup-id "compton --config /home/miniu/.config/.compton.conf -b"
-exec --no-startup-id ~/bin/AutoStartScripts
+#exec --no-startup-id ~/bin/AutoStartScripts
+exec --no-startup-id sh ~/.fehbg &
+exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
-exec --no-startup-id "thunar --daemon"
-exec --no-startup-id megasync
 exec --no-startup-id nm-applet
+exec --no-startup-id xss-lock -- i3lock -c 222222
+exec --no-startup-id ~/git/configfiles/synaptic_settings
+exec --no-startup-id deluge
+exec --no-startup-id mpd ~/.config/mpd/mpd.conf
+exec --no-startup-id mpdscribble --conf ~/.config/mpd/mpdscribble.conf
+exec --no-startup-id ~/bin/swapCtlAlt y

@@ -68,6 +68,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'chankaward/vim-railscasts-theme'
 Plug 'jaapie/vim-colours-dusk'
+Plug 'Wutzara/vim-materialtheme'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'gosukiwi/vim-atom-dark'
 
 " Other
 Plug 'tpope/vim-fugitive'
@@ -150,12 +153,17 @@ let g:EasyMotion_smartcase = 1
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
-
+let g:ycm_complete_in_comments = 1              " Complete in comments
 
 ""             Semantic Highlight
 " Settings
 source $CONFIG_FOLDER/semanticHighlightPluginSettings.vim
+" let g:semanticGUIColors = [ '#EF5350', '#64B5F6', '#9575CD', '#7986CB', '#4FC3F7', '#29B6F6', '#81D4FA', '#80DEEA', '#80CBC4', '#9CCC65', '#E57373', '#CE93D8', '#B39DDB', '#7986CB', '#64B5F6', '#90CAF9', '#C5CAE9', '#536DFE', '#448AFF', '#4FC3F7', '#81D4FA', '#40C4FF', '#81C784', '#26A69A' , '#4DB6AC', '#80CBC4' ]
+let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
 
+""                  CtrlP
+" Settings
+nmap <C-B> :CtrlPBuffer<CR>
 
 " 
 " =====================================
@@ -169,7 +177,6 @@ set smartindent             " Use smart indent if there is no indent file
 set scrolloff=5             " Keep x context lines above and below the cursor
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set tabstop=4               " <tab> inserts x spaces
-set textwidth=90            " Lines are automatically wrapped after x columns
 
 
 "
@@ -192,9 +199,6 @@ set incsearch               " Incrementally search while typing a /regex
 "
 "
 
-colorscheme railscasts
-
-
 set background=dark         " Dark background by default
 set showmatch               " Show matching parentesis
 set cursorline              " Have a line indicate the cursor location
@@ -204,13 +208,16 @@ set linebreak               " But don't wrap text in the middle of a word
 set noerrorbells            " Don't bell or blink
 set vb t_vb=                " 
 
+colorscheme solarized       " Theme for non gui, overwritten in next if
+
 " GUI settings
 if has('gui_running')
 	:set go-=r
 	:set go-=T
 	:set go-=m
 	:set guiheadroom=0
-    :set guifont=Droid\ Sans\ Mono\ 9
+    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 12
+    colorscheme nTheme
 endif
 
 
@@ -298,5 +305,5 @@ nnoremap QQ @q
 au BufRead,BufNewFile *.h set filetype=c
 
 " Make Python follow PEP8
-au FileType python set sts=4 ts=4 sw=4 tw=79
+au FileType python set sts=4 ts=4 sw=4
 
