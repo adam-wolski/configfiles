@@ -231,3 +231,5 @@ exec --no-startup-id deluge
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id mpdscribble --conf ~/.config/mpd/mpdscribble.conf
 exec --no-startup-id ~/bin/swapCtlAlt y
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s 0
