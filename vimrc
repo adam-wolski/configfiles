@@ -62,6 +62,7 @@ Plug 'beyondmarc/opengl.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'rust-lang/rust.vim'
 Plug 'LucHermitte/VimFold4C'
+Plug 'KitN/nand2-vim-syn'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
