@@ -4,58 +4,64 @@ import re
 
 status = Status(standalone=True)
 
-class Netspeed(IntervalModule):
+
+class NetSpeed(IntervalModule):
     interval = 1
 
-    lastDown = 0
-    lastUp = 0
+    last_down = 0
+    last_up = 0
 
     proc = '/proc/net/dev'
 
-    tmpMeasure = False
-    tmpDownStart = 0
-    tmpUpStart = 0
+    tmp_measure = False
+    tmp_downstart = 0
+    tmp_upstart = 0
 
     enabled = True
 
-    on_leftclick = "toggleTmpMeasure"
+    on_leftclick = "toggle_tmp_measure"
     on_rightclick = "toggle"
+    on_upscroll = "switch_device"
+
+    device = 0
 
     def run(self):
 
         if self.enabled:
-            d, u = self.readProc()
+            d, u = self.read_proc()
 
-            dSpeed = d - self.lastDown
-            uSpeed = u - self.lastUp
+            dspeed = d - self.last_down
+            uspeed = u - self.last_up
 
-            self.lastDown = d
-            self.lastUp = u
+            self.last_down = d
+            self.last_up = u
 
-            if self.tmpMeasure:
-                d = d - self.tmpDownStart
-                u = u - self.tmpUpStart
+            if self.tmp_measure:
+                d = d - self.tmp_downstart
+                u = u - self.tmp_upstart
 
             self.output = {
-                    "full_text": "{0}\\s {1}\\s  {2} {3}".format(self.bytesPrint(dSpeed), self.bytesPrint(uSpeed), self.bytesPrint(d), self.bytesPrint(u))
+                    "full_text": "{0}\\s {1}\\s  {2} {3}".format(
+                        self.bytes_print(dspeed),
+                        self.bytes_print(uspeed),
+                        self.bytes_print(d),
+                        self.bytes_print(u))
                     }
         else:
             self.output = {
                     "full_text": "_"
                     }
 
-
-    def toggleTmpMeasure(self):
-        if self.tmpMeasure:
-            self.tmpMeasure = False
+    def toggle_tmp_measure(self):
+        if self.tmp_measure:
+            self.tmp_measure = False
         else:
-            self.tmpMeasure = True
-            d, u = self.readProc()
-            self.tmpDownStart = d
-            self.tmpUpStart = u
+            self.tmp_measure = True
+            d, u = self.read_proc()
+            self.tmp_downstart = d
+            self.tmp_upstart = u
 
-
-    def bytesPrint(self, b):
+    def bytes_print(self, b):
         if b > 1000000000:
             gb = b / 1000000000
             return "{0:.2f} GB".format(gb)
@@ -68,12 +74,25 @@ class Netspeed(IntervalModule):
         else:
             return "{0} B".format(b)
 
+    def switch_device(self):
+        self.device = self.device + 1
 
-    def readProc(self):
+    def read_proc(self):
         dwn = 0
         up = 0
-        with open(self.proc, "r") as procFile:
-            m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$', procFile.read(), flags=re.MULTILINE)
+        with open(self.proc, "r") as proc_file:
+            if self.device % 3 == 0:
+                m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                        proc_file.read(),
+                        flags=re.MULTILINE)
+            if self.device % 3 == 1:
+                m = re.search(r'^\s*wlp7s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                        proc_file.read(),
+                        flags=re.MULTILINE)
+            if self.device % 3 == 2:
+                m = re.search(r'^\s*enp8s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                        proc_file.read(),
+                        flags=re.MULTILINE)
             if m:
                 dwn = int(m.group(1))
                 up = int(m.group(2))
@@ -185,6 +204,6 @@ status.register("pulseaudio",
 #        "stop": "◾",
 #    },)
 
-status.register(Netspeed)
+status.register(NetSpeed)
 
 status.run()
