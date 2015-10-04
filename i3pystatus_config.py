@@ -81,24 +81,30 @@ class NetSpeed(IntervalModule):
         dwn = 0
         up = 0
         with open(self.proc, "r") as proc_file:
-            if self.device % 3 == 0:
-                m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
-                        proc_file.read(),
-                        flags=re.MULTILINE)
-            if self.device % 3 == 1:
-                m = re.search(r'^\s*wlp7s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
-                        proc_file.read(),
-                        flags=re.MULTILINE)
-            if self.device % 3 == 2:
-                m = re.search(r'^\s*enp8s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
-                        proc_file.read(),
-                        flags=re.MULTILINE)
-            if m:
-                dwn = int(m.group(1))
-                up = int(m.group(2))
-            else:
-                dwn = -1
-                up = -1
+            contents = proc_file.read()
+            trys = 0
+            while trys < 3:
+                if self.device % 3 == 0:
+                    m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                            contents,
+                            flags=re.MULTILINE)
+                if self.device % 3 == 1:
+                    m = re.search(r'^\s*enp8s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                            contents,
+                            flags=re.MULTILINE)
+                if self.device % 3 == 2:
+                    m = re.search(r'^\s*wlp7s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                            contents,
+                            flags=re.MULTILINE)
+                if m:
+                    dwn = int(m.group(1))
+                    up = int(m.group(2))
+                    break
+                else:
+                    dwn = -1
+                    up = -1
+                    self.switch_device()
+                    trys = trys + 1
         return [dwn, up]
 
     def toggle(self):
