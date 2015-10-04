@@ -57,4 +57,7 @@ alias rnm='sudo systemctl restart NetworkManager'
 alias cower='cower --sort votes'
 alias py='python'
 alias e='$EDITOR'
-alias ev='pynvim' #Editor gui
+alias ev='qvim'                               #Editor gui
+alias pyev='pynvim'
+alias sx='startx'
+alias wine='PULSE_LATENCY_MSEC=60 wine'       #Fix for audio playing to fast
