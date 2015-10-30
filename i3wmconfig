@@ -161,6 +161,11 @@ bindsym $mod+n exec "gnome-terminal --execute ncmpcpp"
 bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
 bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
 
+# MPD shortcuts
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+
 # other shortcuts
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -170,6 +175,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
+
+bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
 
 # Numix colors
 set $num_white f9f9f9
@@ -212,12 +219,6 @@ bar {
 
 workspace 5 output DVI-I-0
 
-# MPD
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
-bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-
-
 # autostart
 #exec --no-startup-id xrdb /home/miniu/.Xresources
 #exec --no-startup-id ~/bin/AutoStartScripts
@@ -225,7 +226,7 @@ exec --no-startup-id sh ~/.fehbg &
 exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
-exec --no-startup-id xss-lock -- i3lock -c 222222
+#exec --no-startup-id xss-lock -- i3lock -c 222222 #autolock
 exec --no-startup-id ~/git/configfiles/synaptic_settings
 exec --no-startup-id deluge
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf
