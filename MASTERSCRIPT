@@ -20,6 +20,7 @@ alias vimMASTER='$EDITOR $CONFIG_FOLDER/MASTERSCRIPT'
 alias vimzsh='$EDITOR ~/.zshrc'
 alias vimi3='$EDITOR $CONFIG_FOLDER/i3wmconfig'
 alias v='vim'
+alias qnvim='nvim-qt'
 
 # GIT aliases
 alias pull='git pull'
@@ -61,3 +62,9 @@ alias ev='qvim'                               #Editor gui
 alias pyev='pynvim'
 alias sx='startx'
 alias wine='PULSE_LATENCY_MSEC=60 wine'       #Fix for audio playing to fast
+alias xboxdrvDarkSouls='sudo xboxdrv --detach-kernel-driver --buttonmap 1=3,3=1,2=4,4=2,rt=start,lt=back,start=rt,back=lt --ui-buttonmap guide=KEY_LEFTSHIFT+KEY_TAB,rt=KEY_END,lt=KEY_G --detach --dbus disabled --daemon' #Fix for not correct mapping in dark souls
+alias pulseaudiofix='PULSE_LATENCY_MSEC=60'
+alias winesteam='primusrun wine "/home/miniu/.wine/drive_c/Program Files (x86)/Steam/Steam.exe" --no-dwrite'
+alias pasds='pactl set-default-sink'
+alias pals='pactl list sinks'
+alias palsb='pactl list sinks | grep -B 2 Blaster'
