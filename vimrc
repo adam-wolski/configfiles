@@ -18,6 +18,7 @@ set nofoldenable                    " Disable folds on start, toggle with zi
 set wildmenu                        " Menu completion in command mode on <Tab>
 set wildmode=full                   " <Tab> cycles between all matching choices.
 set backspace=indent,eol,start
+set dir=~/tmp/vim                   " Directory for .swp files
 
 let CONFIG_FOLDER=$CONFIG_FOLDER    " Read config folder location from env
 
@@ -42,7 +43,12 @@ Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 
 " Completation
-Plug 'Valloric/YouCompleteMe'
+if has('nvim')
+        Plug 'ervandew/supertab'
+        Plug 'davidhalter/jedi-vim'
+else
+        Plug 'Valloric/YouCompleteMe'
+endif
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'Raimondi/delimitMate'
@@ -107,7 +113,7 @@ au! BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
 
 ""              Tagbar
 " Shortcut
-nnoremap <leader>tb :TagbarToggle<cr>
+nnoremap <leader>tb :TagbarOpenAutoClose<cr>
 
 
 ""            Number Toggle
@@ -148,6 +154,21 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0                " Keep cursor column when in JK motion
 let g:EasyMotion_smartcase = 1
 
+""              SuperTab
+" Settings
+let g:SuperTabDefaultCompletionType = "<c-n>"   " Make tab go from top to bottom
+
+""              JediVim
+"
+if has('nvim')
+        let g:jedi#goto_command = "<leader>d"
+        let g:jedi#goto_assignments_command = "<leader>g"
+        let g:jedi#goto_definitions_command = ""
+        let g:jedi#documentation_command = "K"
+        let g:jedi#usages_command = "<leader>n"
+        let g:jedi#completions_command = "<C-Space>"
+        let g:jedi#rename_command = "<leader>r"
+endif
 
 ""              YouCompleteMe
 " Shortcut
@@ -160,7 +181,12 @@ let g:ycm_complete_in_comments = 1              " Complete in comments
 " Settings
 source $CONFIG_FOLDER/semanticHighlightPluginSettings.vim
 " let g:semanticGUIColors = [ '#EF5350', '#64B5F6', '#9575CD', '#7986CB', '#4FC3F7', '#29B6F6', '#81D4FA', '#80DEEA', '#80CBC4', '#9CCC65', '#E57373', '#CE93D8', '#B39DDB', '#7986CB', '#64B5F6', '#90CAF9', '#C5CAE9', '#536DFE', '#448AFF', '#4FC3F7', '#81D4FA', '#40C4FF', '#81C784', '#26A69A' , '#4DB6AC', '#80CBC4' ]
-let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
+if has('gui_running') || has('nvim')
+        let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
+else
+        let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
+        let g:semanticTermColors = [1,31,32,33,34,35,36,37,41,42,43,44,45,46,47,91,95,97,101,105]
+endif
 
 ""                  CtrlP
 " Settings
@@ -212,7 +238,7 @@ set vb t_vb=                "
 colorscheme solarized       " Theme for non gui, overwritten in next if
 
 " GUI settings
-if has('gui_running')
+if has('gui_running') || has('nvim')
 	:set go-=r
 	:set go-=T
 	:set go-=m
@@ -254,26 +280,40 @@ xnoremap j gj
 xnoremap k gk
 
 " window navigation
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
 
+if has('nvim')
+""
+"" Neovim terminal mode
+""
+
+"Start/Exit
+        nnoremap <leader>t :vsp term://zsh<CR>
+        tnoremap <C-e> <C-\><C-n>
+" window navigation
+        tnoremap <C-h> <C-\><C-n><C-w>h
+        tnoremap <C-j> <C-\><C-n><C-w>j
+        tnoremap <C-k> <C-\><C-n><C-w>k
+        tnoremap <C-l> <C-\><C-n><C-w>l
+endif
 
 ""
 "" Other
 ""
 
 " Add ; on end line
-imap <C-t> <ESC>$a;
+inoremap <C-t> <ESC>$a;
 
 " Paste from clipboard
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
 
 " Take cursor to end of pasted line
 vnoremap <silent> y y`]
@@ -306,5 +346,6 @@ nnoremap QQ @q
 au BufRead,BufNewFile *.h set filetype=c
 
 " Make Python follow PEP8
-au FileType python set sts=4 ts=4 sw=4
+au FileType python set sts=4 ts=4 sw=4 colorcolumn=80
+au FileType python nnoremap <F8> :!pep8 %<CR>
 
