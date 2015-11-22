@@ -220,15 +220,14 @@ bar {
 workspace 5 output DVI-I-0
 
 # autostart
+# Use xinit for .Xresources
 #exec --no-startup-id xrdb /home/miniu/.Xresources
 #exec --no-startup-id ~/bin/AutoStartScripts
 exec --no-startup-id sh ~/.fehbg &
 exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
-#exec --no-startup-id xss-lock -- i3lock -c 222222 #autolock
 exec --no-startup-id ~/git/configfiles/synaptic_settings
-exec --no-startup-id deluge
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id mpdscribble --conf ~/.config/mpd/mpdscribble.conf
 exec --no-startup-id ~/bin/swapCtlAlt y
