@@ -14,7 +14,7 @@ alias ww='sh ~/.config/wacomconfig'
 
 # Vim aliases
 alias vimvim='$EDITOR ~/.vimrc' 
-alias vimnvim='$EDITOR ~/.nvimrc' 
+alias vimnvim='$EDITOR ~/.config/nvim/init.vim' 
 alias vimvimvim='$EDITOR $CONFIG_FOLDER/vimsettings.vim'
 alias vimMASTER='$EDITOR $CONFIG_FOLDER/MASTERSCRIPT'
 alias vimzsh='$EDITOR ~/.zshrc'
