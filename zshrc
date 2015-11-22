@@ -78,9 +78,9 @@ export PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -109,3 +109,4 @@ PATH=/home/miniu/.gem/ruby/2.1.0/bin:$PATH
 stty -ixon 
 
 source "/home/miniu/git/configfiles/MASTERSCRIPT"
+export NVIM_TUI_ENABLE_TRUE_COLOR=True
