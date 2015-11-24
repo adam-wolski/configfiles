@@ -2,7 +2,8 @@ Xcursor.theme: Human
 
 URxvt.intensityStyles: false
 
-URxvt*font: xft:Liberation Mono for Powerline:pixelsize=16:antialias=true:hinting=true
+! URxvt*font: xft:Monospace Regular:pixelsize=12:antialias=true:hinting=true
+URxvt*font: xft:Monospace Regular:pixelsize=14
 URxvt.scrollBar: false
 urxvt*meta8: True
 ! Solarized color scheme for the X Window System
@@ -46,13 +47,22 @@ urxvt*meta8: True
 ! #define S_base3         #002b36
 
 
+! Numix colors
+#define N_white         #f9f9f9
+#define N_gray          #dedede
+#define N_orange        #d64937
+#define N_darkgray      #333333
+#define N_darkgrayl     #404040
+#define N_black         #2d2d2d
+#define N_green         #81C784
+
 ! To only apply colors to your terminal, for example, prefix
 ! the color assignment statement with its name. Example:
 !
 ! URxvt*background:            S_base03
 
-*background:              S_base03
-*foreground:              S_base0
+*background:              N_darkgray
+*foreground:              N_white
 *fading:                  40
 *fadeColor:               S_base03
 *cursorColor:             S_base1
