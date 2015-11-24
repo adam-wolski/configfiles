@@ -85,7 +85,7 @@ class NetSpeed(IntervalModule):
             trys = 0
             while trys < 3:
                 if self.device % 3 == 0:
-                    m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                    m = re.search(r'^\s*wlp7s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
                             contents,
                             flags=re.MULTILINE)
                 if self.device % 3 == 1:
@@ -93,7 +93,11 @@ class NetSpeed(IntervalModule):
                             contents,
                             flags=re.MULTILINE)
                 if self.device % 3 == 2:
-                    m = re.search(r'^\s*wlp7s0:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                    m = re.search(r'^\s*[wp]+p0.*:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
+                            contents,
+                            flags=re.MULTILINE)
+                if self.device % 4 == 3:
+                    m = re.search(r'^\s*enp0s20u2:\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*(\d*)\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*\s*\d*$',
                             contents,
                             flags=re.MULTILINE)
                 if m:
