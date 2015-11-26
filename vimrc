@@ -18,9 +18,17 @@ set nofoldenable                    " Disable folds on start, toggle with zi
 set wildmenu                        " Menu completion in command mode on <Tab>
 set wildmode=full                   " <Tab> cycles between all matching choices.
 set backspace=indent,eol,start
-set dir=~/tmp/vim                   " Directory for .swp files
+if has('unix')
+        set dir=~/tmp/vim           " Directory for .swp files
+endif
 
-let CONFIG_FOLDER=$CONFIG_FOLDER    " Read config folder location from env
+if has('unix')                      " Read config folder location from env
+        let CONFIG_FOLDER=$CONFIG_FOLDER    
+else
+        if has('win32')             " Hardcode it for windows for now
+                let $CONFIG_FOLDER='C:\\git\\configfiles'
+        endif
+endif
 
 let mapleader="\<Space>"            "Set leader shortcut to spacebar
 
@@ -43,7 +51,7 @@ Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch'
 
 " Completation
-if has('nvim')
+if has('nvim') || has('win32')
         Plug 'ervandew/supertab'
         Plug 'davidhalter/jedi-vim'
 else
@@ -160,7 +168,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"   " Make tab go from top to bottom
 
 ""              JediVim
 "
-if has('nvim')
+if has('nvim') || has('win32')
         let g:jedi#goto_command = "<leader>d"
         let g:jedi#goto_assignments_command = "<leader>g"
         let g:jedi#goto_definitions_command = ""
