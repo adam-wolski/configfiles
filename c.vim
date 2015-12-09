@@ -1,5 +1,3 @@
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
-
 " --- Tab settings ---
 set tabstop=8
 set shiftwidth=8
@@ -18,3 +16,6 @@ set cul                      " Highlight the current line
 :set colorcolumn=120         " Right Margin
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
+
+nnoremap <F5> :!clang -g % -o %:r<CR><CR>
+nnoremap <F6> :!./%:r
