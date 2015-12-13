@@ -72,11 +72,14 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
 " Language specific
-Plug 'beyondmarc/opengl.vim'
-Plug 'tikhomirov/vim-glsl'
-Plug 'rust-lang/rust.vim'
-Plug 'LucHermitte/VimFold4C'
-Plug 'KitN/nand2-vim-syn'
+Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
+Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'LucHermitte/VimFold4C', { 'for': ['c', 'cpp'] }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -181,7 +184,7 @@ endif
 ""              YouCompleteMe
 " Shortcut
 nnoremap <leader>d :YcmCompleter GoTo<CR>
-let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.config/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
 let g:ycm_complete_in_comments = 1              " Complete in comments
 
