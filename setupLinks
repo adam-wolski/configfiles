@@ -9,9 +9,11 @@ then
         ln -s $CDIR/i3pystatus_config.py ~/.i3/i3pystatus_config.py
         ln -s $CDIR/i3wmconfig ~/.i3/config
         ln -s $CDIR/vimrc ~/.vimrc
+        ln -s $CDIR/gvimrc ~/.gvimrc
         ln -s $CDIR/Xmodmap ~/.Xmodmap
         ln -s $CDIR/Xresources ~/.Xresources
-        ln -s $CDIR/ycm_extra_conf_c.py ~/.ycm_extra_conf_c.py
-        ln -s $CDIR/ycm_extra_conf.py ~/.ycm_extra_conf.py
+        ln -s $CDIR/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py
         ln -s $CDIR/zshrc ~/.zshrc
+        ln -s $CDIR/haskell.vim ~/.vim/ftplugin/
+        ln -s $CDIR/c.vim ~/.vim/ftplugin/
 fi
