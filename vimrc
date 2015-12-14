@@ -48,14 +48,14 @@ call plug#begin()
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
-Plug 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
 
 " Completation
 if has('nvim') || has('win32')
         Plug 'ervandew/supertab'
         Plug 'davidhalter/jedi-vim'
 else
-        Plug 'Valloric/YouCompleteMe'
+        Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang --system-boost' }
 endif
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -67,19 +67,25 @@ Plug 'scrooloose/syntastic'
 
 " Visual
 " Plug 'bling/vim-airline'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
 " Language specific
 Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
-Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'LucHermitte/VimFold4C', { 'for': ['c', 'cpp'] }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-classpath', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -91,9 +97,9 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'gosukiwi/vim-atom-dark'
 
 " Other
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
-Plug 'sjl/gundo.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
@@ -254,7 +260,7 @@ if has('gui_running') || has('nvim')
 	:set go-=T
 	:set go-=m
 	:set guiheadroom=0
-    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 12
+    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 16
     colorscheme nTheme
 endif
 
@@ -296,12 +302,12 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
-if has('nvim')
+
 ""
 "" Neovim terminal mode
 ""
-
-"Start/Exit
+if has('nvim')
+" Start/Exit
         nnoremap <leader>t :vsp term://zsh<CR>
         tnoremap <C-e> <C-\><C-n>
 " window navigation
@@ -310,6 +316,7 @@ if has('nvim')
         tnoremap <C-k> <C-\><C-n><C-w>k
         tnoremap <C-l> <C-\><C-n><C-w>l
 endif
+
 
 ""
 "" Other
@@ -359,4 +366,3 @@ au BufRead,BufNewFile *.h set filetype=c
 " Make Python follow PEP8
 au FileType python set sts=4 ts=4 sw=4 colorcolumn=80
 au FileType python nnoremap <F8> :!pep8 %<CR>
-
