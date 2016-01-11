@@ -89,7 +89,7 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#Skrypt aby ctrl z dzialalo jako toggle do zsylania do tla i do wracania
+# Make ctrl z go go back and forth between processes
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     fg
@@ -106,7 +106,17 @@ PATH=/home/miniu/bin:$PATH
 PATH=/home/miniu/.gem/ruby/2.1.0/bin:$PATH
 PATH=/home/miniu/.cabal/bin:$PATH
 
-#aby ctrl s bylo wolne dla vima
+# go back to ranger using rg
+rg() {
+    if [ -z "$RANGER_LEVEL" ]
+    then
+        ranger
+    else
+        exit
+    fi
+}
+
+#free ctrl s for terminal vim
 stty -ixon 
 
 source "/home/miniu/git/configfiles/MASTERSCRIPT"
