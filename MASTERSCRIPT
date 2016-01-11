@@ -21,6 +21,7 @@ alias vimzsh='$EDITOR ~/.zshrc'
 alias vimi3='$EDITOR $CONFIG_FOLDER/i3wmconfig'
 alias v='vim'
 alias qnvim='nvim-qt'
+alias pyvim='PYTHONPATH=./ nvim'
 
 # GIT aliases
 alias pull='git pull'
@@ -42,6 +43,14 @@ alias prepinfo='pacman -Si'                 # Display information about a given 
 alias preps='pacman -Ss'                    # Search for package(s) in the repositories
 alias pinfo='pacman -Qi'                    # Display information about a given package in the local database
 alias psearch='pacman -Qs'                  # Search for package(s) in the local database
+# package info
+alias pfiles='pkgfile -l'
+alias pfilesupdate='pkgfile --update'
+# aur aliases
+alias aurupg='pacaur -Syu'                  # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias aur='pacaur -S --noedit'              
+alias aurs='cower --sort votes -s'          # Search
+alias aursearch='cower --sort votes -s'     # Search
 
 # other aliases
 alias o='xdg-open'
@@ -56,8 +65,8 @@ alias valg='valgrind --track-origins=yes --leak-check=full'
 alias valgv='valgrind --track-origins=yes --leak-check=full -v'
 alias valgs='valgrind --track-origins=yes'
 alias rnm='sudo systemctl restart NetworkManager'
-alias cower='cower --sort votes'
 alias py='python'
+alias ptpython='ptpython --vi'
 alias e='$EDITOR'
 alias ev='qvim'                               #Editor gui
 alias pyev='pynvim'
