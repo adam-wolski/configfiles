@@ -118,5 +118,5 @@ nnoremap <silent> <leader>hz :HoogleClose<CR>
 
 " Bigger font for haskell so changed symbols are nicer to read
 if has('gui_running') || has('nvim')
-        :set guifont=Monospace\ 13
+        :set guifont=Source\ Code\ Pro\ Ultra-Light\ 14
 endif
