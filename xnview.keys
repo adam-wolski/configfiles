@@ -45,6 +45,7 @@ cmd_import
 cmd_infoShow 
 cmd_infoUseTabs 
 cmd_invertSelection 
+cmd_join 
 cmd_label0 Ctrl+Shift+0
 cmd_label0m 
 cmd_label1 Ctrl+Shift+1
@@ -145,7 +146,6 @@ cmd_zoomIn +
 cmd_zoomOut -
 
 [View]
-cmd_8bf Ctrl+G
 cmd_align 
 cmd_animation 
 cmd_autoContrast Ctrl+Alt+O
