@@ -3,6 +3,9 @@
 "               Init
 " =====================================
 "
+let g:author='Adam Wolski'
+let g:email='miniupuchaty@gmail.com'
+let g:github='https://github.com/miniukov'
 
 set encoding=utf-8
 set exrc                            " Load vimrc from current dir
@@ -51,15 +54,13 @@ Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
 
 " Completation
-if has('nvim') || has('win32')
-        Plug 'ervandew/supertab'
-        Plug 'davidhalter/jedi-vim'
-else
-        Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --system-libclang --system-boost' }
-endif
+Plug 'ervandew/supertab', {'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'  " Was giving problems trying auto-pairs for now
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " Error Checking
@@ -139,6 +140,10 @@ let g:NumberToggleTrigger="<leader>nt"
 
 
 ""              UltiSnips
+" Snippets variables
+let g:snips_author='Adam Wolski'
+let g:snips_email='miniupuchaty@gmail.com'
+let g:snips_github='https://github.com/miniukov'
 " Shortcuts
 let g:UltiSnipsExpandTrigger='<c-s>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
@@ -193,6 +198,7 @@ nnoremap <leader>d :YcmCompleter GoTo<CR>
 let g:ycm_global_ycm_extra_conf = "~/.config/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
 let g:ycm_complete_in_comments = 1              " Complete in comments
+let g:ycm_rust_src_path = '/usr/local/rust/rustc-1.5.0/src'
 
 ""             Semantic Highlight
 " Settings
@@ -207,7 +213,8 @@ endif
 
 ""                  CtrlP
 " Settings
-nmap <C-B> :CtrlPBuffer<CR>
+nnoremap <C-B> :CtrlPBuffer<CR>
+nnoremap <C-P> :CtrlP<CR>
 
 " 
 " =====================================
