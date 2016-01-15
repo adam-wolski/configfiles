@@ -105,6 +105,7 @@ bindkey '^Z' fancy-ctrl-z
 PATH=/home/miniu/bin:$PATH
 PATH=/home/miniu/.gem/ruby/2.1.0/bin:$PATH
 PATH=/home/miniu/.cabal/bin:$PATH
+PATH=/home/miniu/.cargo/bin:$PATH
 
 # go back to ranger using rg
 rg() {
