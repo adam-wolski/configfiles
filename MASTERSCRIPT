@@ -79,3 +79,4 @@ alias pasds='pactl set-default-sink'
 alias pals='pactl list sinks'
 alias palsb='pactl list sinks | grep -B 2 Blaster'
 alias wacomDisableTouch="xsetwacom --set 'Wacom Bamboo 2FG 4x5 Finger touch' touch off"
+alias irc='weechat'
