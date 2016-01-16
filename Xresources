@@ -6,6 +6,15 @@ URxvt.intensityStyles: false
 URxvt*font: xft:Monospace Regular:pixelsize=14
 URxvt.scrollBar: false
 urxvt*meta8: True
+
+! Better font rendering
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.autohint: 0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.dpi: 96
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
