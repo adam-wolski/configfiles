@@ -101,6 +101,7 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-dispatch'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
@@ -121,12 +122,22 @@ noremap <leader>gs :Gstatus<CR>
 noremap <leader>gw :Gwrite<CR>
 
 
+""              Dispatch
+" Shortcuts
+nnoremap <F5> :Make<CR>
+nnoremap <C-F5> :Make!<CR>
+nnoremap <F6> :Dispatch<CR>
+nnoremap <C-F6> :Dispatch!<CR>
+
+
 ""              FSwitch
 " Shortcut
 nnoremap <leader>fs :FSHere<cr>
 " Custom file bindings
 au! BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
 au! BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
+au! BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
+au! BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
 
 
 ""              Tagbar
@@ -373,3 +384,8 @@ au BufRead,BufNewFile *.h set filetype=c
 " Make Python follow PEP8
 au FileType python set sts=4 ts=4 sw=4 colorcolumn=80
 au FileType python nnoremap <F8> :!pep8 %<CR>
+
+" Set compiler for rust. Needs to be done here instead of ftplugin/rust.vim
+" because rust.vim plugin that defines compiler loads after ftplugin and we
+" get missing compiler warning.
+au FileType rust compiler cargo
