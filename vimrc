@@ -57,7 +57,9 @@ Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
 " Completation
 Plug 'ervandew/supertab', {'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
+if has('unix')
+    Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
+endif
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -101,7 +103,12 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'gosukiwi/vim-atom-dark'
 
 " Other
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+if has('unix')
+    Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+endif
+if has('win32')
+    Plug 'nfvs/vim-perforce'
+endif
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
