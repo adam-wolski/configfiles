@@ -27,6 +27,8 @@ then
         ln -s $CDIR/haskell.vim ~/.vim/ftplugin/
         echo "linking $CDIR/c.vim ~/.vim/ftplugin/"
         ln -s $CDIR/c.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/cpp.vim ~/.vim/ftplugin/"
+        ln -s $CDIR/cpp.vim ~/.vim/ftplugin/
         echo "linking $CDIR/rust.vim ~/.vim/ftplugin/"
         ln -s $CDIR/rust.vim ~/.vim/ftplugin/
 fi
