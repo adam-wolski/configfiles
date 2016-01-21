@@ -8,6 +8,7 @@ let g:email='miniupuchaty@gmail.com'
 let g:github='https://github.com/miniukov'
 
 set encoding=utf-8
+set laststatus=2                    " Show statusline always
 set exrc                            " Load vimrc from current dir
 set hidden                          " Hide buffer instead of closing it
 syntax on                           " Enable syntax highlighting
@@ -56,7 +57,8 @@ Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
 " Completation
 Plug 'ervandew/supertab', {'for': 'python'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust']}
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 " Plug 'Raimondi/delimitMate'  " Was giving problems trying auto-pairs for now
@@ -68,8 +70,9 @@ Plug 'scrooloose/syntastic'
 
 " Visual
 " Plug 'bling/vim-airline'
+Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install && make clean && make clean_clang', 'for': ['c', 'cpp'] }
 Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
-Plug 'jaxbot/semantic-highlight.vim'
+Plug 'jaxbot/semantic-highlight.vim', { 'for': ['python', 'rust'] }
 Plug 'kien/rainbow_parentheses.vim'
 
 " Language specific
@@ -226,6 +229,7 @@ endif
 " Settings
 nnoremap <C-B> :CtrlPBuffer<CR>
 nnoremap <C-P> :CtrlP<CR>
+nnoremap <C-C> :CtrlPTag<CR>
 
 " 
 " =====================================
