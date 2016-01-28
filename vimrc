@@ -197,9 +197,11 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0                " Keep cursor column when in JK motion
 let g:EasyMotion_smartcase = 1
 
+
 ""              SuperTab
 " Settings
 let g:SuperTabDefaultCompletionType = "<c-n>"   " Make tab go from top to bottom
+
 
 ""              JediVim
 "
@@ -213,13 +215,15 @@ if has('nvim') || has('win32')
         let g:jedi#rename_command = "<leader>r"
 endif
 
+
 ""              YouCompleteMe
 " Shortcut
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 let g:ycm_global_ycm_extra_conf = "~/.config/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
 let g:ycm_complete_in_comments = 1              " Complete in comments
-let g:ycm_rust_src_path = '/usr/local/rust/rustc-1.5.0/src'
+let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
+
 
 ""             Semantic Highlight
 " Settings
@@ -232,11 +236,18 @@ else
         let g:semanticTermColors = [1,31,32,33,34,35,36,37,41,42,43,44,45,46,47,91,95,97,101,105]
 endif
 
+
 ""                  CtrlP
 " Settings
 nnoremap <C-B> :CtrlPBuffer<CR>
 nnoremap <C-P> :CtrlP<CR>
 nnoremap <C-C> :CtrlPTag<CR>
+
+
+""                  Indent Guide
+" Shortcut
+nnoremap <leader>ig :IndentGuidesToggle<CR>
+
 
 " 
 " =====================================
