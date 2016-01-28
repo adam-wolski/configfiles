@@ -1,5 +1,5 @@
 nnoremap <Leader>sh :SemanticHighlightToggle<cr>
-let g:semanticEnableFileTypes = {'cpp': 'cpp','header': 'hpp', 'python': 'py', 'c': 'c', 'h': 'h'}
+let g:semanticEnableFileTypes = {'cpp': 'cpp','header': 'hpp', 'python': 'py', 'c': 'c', 'h': 'h', 'rust': 'rs'}
 
 let g:semanticBlacklistOverride = {
     \   'cpp': [
