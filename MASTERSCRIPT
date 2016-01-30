@@ -28,6 +28,7 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gstatus='git status'
 alias gcommit='git commit'
+alias gdiff='git diff'
 
 # cd aliases
 alias cdbin='cd ~/bin/'
