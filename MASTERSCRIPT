@@ -24,10 +24,10 @@ alias qnvim='nvim-qt'
 alias pyvim='PYTHONPATH=./ nvim'
 
 # GIT aliases
-alias pull='git pull'
-alias push='git push origin master'
-alias status='git status'
-alias commit='git commit -a -m'
+alias gpull='git pull'
+alias gpush='git push'
+alias gstatus='git status'
+alias gcommit='git commit'
 
 # cd aliases
 alias cdbin='cd ~/bin/'
