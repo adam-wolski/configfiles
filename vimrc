@@ -70,8 +70,9 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 
 " Visual
-" Plug 'bling/vim-airline'
-Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install && make clean && make clean_clang', 'for': ['c', 'cpp'] }
+if has('unix')
+        Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install && make clean && make clean_clang', 'for': ['c', 'cpp'] }
+endif
 Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'kien/rainbow_parentheses.vim'
