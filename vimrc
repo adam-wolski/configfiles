@@ -49,7 +49,7 @@ let mapleader="\<Space>"            "Set leader shortcut to spacebar
 call plug#begin()
 
 " Navigation
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
@@ -63,7 +63,6 @@ endif
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-" Plug 'Raimondi/delimitMate'  " Was giving problems trying auto-pairs for now
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
@@ -74,7 +73,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'bling/vim-airline'
 Plug 'jeaye/color_coded', { 'do': 'cmake . && make && make install && make clean && make clean_clang', 'for': ['c', 'cpp'] }
 Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
-Plug 'jaxbot/semantic-highlight.vim', { 'for': ['python', 'rust'] }
+Plug 'jaxbot/semantic-highlight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
 " Language specific
@@ -300,7 +299,7 @@ if has('gui_running') || has('nvim')
 	:set go-=T
 	:set go-=m
 	:set guiheadroom=0
-    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 16
+    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 11
     colorscheme nTheme
 endif
 
