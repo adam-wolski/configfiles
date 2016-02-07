@@ -12,7 +12,6 @@ set cin "
 " --- Column/Row Stuff ---
 set cul                      " Highlight the current line
 :set number                  " Show Line Numbers
-:set lines=40 columns=120    " Window Size
 :set colorcolumn=120         " Right Margin
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge

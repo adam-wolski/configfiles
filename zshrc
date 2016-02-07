@@ -53,8 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export KEYTIMEOUT=1
 
-#source "home/miniu/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
 
 #Custom Keybindings
 #
@@ -121,4 +120,5 @@ rg() {
 stty -ixon 
 
 source "/home/miniu/git/configfiles/MASTERSCRIPT"
+source "/home/miniu/.startup.mine"
 export NVIM_TUI_ENABLE_TRUE_COLOR=True

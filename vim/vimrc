@@ -165,6 +165,8 @@ let g:NumberToggleTrigger="<leader>nt"
 let g:snips_author='Adam Wolski'
 let g:snips_email='miniupuchaty@gmail.com'
 let g:snips_github='https://github.com/miniukov'
+" Setup directories.
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 " Shortcuts
 let g:UltiSnipsExpandTrigger='<c-s>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
@@ -227,7 +229,7 @@ let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
 
 ""             Semantic Highlight
 " Settings
-source $CONFIG_FOLDER/semanticHighlightPluginSettings.vim
+source $CONFIG_FOLDER/vim/semanticHighlightPluginSettings.vim
 " let g:semanticGUIColors = [ '#EF5350', '#64B5F6', '#9575CD', '#7986CB', '#4FC3F7', '#29B6F6', '#81D4FA', '#80DEEA', '#80CBC4', '#9CCC65', '#E57373', '#CE93D8', '#B39DDB', '#7986CB', '#64B5F6', '#90CAF9', '#C5CAE9', '#536DFE', '#448AFF', '#4FC3F7', '#81D4FA', '#40C4FF', '#81C784', '#26A69A' , '#4DB6AC', '#80CBC4' ]
 if has('gui_running') || has('nvim')
         let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
@@ -411,3 +413,8 @@ au FileType python nnoremap <F8> :!pep8 %<CR>
 " because rust.vim plugin that defines compiler loads after ftplugin and we
 " get missing compiler warning.
 au FileType rust compiler cargo
+
+" Chrome Engine skin filetype
+au BufNewFile,BufRead *.skn set filetype=ce_skin
+" Chrome Engine Material filetype
+au BufNewFile,BufRead *.dmt set filetype=ce_mat

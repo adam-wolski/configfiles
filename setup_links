@@ -7,28 +7,30 @@ if [[ -z $1 ]]
 then
         echo "linking $CDIR/gtkrc-2.0.mine ~/.gtkrc-2.0.mine"
         ln -s $CDIR/gtkrc-2.0.mine ~/.gtkrc-2.0.mine
-        echo "linking $CDIR/i3pystatus_config.py ~/.i3/i3pystatus_config.py"
-        ln -s $CDIR/i3pystatus_config.py ~/.i3/i3pystatus_config.py
-        echo "linking $CDIR/i3wmconfig ~/.i3/config"
-        ln -s $CDIR/i3wmconfig ~/.i3/config
-        echo "linking $CDIR/vimrc ~/.vimrc"
-        ln -s $CDIR/vimrc ~/.vimrc
-        echo "linking $CDIR/gvimrc ~/.gvimrc"
-        ln -s $CDIR/gvimrc ~/.gvimrc
+        echo "linking $CDIR/i3/i3pystatus_config.py ~/.i3/i3pystatus_config.py"
+        ln -s $CDIR/i3/i3pystatus_config.py ~/.i3/i3pystatus_config.py
+        echo "linking $CDIR/i3/config ~/.i3/config"
+        ln -s $CDIR/i3/config ~/.i3/config
+        echo "linking $CDIR/vim/vimrc ~/.vimrc"
+        ln -s $CDIR/vim/vimrc ~/.vimrc
+        echo "linking $CDIR/vim/gvimrc ~/.gvimrc"
+        ln -s $CDIR/vim/gvimrc ~/.gvimrc
         echo "linking $CDIR/Xmodmap ~/.Xmodmap"
         ln -s $CDIR/Xmodmap ~/.Xmodmap
         echo "linking $CDIR/Xresources ~/.Xresources"
         ln -s $CDIR/Xresources ~/.Xresources
-        echo "linking $CDIR/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py"
-        ln -s $CDIR/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py
+        echo "linking $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py"
+        ln -s $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py
         echo "linking $CDIR/zshrc ~/.zshrc"
         ln -s $CDIR/zshrc ~/.zshrc
-        echo "linking $CDIR/haskell.vim ~/.vim/ftplugin/"
-        ln -s $CDIR/haskell.vim ~/.vim/ftplugin/
-        echo "linking $CDIR/c.vim ~/.vim/ftplugin/"
-        ln -s $CDIR/c.vim ~/.vim/ftplugin/
-        echo "linking $CDIR/cpp.vim ~/.vim/ftplugin/"
-        ln -s $CDIR/cpp.vim ~/.vim/ftplugin/
-        echo "linking $CDIR/rust.vim ~/.vim/ftplugin/"
-        ln -s $CDIR/rust.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/vim/filetype/haskell.vim ~/.vim/ftplugin/"
+        ln -s $CDIR/vim/filetype/haskell.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/vim/filetype/c.vim ~/.vim/ftplugin/"
+        ln -s $CDIR/vim/filetype/c.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/vim/filetype/cpp.vim ~/.vim/ftplugin/"
+        ln -s $CDIR/vim/filetype/cpp.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/vim/filetype/rust.vim ~/.vim/ftplugin/"
+        ln -s $CDIR/vim/filetype/rust.vim ~/.vim/ftplugin/
+        echo "linking $CDIR/vim/snippets/rust.snippets ~/.vim/mysnippets/"
+        ln -s $CDIR/vim/snippets/rust.snippets ~/.vim/mysnippets/
 fi
