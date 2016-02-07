@@ -11,18 +11,22 @@ then
         ln -s $CDIR/i3/i3pystatus_config.py ~/.i3/i3pystatus_config.py
         echo "linking $CDIR/i3/config ~/.i3/config"
         ln -s $CDIR/i3/config ~/.i3/config
-        echo "linking $CDIR/vim/vimrc ~/.vimrc"
-        ln -s $CDIR/vim/vimrc ~/.vimrc
-        echo "linking $CDIR/vim/gvimrc ~/.gvimrc"
-        ln -s $CDIR/vim/gvimrc ~/.gvimrc
         echo "linking $CDIR/Xmodmap ~/.Xmodmap"
         ln -s $CDIR/Xmodmap ~/.Xmodmap
         echo "linking $CDIR/Xresources ~/.Xresources"
         ln -s $CDIR/Xresources ~/.Xresources
-        echo "linking $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py"
-        ln -s $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py
         echo "linking $CDIR/zshrc ~/.zshrc"
         ln -s $CDIR/zshrc ~/.zshrc
+
+        # Vim
+        echo "linking $CDIR/vim/vimrc ~/.vimrc"
+        ln -s $CDIR/vim/vimrc ~/.vimrc
+        echo "linking $CDIR/vim/gvimrc ~/.gvimrc"
+        ln -s $CDIR/vim/gvimrc ~/.gvimrc
+
+        echo "linking $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py"
+        ln -s $CDIR/vim/ycm_extra_conf_c.py ~/.config/.ycm_extra_conf_c.py
+
         echo "linking $CDIR/vim/filetype/haskell.vim ~/.vim/ftplugin/"
         ln -s $CDIR/vim/filetype/haskell.vim ~/.vim/ftplugin/
         echo "linking $CDIR/vim/filetype/c.vim ~/.vim/ftplugin/"
@@ -31,6 +35,10 @@ then
         ln -s $CDIR/vim/filetype/cpp.vim ~/.vim/ftplugin/
         echo "linking $CDIR/vim/filetype/rust.vim ~/.vim/ftplugin/"
         ln -s $CDIR/vim/filetype/rust.vim ~/.vim/ftplugin/
+
+        echo "linking $CDIR/vim/syntax/ce_skin.vim ~/.vim/syntax/"
+        ln -s $CDIR/vim/syntax/ce_skin.vim ~/.vim/syntax/
+
         echo "linking $CDIR/vim/snippets/rust.snippets ~/.vim/mysnippets/"
         ln -s $CDIR/vim/snippets/rust.snippets ~/.vim/mysnippets/
 fi
