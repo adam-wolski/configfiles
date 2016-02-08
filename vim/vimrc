@@ -55,10 +55,17 @@ Plug 'majutsushi/tagbar'
 Plug 'derekwyatt/vim-fswitch', { 'on': 'FSHere'}
 
 " Completation
-Plug 'ervandew/supertab', {'for': 'python'}
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
 if has('unix')
+    Plug 'ervandew/supertab', {'for': 'python'}
+    Plug 'davidhalter/jedi-vim', {'for': 'python'}
     Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
+else
+        " use supertab and jedi-vim on Windows always not only for python, as
+        " compiling YouCompleteMe on win is to combersome.
+        if has('win32')
+            Plug 'ervandew/supertab'
+            Plug 'davidhalter/jedi-vim'
+        endif
 endif
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
