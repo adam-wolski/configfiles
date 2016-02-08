@@ -7,7 +7,9 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn match CEComment '//.*'
+" syn match CEComment '//.*'
+syn keyword CETodo TODO Todo
+syn region CEComment start='//' end='$' contains=CETodo
 syn region CEString start='"' end='"' 
 syn region CEBlock start='{' end='}' fold transparent
 syn keyword CEBuildInFunctions EnableNewSkins ShowAll HideAll Replace UseSkin Skin SkinVersion
@@ -23,3 +25,4 @@ hi def link CEComment             Comment
 hi def link CEString              String
 hi def link CEMat                 Special
 hi def link CESkn                 Special
+hi def link CETodo                TODO
