@@ -1,0 +1,72 @@
+snippet start
+EnableNewSkins()
+!include("surface.def")
+endsnippet
+
+snippet section
+// ################################################################################################
+//										${1}
+// ################################################################################################
+endsnippet
+
+snippet skn
+Skin("${1}")
+{
+	${2}
+}
+endsnippet
+
+snippet rpl
+Replace("${1}.mat", "${2}.mat")
+endsnippet
+
+snippet filter
+FilterInEditor()
+endsnippet
+
+snippet show
+Show("${1}")
+endsnippet
+
+snippet hide
+Hide("${1}")
+endsnippet
+
+snippet incl
+!include("${1}.${2:skn}")
+endsnippet
+
+snippet enablenew
+EnableNewSkins()
+endsnippet
+
+snippet alpha
+ColorAlpha(${1:0}, ${2})
+endsnippet
+
+snippet grp
+Group()
+{
+	UseSkin("${1}", ${2:1})
+}
+endsnippet
+
+snippet clr
+ColorI(${4:0}, ${1:255}, ${2:255}, ${3:255})
+endsnippet
+
+snippet tag
+Tags("${1}")
+endsnippet
+
+snippet char
+Character("${1}", "")
+endsnippet
+
+snippet use
+UseSkin("${1}", 1)
+endsnippet
+
+snippet version
+SkinVersion("${1}", "$1_${2}", "_$2")
+endsnippet
