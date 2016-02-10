@@ -9,8 +9,8 @@ Description: Setup links to they specified paths.
 from sys import argv
 from platform import system
 from os import path
+from os import remove
 from subprocess import Popen
-from shutil import rmtree
 
 def link(target, lnk, force=False):
     """
@@ -29,14 +29,11 @@ def link(target, lnk, force=False):
     if path.isdir(target):
         if path.isdir(lnk):
             if not force:
-                print("failed to create folder link '{}': Folder exists".format(lnk))
+                print("failed to create folder link"
+                      " '{}': Folder exists".format(lnk))
                 return
             else:
-                print("Are you sure you want to delete folder: {}".format(lnk))
-                if input('y/N: ') in ('y', 'Y'):
-                    rmtree(path.realpath(lnk))
-                else:
-                    return
+                remove(lnk)
 
     if force:
         if system() == 'Linux':
