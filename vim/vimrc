@@ -252,7 +252,6 @@ nnoremap <C-B> :CtrlPBuffer<CR>
 nnoremap <C-P> :CtrlP<CR>
 nnoremap <C-C> :CtrlPTag<CR>
 
-
 ""                  Indent Guide
 " Shortcut
 nnoremap <leader>ig :IndentGuidesToggle<CR>

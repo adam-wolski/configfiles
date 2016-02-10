@@ -121,4 +121,3 @@ stty -ixon
 
 source "/home/miniu/git/configfiles/MASTERSCRIPT"
 source "/home/miniu/.startup.mine"
-export NVIM_TUI_ENABLE_TRUE_COLOR=True

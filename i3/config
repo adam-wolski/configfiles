@@ -25,8 +25,7 @@ font pango:Open Sans 9
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,8 +155,7 @@ bindsym $mod+shift+Right move workspace to output right
 # application shortcuts
 bindsym $mod+space exec chromium
 bindsym $mod+e exec thunar
-bindsym $mod+n exec "gnome-terminal --execute ncmpcpp"
-bindsym $mod+shift+e exec "gnome-terminal --execute ranger"
+bindsym $mod+shift+e exec "i3-sensible-terminal -e ranger"
 
 #Tablet shortcuts
 bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
@@ -224,7 +222,7 @@ workspace 5 output DVI-I-0
 #exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 #exec --no-startup-id mpdscribble --conf ~/.config/mpd/mpdscribble.conf
 exec --no-startup-id sh ~/.fehbg &
-exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
+#exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/git/configfiles/synaptic_settings
