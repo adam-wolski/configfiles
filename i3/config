@@ -217,15 +217,16 @@ workspace 5 output DVI-I-0
 
 # autostart
 # Use xinit for .Xresources
-#exec --no-startup-id xrdb /home/miniu/.Xresources
 #exec --no-startup-id ~/bin/AutoStartScripts
 #exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 #exec --no-startup-id mpdscribble --conf ~/.config/mpd/mpdscribble.conf
 exec --no-startup-id sh ~/.fehbg &
-#exec --no-startup-id "compton --config /home/miniu/.config/compton.conf -b"
+exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/git/configfiles/synaptic_settings
+# Swap ctral with alt and make caps lock an esc key
 exec --no-startup-id ~/bin/swapCtlAlt y
+# Disable screensaver
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 0
