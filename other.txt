@@ -1,0 +1,1 @@
+For konsole in keyboard settings set: ctrl+h to \E[104;5u
