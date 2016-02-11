@@ -12,3 +12,5 @@ set cul                      " Highlight the current line
 :set number                  " Show Line Numbers
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
+
+nnoremap <leader>d viwy/Skin("<C-R>"")<CR>:nohlsearch<cr>
