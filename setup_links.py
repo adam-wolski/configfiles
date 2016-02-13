@@ -53,40 +53,58 @@ if __name__ == '__main__':
     except IndexError:
         FORCE = False
 
-    link(path.join(CDIR, "gtkrc-2.0.mine"),
-         "~/.gtkrc-2.0.mine",
+    NAME = 'gtkrc-2.0.mine'
+    link(path.join(CDIR, "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "i3", "i3pystatus_config.py"),
-         "~/.i3/i3pystatus_config.py",
+
+    NAME = 'i3pystatus_config.py'
+    link(path.join(CDIR, "i3", "{}".format(NAME)),
+         "~/.i3/{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "i3", "config"),
-         "~/.i3/config",
+
+    NAME = 'config'
+    link(path.join(CDIR, "i3", "{}".format(NAME)),
+         "~/.i3/{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "Xmodmap"),
-         "~/.Xmodmap",
+
+    NAME = 'Xresources'
+    link(path.join(CDIR, "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "Xresources"),
-         "~/.Xresources",
+
+    NAME = 'zshrc'
+    link(path.join(CDIR, "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "zshrc"),
-         "~/.zshrc",
+
+    NAME = 'zprofile'
+    link(path.join(CDIR, "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
-    link(path.join(CDIR, "zprofile"),
-         "~/.zprofile",
+
+    NAME = 'Xmodmap'
+    link(path.join(CDIR, "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
 
     # Vim
-    link(path.join(CDIR, "vim", "vimrc"),
-         "~/.vimrc",
-         FORCE)
-    link(path.join(CDIR, "vim", "gvimrc"),
-         "~/.gvimrc",
+    NAME = 'vimrc'
+    link(path.join(CDIR, "vim", "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
 
-    link(path.join(CDIR, "vim", "ycm_extra_conf_c.py"),
-         "~/.config/.ycm_extra_conf_c.py",
+    NAME = 'gvimrc'
+    link(path.join(CDIR, "vim", "{}".format(NAME)),
+         "~/.{}".format(NAME),
          FORCE)
 
+    NAME = 'ycm_extra_conf_c.py'
+    link(path.join(CDIR, "vim", "{}".format(NAME)),
+         "~/.config/.{}".format(NAME),
+         FORCE)
+
+    # Link Vim directories
     link(path.join(CDIR, "vim", "filetype"),
          "~/.vim/ftplugin",
          FORCE)
