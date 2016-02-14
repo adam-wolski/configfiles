@@ -83,11 +83,6 @@ if __name__ == '__main__':
          "~/.{}".format(NAME),
          FORCE)
 
-    NAME = 'Xmodmap'
-    link(path.join(CDIR, "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
     # Vim
     NAME = 'vimrc'
     link(path.join(CDIR, "vim", "{}".format(NAME)),
