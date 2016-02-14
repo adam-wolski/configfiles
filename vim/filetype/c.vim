@@ -16,6 +16,4 @@ set cul                      " Highlight the current line
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
-let b:dispatch = 'make run'
-" nnoremap <F6> :!./%:r
 autocmd BufWrite *.rs :Dispatch! !ctags -R
