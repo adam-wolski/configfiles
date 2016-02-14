@@ -12,6 +12,50 @@ from os import path
 from os import remove
 from subprocess import Popen
 
+LINKS = {
+    # 'filename': ['relative/path/from/config/to/target/{}'
+    #              'full/path/to/link/{}']
+    # {} will be used in formating to paste filename in path.
+
+    'gtkrc-2.0.mine': ["{}",
+                       "~/.{}"],
+
+    'i3pystatus_config.py': ["i3/{}",
+                             "~/.i3/{}"],
+
+    'config': ["i3/{}",
+               "~/.i3/{}"],
+
+    'Xresources': ["{}",
+                   "~/.{}"],
+
+    'zshrc': ["{}",
+              "~/.{}"],
+
+    'zprofile': ["{}",
+                 "~/.{}"],
+
+    # Vim
+    'vimrc': ["vim/{}",
+              "~/.{}"],
+
+    'gvimrc': ["vim/{}",
+               "~/.{}"],
+
+    'ycm_extra_conf_c.py': ["vim/{}",
+                            "~/.config/.{}"],
+
+    # Vim folders
+    'filetype_folder': ["vim/filetype",
+                        "~/.vim/ftplugin"],
+
+    'syntax': ["vim/{}",
+               "~/.vim/{}"],
+
+    'snippets_folder': ["vim/snippets",
+                        "~/.vim/mysnippets"],
+    }
+
 def link(target, lnk, force=False):
     """
     Creates symbolic link 'lnk' pointing to 'target'.
@@ -53,62 +97,8 @@ if __name__ == '__main__':
     except IndexError:
         FORCE = False
 
-    NAME = 'gtkrc-2.0.mine'
-    link(path.join(CDIR, "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    NAME = 'i3pystatus_config.py'
-    link(path.join(CDIR, "i3", "{}".format(NAME)),
-         "~/.i3/{}".format(NAME),
-         FORCE)
-
-    NAME = 'config'
-    link(path.join(CDIR, "i3", "{}".format(NAME)),
-         "~/.i3/{}".format(NAME),
-         FORCE)
-
-    NAME = 'Xresources'
-    link(path.join(CDIR, "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    NAME = 'zshrc'
-    link(path.join(CDIR, "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    NAME = 'zprofile'
-    link(path.join(CDIR, "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    # Vim
-    NAME = 'vimrc'
-    link(path.join(CDIR, "vim", "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    NAME = 'gvimrc'
-    link(path.join(CDIR, "vim", "{}".format(NAME)),
-         "~/.{}".format(NAME),
-         FORCE)
-
-    NAME = 'ycm_extra_conf_c.py'
-    link(path.join(CDIR, "vim", "{}".format(NAME)),
-         "~/.config/.{}".format(NAME),
-         FORCE)
-
-    # Link Vim directories
-    link(path.join(CDIR, "vim", "filetype"),
-         "~/.vim/ftplugin",
-         FORCE)
-
-    link(path.join(CDIR, "vim", "syntax"),
-         "~/.vim/syntax",
-         FORCE)
-
-    link(path.join(CDIR, "vim", "snippets"),
-         "~/.vim/mysnippets",
-         FORCE)
-
+    for l in LINKS.keys():
+        link(path.join(CDIR,
+                       LINKS[l][0].format(l)),
+             LINKS[l][1].format(l),
+             FORCE)
