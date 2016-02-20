@@ -20,4 +20,8 @@ let g:current_workfolder = split(substitute(system('p4 info'), '.*Client root: \
 
 " Map ctrlp to whole project. 
 noremap <C-P> :execute 'CtrlP ' . current_workfolder<CR>
-
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 99
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_by_filename = 1
+set wildignore+=*/assets_pc/*,src\*,tools/*,etc/*
