@@ -80,7 +80,7 @@ alias sx='startx'
 alias wine='PULSE_LATENCY_MSEC=60 wine'       #Fix for audio playing to fast
 alias xboxdrvDarkSouls='sudo xboxdrv --detach-kernel-driver --buttonmap 1=3,3=1,2=4,4=2,rt=start,lt=back,start=rt,back=lt --ui-buttonmap guide=KEY_LEFTSHIFT+KEY_TAB,rt=KEY_END,lt=KEY_G --detach --dbus disabled --daemon' #Fix for not correct mapping in dark souls
 alias pulseaudiofix='PULSE_LATENCY_MSEC=60'
-alias winesteam='primusrun wine "/home/miniu/.wine/drive_c/Program Files (x86)/Steam/Steam.exe" --no-dwrite'
+alias winesteam='wine "/home/miniu/.wine/drive_c/Program Files (x86)/Steam/Steam.exe" --no-dwrite'
 alias pasds='pactl set-default-sink'
 alias pals='pactl list sinks'
 alias palsb='pactl list sinks | grep -B 2 Blaster'
@@ -88,3 +88,4 @@ alias wacomDisableTouch="xsetwacom --set 'Wacom Bamboo 2FG 4x5 Finger touch' tou
 alias irc='weechat'
 alias youtube-dl-allnighter='youtube-dl -i --retries infinite'
 alias rust-clewn='clewn -gc 'rust-gdb' -ga'
+alias clewn='clewn -ga'
