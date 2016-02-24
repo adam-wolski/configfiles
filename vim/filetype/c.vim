@@ -16,4 +16,5 @@ set cul                      " Highlight the current line
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
-autocmd BufWrite *.rs :Dispatch! !ctags -R
+autocmd BufWrite *.c :Dispatch! !ctags -R
+autocmd BufWrite *.h :Dispatch! !ctags -R
