@@ -21,7 +21,7 @@ DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -101,10 +101,10 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-PATH=/home/miniu/bin:$PATH
-PATH=/home/miniu/.gem/ruby/2.1.0/bin:$PATH
-PATH=/home/miniu/.cabal/bin:$PATH
-PATH=/home/miniu/.cargo/bin:$PATH
+PATH=$HOME/bin:$PATH
+PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
+PATH=$HOME/.cabal/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 
 # go back to ranger using rg
 rg() {
@@ -119,5 +119,5 @@ rg() {
 #free ctrl s for terminal vim
 stty -ixon 
 
-source "/home/miniu/git/configfiles/MASTERSCRIPT"
-source "/home/miniu/.startup.mine"
+source "$HOME/.MASTERSCRIPT"
+source "$HOME/.startup.mine"
