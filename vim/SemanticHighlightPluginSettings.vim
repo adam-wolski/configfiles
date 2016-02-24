@@ -1,6 +1,3 @@
-nnoremap <Leader>sh :SemanticHighlightToggle<cr>
-let g:semanticEnableFileTypes = {'python': 'py', 'rust': 'rs'}
-
 let g:semanticBlacklistOverride = {
     \   'cpp': [
     \   'public',
