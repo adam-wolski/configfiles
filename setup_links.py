@@ -20,6 +20,12 @@ LINKS = {
     'gtkrc-2.0.mine': ["{}",
                        "~/.{}"],
 
+    'MASTERSCRIPT': ["{}",
+                     "~/.{}"],
+
+    'vtrgb': ["{}",
+              "~/.config/{}"],
+
     'i3pystatus_config.py': ["i3/{}",
                              "~/.i3/{}"],
 
@@ -44,6 +50,9 @@ LINKS = {
 
     'ycm_extra_conf_c.py': ["vim/{}",
                             "~/.config/.{}"],
+
+    'SemanticHighlightPluginSettings.vim': ["vim/{}",
+                                            "~/.config/{}"],
 
     # Vim folders
     'filetype_folder': ["vim/filetype",
