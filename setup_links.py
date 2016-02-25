@@ -12,6 +12,9 @@ from os import path
 from os import remove
 from subprocess import Popen
 
+if system() == 'Windows':
+    from win32file import CreateSymbolicLink
+
 LINKS = {
     # 'filename': ['relative/path/from/config/to/target/{}'
     #              'full/path/to/link/{}']
@@ -49,7 +52,7 @@ LINKS = {
                "~/.{}"],
 
     'ycm_extra_conf_c.py': ["vim/{}",
-                            "~/.config/.{}"],
+                            "~/.config/{}"],
 
     'SemanticHighlightPluginSettings.vim': ["vim/{}",
                                             "~/.config/{}"],
@@ -65,37 +68,63 @@ LINKS = {
                         "~/.vim/mysnippets"],
     }
 
+LINKS_WIN = {
+    # Vim
+    'vimrc': [r"vim\{}",
+              r"~\_{}"],
+
+    'gvimrc': [r"vim\{}",
+               r"~\_{}"],
+
+    'ycm_extra_conf_c.py': [r"vim\{}",
+                            r"~\.config\{}"],
+
+    'SemanticHighlightPluginSettings.vim': [r"vim\{}",
+                                            r"~\.config\{}"],
+
+    # Vim folders
+    'filetype_folder': [r"vim\filetype",
+                        r"~\vimfiles\ftplugin"],
+
+    'syntax': [r"vim\{}",
+               r"~\vimfiles\{}"],
+
+    'snippets_folder': [r"vim\snippets",
+                        r"~\vimfiles\mysnippets"],
+    }
+
 def link(target, lnk, force=False):
     """
     Creates symbolic link 'lnk' pointing to 'target'.
     """
 
-    if system() != 'Linux':
+    if system() != 'Linux' and system() != 'Windows':
         print("{} operating system is not supported.".format(system()))
         return
 
-    lnk = path.expandvars(path.expanduser(lnk))
-    target = path.expandvars(path.expanduser(target))
+    isdir = False
+
+    lnk = path.normpath(path.expandvars(path.expanduser(lnk)))
+    target = path.normpath(path.expandvars(path.expanduser(target)))
 
     print("\n{} -> {}".format(lnk, target))
 
-    if path.isdir(target):
+    if path.isdir(lnk) or path.isfile(lnk):
         if path.isdir(lnk):
-            if not force:
-                print("failed to create folder link"
-                      " '{}': Folder exists".format(lnk))
-                return
-            else:
-                remove(lnk)
+            isdir = True
+        if not force:
+            print("'{}': link exists".format(lnk))
+            return
+        else:
+            remove(lnk)
 
-    if force:
-        if system() == 'Linux':
-            com = ['ln', '-sf', target, lnk]
-    else:
-        if system() == 'Linux':
-            com = ['ln', '-s', target, lnk]
-
-    Popen(com).wait()
+    if system() == 'Linux':
+        Popen(['ln', '-s', target, lnk]).wait()
+    elif system() == 'Windows':
+        if isdir:
+            CreateSymbolicLink(lnk, target, 1)
+        else:
+            CreateSymbolicLink(lnk, target, 0)
 
 if __name__ == '__main__':
 
@@ -106,8 +135,14 @@ if __name__ == '__main__':
     except IndexError:
         FORCE = False
 
+    if system() == 'Windows':
+        LINKS = LINKS_WIN
+
     for l in LINKS.keys():
         link(path.join(CDIR,
                        LINKS[l][0].format(l)),
              LINKS[l][1].format(l),
              FORCE)
+
+    if system() == 'Windows':
+        input('\nDONE')
