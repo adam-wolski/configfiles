@@ -227,7 +227,11 @@ colorscheme solarized       " Theme for non gui, overwritten in next if
 if has('gui_running') || has('nvim')
     :set guioptions=
 	:set guiheadroom=0
-    :set guifont=Source\ Code\ Pro\ Ultra-Light\ 11
+    if has('unix')
+            :set guifont=Source\ Code\ Pro\ Ultra-Light\ 11
+    else
+            :set guifont=Source_Code_Pro:h10:cEASTEUROPE
+    endif
     colorscheme nTheme
 endif
 " }}} GUI Settings
