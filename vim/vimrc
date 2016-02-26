@@ -7,6 +7,7 @@ set encoding=utf-8
 set statusline=[%n]\ %f%m%r%h%w\ %=\ %Y\ %l,%v\ %p%%
 set laststatus=2                    " Show statusline always
 set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
+set fdm=syntax                      " Set foldmethod to one based on syntax
 set exrc                            " Load vimrc from current dir
 set hidden                          " Hide buffer instead of closing it
 syntax on                           " Enable syntax highlighting
