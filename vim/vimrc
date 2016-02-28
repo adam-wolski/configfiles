@@ -27,6 +27,7 @@ let mapleader="\<Space>"            " Set leader shortcut to spacebar
 set backspace=indent,eol,start
 if has('unix')                      
         set dir=~/tmp/vim                                   " Directory for .swp files
+        set dict+=/usr/share/dict/words
 endif
 " }}} Init
 " Plugins {{{
