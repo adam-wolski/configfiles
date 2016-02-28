@@ -290,6 +290,9 @@ endif
 " Add ; on end line
 inoremap <C-t> <ESC>$a;
 
+" Quick spellcheck toggle
+nnoremap <silent> <F10> :set spell!<CR>
+
 " Paste from clipboard
 vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
