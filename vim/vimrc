@@ -329,10 +329,10 @@ function MyFoldText()
   return v:folddashes . sub
 endfunction
 " }}} Functions
-" Filetype Specific settings {{{
+" Filetype Specific Settings {{{
 " C {{{
-" Override setting for .h files, which default to cpp for me.
-au BufRead,BufNewFile *.h set filetype=c
+" Override setting for .h files, which defaults to cpp for me.
+au BufEnter,BufRead,BufNewFile *.h set filetype=c
 " }}} C
 " Python {{{
 au FileType python set sts=4 ts=4 sw=4 colorcolumn=80   " Make Python follow PEP8
