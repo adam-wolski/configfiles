@@ -8,6 +8,9 @@ set statusline=[%n]\ %f%m%r%h%w\ %=\ %Y\ %l,%v\ %p%%
 set laststatus=2                    " Show statusline always
 set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
 set fdm=syntax                      " Set foldmethod to one based on syntax
+set softtabstop=4                   " Number of spaces that a <Tab> counts for while editing
+set tabstop=4                       " Number of spaces that a <Tab> counts for
+set shiftwidth=4                    " Number of spaces that << >> move by.
 set exrc                            " Load vimrc from current dir
 set hidden                          " Hide buffer instead of closing it
 syntax on                           " Enable syntax highlighting
