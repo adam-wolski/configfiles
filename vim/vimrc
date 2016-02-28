@@ -119,10 +119,10 @@ nnoremap <C-F6> :Dispatch!<CR>
 " }}} Dispatch
 "   FSwitch {{{
 nnoremap <leader>fs :FSHere<cr>
-au! BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
-au! BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
-au! BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
-au! BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
+au BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
+au BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
+au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
+au BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
 " }}} FSwitch
 "   Tagbar {{{
 nnoremap <leader>tb :TagbarOpenAutoClose<cr>
