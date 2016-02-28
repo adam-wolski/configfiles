@@ -187,6 +187,9 @@ nnoremap <leader>d :YcmCompleter GoTo<CR>
 let g:ycm_global_ycm_extra_conf = "~/.config/ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
 let g:ycm_complete_in_comments = 1              " Complete in comments
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
 " }}} YouCompleteMe
 "   Semantic Highlight {{{
