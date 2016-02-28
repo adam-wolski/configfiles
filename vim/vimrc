@@ -356,5 +356,6 @@ au BufRead,BufNewfile *vimrc
   \ hi def link fmrkr Ignore |
   \ set fdm=marker |
   \ set foldenable
+au FileType vim set sts=4 ts=4 sw=4
 " }}} Vim
 " }}} Filetype Specific Settings
