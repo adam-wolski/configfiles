@@ -68,6 +68,7 @@ Plug 'luochen1990/rainbow'
 " Language specific Plugins {{{
 Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
 Plug 'LucHermitte/VimFold4C', { 'for': ['c', 'cpp'] }
+Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
@@ -202,6 +203,11 @@ nnoremap <C-C> :CtrlPTag<CR>
 "   Indent Guides {{{
 nnoremap <leader>ig :IndentGuidesToggle<CR>
 " }}} Indent Guides
+"   Makeshift {{{
+let g:makeshift_on_startup = 1
+let g:makeshift_use_pwd_first = 1
+let g:makeshift_chdir = 1
+" }}} Makeshift
 " }}} Plugin configuration
 " }}} Plugins
 " Editing Settings {{{
