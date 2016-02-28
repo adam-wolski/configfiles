@@ -25,7 +25,7 @@ set wildmenu                        " Menu completion in command mode on <Tab>
 set wildmode=full                   " <Tab> cycles between all matching choices.
 let mapleader="\<Space>"            " Set leader shortcut to spacebar
 set backspace=indent,eol,start
-if has('unix')                      
+if has('unix')
         set dir=~/tmp/vim                                   " Directory for .swp files
         set dict+=/usr/share/dict/words
 endif
@@ -234,7 +234,7 @@ set wrap                    " Wrap text
 set linebreak               " But don't wrap text in the middle of a word
 
 set noerrorbells            " Don't bell or blink
-set vb t_vb=                " 
+set vb t_vb=
 
 colorscheme solarized       " Theme for non gui, overwritten in next if
 " GUI Settings {{{
