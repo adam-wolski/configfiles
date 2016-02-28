@@ -134,7 +134,7 @@ let g:NumberToggleTrigger="<leader>nt"
 " Snippets variables
 let g:snips_author='Adam Wolski'
 let g:snips_email='miniupuchaty@gmail.com'
-let g:snips_github='https://github.com/miniukov'
+let g:snips_github='https://github.com/miniukof'
 " Setup directories.
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 " Shortcuts
