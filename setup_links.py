@@ -51,8 +51,11 @@ LINKS = {
     'gvimrc': ["vim/{}",
                "~/.{}"],
 
-    'ycm_extra_conf_c.py': ["vim/{}",
-                            "~/.config/{}"],
+    'ycm_extra_conf.py': ["vim/{}",
+                          "~/.config/{}"],
+
+    'ycm_extra_conf_cpp.py': ["vim/{}",
+                              "~/.config/{}"],
 
     'SemanticHighlightPluginSettings.vim': ["vim/{}",
                                             "~/.config/{}"],
@@ -66,6 +69,9 @@ LINKS = {
 
     'snippets_folder': ["vim/snippets",
                         "~/.vim/mysnippets"],
+
+    'after': ["vim/after",
+              "~/.vim/after"],
     }
 
 LINKS_WIN = {
@@ -75,9 +81,6 @@ LINKS_WIN = {
 
     'gvimrc': [r"vim\{}",
                r"~\_{}"],
-
-    'ycm_extra_conf_c.py': [r"vim\{}",
-                            r"~\.config\{}"],
 
     'SemanticHighlightPluginSettings.vim': [r"vim\{}",
                                             r"~\.config\{}"],
@@ -91,6 +94,9 @@ LINKS_WIN = {
 
     'snippets_folder': [r"vim\snippets",
                         r"~\vimfiles\mysnippets"],
+
+    'after': [r"vim\after",
+              r"~\.vim\after"],
     }
 
 def link(target, lnk, force=False):
