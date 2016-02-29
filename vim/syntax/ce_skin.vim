@@ -12,7 +12,7 @@ syn keyword CETodo TODO Todo
 syn region CEComment start='//' end='$' contains=CETodo
 syn region CEString start='"' end='"' 
 syn region CEBlock start='{' end='}' fold transparent
-syn keyword CEBuildInFunctions EnableNewSkins ShowAll HideAll Replace UseSkin Skin SkinVersion
+syn keyword CEBuildInFunctions EnableNewSkins ShowAll HideAll Replace UseSkin Skin SkinVersion Show ReplaceSurface ColorI UseAlpha
 syn match CEInclude '!include'
 syn match CEMat '"\(\d*\w*\)\.mat"'
 syn match CESkn '"\(\d*\w*\)\.skn"'
