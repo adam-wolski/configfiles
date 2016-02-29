@@ -281,3 +281,6 @@ hi def link cBoolean Boolean
 syn keyword AdditionalTypes u8 u16 u32 u64 i8 i16 i32 i64 f32 f64
 hi def link AdditionalTypes Type
 
+" Special comments
+syn region cFunctionComment start="/\*\*" end="*/"
+hi def link cFunctionComment SpecialComment
