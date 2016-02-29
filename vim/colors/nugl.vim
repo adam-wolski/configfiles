@@ -209,10 +209,10 @@ exe "hi! Underlined"     .s:gn   .s:fa4 .s:bgn
 exe "hi! Ignore"         .s:gn   .s:fgn   .s:bgn
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"          .s:gb   .s:fa2    .s:bgn
+exe "hi! Error"          .s:gb   .s:fa2   .s:bgn
 "       *Error           any erroneous construct
 
-exe "hi! Todo"           .s:gb   .s:fa3.s:bgn
+exe "hi! Todo"           .s:gb   .s:fa2   .s:bgn
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
