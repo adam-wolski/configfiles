@@ -67,7 +67,6 @@ Plug 'luochen1990/rainbow'
 " }}} Visual Plugins
 " Language specific Plugins {{{
 Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
-Plug 'LucHermitte/VimFold4C', { 'for': ['c', 'cpp'] }
 Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
@@ -236,7 +235,6 @@ set linebreak               " But don't wrap text in the middle of a word
 set noerrorbells            " Don't bell or blink
 set vb t_vb=
 
-colorscheme solarized       " Theme for non gui, overwritten in next if
 " GUI Settings {{{
 if has('gui_running') || has('nvim')
     :set guioptions=
@@ -246,7 +244,9 @@ if has('gui_running') || has('nvim')
     else
             :set guifont=Source_Code_Pro:h10:cEASTEUROPE
     endif
-    colorscheme nTheme
+    colorscheme nugl
+else
+    colorscheme solarized
 endif
 " }}} GUI Settings
 " }}} Visual Settings
@@ -350,7 +350,7 @@ au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetyp
 au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
 " }}} Chrome
 " Vim {{{
-au BufRead,BufNewfile *vimrc
+au filetype vim
   \ syn match fmrkr '"*{{{\|"*}}}'
   \ containedin=vimLineComment contained |
   \ hi def link fmrkr Ignore |
