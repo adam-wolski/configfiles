@@ -61,10 +61,13 @@ LINKS = {
                                             "~/.config/{}"],
 
     # Vim folders
-    'filetype_folder': ["vim/filetype",
-                        "~/.vim/ftplugin"],
+    'ftplugin': ["vim/{}",
+                 "~/.vim/{}"],
 
     'syntax': ["vim/{}",
+               "~/.vim/{}"],
+
+    'colors': ["vim/{}",
                "~/.vim/{}"],
 
     'snippets_folder': ["vim/snippets",
@@ -86,10 +89,13 @@ LINKS_WIN = {
                                             r"~\.config\{}"],
 
     # Vim folders
-    'filetype_folder': [r"vim\filetype",
-                        r"~\vimfiles\ftplugin"],
+    'ftplugin': [r"vim\{}",
+                 r"~\vimfiles\{}"],
 
     'syntax': [r"vim\{}",
+               r"~\vimfiles\{}"],
+
+    'colors': [r"vim\{}",
                r"~\vimfiles\{}"],
 
     'snippets_folder': [r"vim\snippets",
