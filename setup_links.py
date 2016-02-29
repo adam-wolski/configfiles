@@ -101,8 +101,8 @@ LINKS_WIN = {
     'snippets_folder': [r"vim\snippets",
                         r"~\vimfiles\mysnippets"],
 
-    'after': [r"vim\after",
-              r"~\.vim\after"],
+    'after': [r"vim\{}",
+              r"~\vimfiles\{}"],
     }
 
 def link(target, lnk, force=False):
@@ -117,13 +117,16 @@ def link(target, lnk, force=False):
     isdir = False
 
     lnk = path.normpath(path.expandvars(path.expanduser(lnk)))
+    if path.isdir(target):
+        isdir = True
     target = path.normpath(path.expandvars(path.expanduser(target)))
 
-    print("\n{} -> {}".format(lnk, target))
+    if isdir:
+        print("\n{} -> {} : DIR".format(lnk, target))
+    else:
+        print("\n{} -> {} : FILE".format(lnk, target))
 
     if path.isdir(lnk) or path.isfile(lnk):
-        if path.isdir(lnk):
-            isdir = True
         if not force:
             print("'{}': link exists".format(lnk))
             return
