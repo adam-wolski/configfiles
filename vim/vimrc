@@ -4,7 +4,7 @@ let g:email='miniupuchaty@gmail.com'
 let g:github='https://github.com/miniukof'
 
 set encoding=utf-8
-set statusline=[%n]                 " Buffer number
+set statusline=[%n]\                " Buffer number
 set statusline+=%f%m%r%h%w\         " Filename and modification
 set statusline+=%=\                 " Bring rest to right
 set statusline+=%Y\                 " Filetype"
