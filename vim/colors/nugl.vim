@@ -155,12 +155,12 @@ let s:gs7 = " guisp=".s:c7
 " note that link syntax to avoid duplicate configuration doesn't work with the
 " exe compiled formats
 
-exe "hi! Normal"         .s:gn   .s:fg0  .s:bg0
+exe "hi! Normal"   .s:gn   .s:fg0   .s:bg0
 
-exe "hi! Comment"        .s:gi   .s:fg2 .s:bgn
+exe "hi! Comment"   .s:gi   .s:fg2   .s:bgn
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:gn   .s:fa6   .s:bgn
+exe "hi! Constant"   .s:gn   .s:fa6   .s:bgn
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -168,11 +168,11 @@ exe "hi! Constant"       .s:gn   .s:fa6   .s:bgn
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
-exe "hi! Identifier"     .s:gn   .s:fa5   .s:bgn
+exe "hi! Identifier"   .s:gn   .s:fa5   .s:bgn
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"      .s:gn   .s:fa7  .s:bgn
+exe "hi! Statement"   .s:gn   .s:fa7   .s:bgn
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -181,98 +181,98 @@ exe "hi! Statement"      .s:gn   .s:fa7  .s:bgn
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"        .s:gn   .s:fa1 .s:bgn
+exe "hi! PreProc"   .s:gn   .s:fa1   .s:bgn
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
 "        Macro           same as Define
 "        PreCondit       preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"           .s:gn   .s:fa0 .s:bgn
+exe "hi! Type"   .s:gn   .s:fa0   .s:bgn
 "       *Type            int, long, char, etc.
 "        StorageClass    static, register, volatile, etc.
 "        Structure       struct, union, enum, etc.
 "        Typedef         A typedef
 
-exe "hi! Special"        .s:gn   .s:fa2    .s:bgn
+exe "hi! Special"   .s:gn   .s:fa2   .s:bgn
 "       *Special         any special symbol
 "        SpecialChar     special character in a constant
 "        Tag             you can use CTRL-] on this
 "        Delimiter       character that needs attention
 "        Debug           debugging statements
-exe "hi! SpecialComment" .s:gi   .s:fa0  .s:bgn
+exe "hi! SpecialComment"   .s:gi   .s:fa0   .s:bgn
 "        SpecialComment  special things inside a comment
 
-exe "hi! Underlined"     .s:gn   .s:fa4 .s:bgn
+exe "hi! Underlined"   .s:gn   .s:fa4   .s:bgn
 "       *Underlined      text that stands out, HTML links
 
-exe "hi! Ignore"         .s:gn   .s:fgn   .s:bgn
+exe "hi! Ignore"   .s:gn   .s:fgn   .s:bgn
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"          .s:gb   .s:fa2   .s:bgn
+exe "hi! Error"   .s:gb   .s:fa2   .s:bgn
 "       *Error           any erroneous construct
 
-exe "hi! Todo"           .s:gb   .s:fa2   .s:bgn
+exe "hi! Todo"   .s:gb   .s:fa2   .s:bgn
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
 "}}}
 " Extended highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! SpecialKey"     .s:gb   .s:fgd   .s:bgn
-exe "hi! NonText"        .s:gb   .s:fgd   .s:bgn
-exe "hi! StatusLine"     .s:gn   .s:fg1   .s:bgn
+exe "hi! SpecialKey"   .s:gb   .s:fgd   .s:bgn
+exe "hi! NonText"   .s:gb   .s:fgd   .s:bgn
+exe "hi! StatusLine"   .s:gn   .s:fg1   .s:bgn
 exe "hi! StatusLineNC"   .s:gn   .s:fg3   .s:bgn
-exe "hi! Visual"         .s:gr   .s:fg2   .s:bgD
-exe "hi! Directory"      .s:gn   .s:fa5   .s:bgn
-exe "hi! ErrorMsg"       .s:gr   .s:fa2   .s:bgn
-exe "hi! IncSearch"      .s:gs   .s:fa1   .s:bgn
-exe "hi! Search"         .s:gr   .s:fa0   .s:bgn
-exe "hi! MoreMsg"        .s:gn   .s:fa5   .s:bgn
-exe "hi! ModeMsg"        .s:gn   .s:fa5   .s:bgn
-exe "hi! LineNr"         .s:gn   .s:fg2   .s:bgn
-exe "hi! Question"       .s:gb   .s:fa6   .s:bgn
-exe "hi! VertSplit"      .s:gn   .s:fg3   .s:bg0
-exe "hi! Title"          .s:gb   .s:fa1   .s:bgn
-exe "hi! VisualNOS"      .s:gs   .s:fgn   .s:bgd
-exe "hi! WarningMsg"     .s:gb   .s:fa2   .s:bgn
-exe "hi! WildMenu"       .s:gn   .s:fgl   .s:bgd
-exe "hi! Folded"         .s:gn   .s:fg0   .s:bgn
-exe "hi! FoldColumn"     .s:gn   .s:fg0   .s:bgd
-exe "hi! DiffAdd"        .s:gb   .s:fa7   .s:bgd   .s:gs7
-exe "hi! DiffChange"     .s:gb   .s:fa0   .s:bgd   .s:gs0
-exe "hi! DiffDelete"     .s:gb   .s:fa2   .s:bgd
-exe "hi! DiffText"       .s:gb   .s:fa5   .s:bgd   .s:gs5
-exe "hi! SignColumn"     .s:gn   .s:fg0   .s:bgn
-exe "hi! Conceal"        .s:gn   .s:fa5   .s:bgn
+exe "hi! Visual"   .s:gr   .s:fg2   .s:bgD
+exe "hi! Directory"   .s:gn   .s:fa5   .s:bgn
+exe "hi! ErrorMsg"   .s:gr   .s:fa2   .s:bgn
+exe "hi! IncSearch"   .s:gs   .s:fa1   .s:bgn
+exe "hi! Search"   .s:gr   .s:fa0   .s:bgn
+exe "hi! MoreMsg"   .s:gn   .s:fa5   .s:bgn
+exe "hi! ModeMsg"   .s:gn   .s:fa5   .s:bgn
+exe "hi! LineNr"   .s:gn   .s:fg2   .s:bgn
+exe "hi! Question"   .s:gb   .s:fa6   .s:bgn
+exe "hi! VertSplit"   .s:gn   .s:fg3   .s:bg0
+exe "hi! Title"   .s:gb   .s:fa1   .s:bgn
+exe "hi! VisualNOS"   .s:gs   .s:fgn   .s:bgd
+exe "hi! WarningMsg"   .s:gb   .s:fa2   .s:bgn
+exe "hi! WildMenu"   .s:gn   .s:fgl   .s:bgd
+exe "hi! Folded"   .s:gn   .s:fg0   .s:bgn
+exe "hi! FoldColumn"   .s:gn   .s:fg0   .s:bgd
+exe "hi! DiffAdd"   .s:gb   .s:fa7   .s:bgd   .s:gs7
+exe "hi! DiffChange"   .s:gb   .s:fa0   .s:bgd   .s:gs0
+exe "hi! DiffDelete"   .s:gb   .s:fa2   .s:bgd
+exe "hi! DiffText"   .s:gb   .s:fa5   .s:bgd   .s:gs5
+exe "hi! SignColumn"   .s:gn   .s:fg0   .s:bgn
+exe "hi! Conceal"   .s:gn   .s:fa5   .s:bgn
 if has('gui_running')
-exe "hi! SpellBad"       .s:gc   .s:fg0   .s:bgn   .s:gs2
-exe "hi! SpellCap"       .s:gc   .s:fg0   .s:bgn   .s:gs4
-exe "hi! SpellRare"      .s:gc   .s:fg0   .s:bgn   .s:gs6
-exe "hi! SpellLocal"     .s:gc   .s:fg0   .s:bgn   .s:gs0
+exe "hi! SpellBad"   .s:gc   .s:fg0   .s:bgn   .s:gs2
+exe "hi! SpellCap"   .s:gc   .s:fg0   .s:bgn   .s:gs4
+exe "hi! SpellRare"   .s:gc   .s:fg0   .s:bgn   .s:gs6
+exe "hi! SpellLocal"   .s:gc   .s:fg0   .s:bgn   .s:gs0
 else
-exe "hi! SpellBad"       .s:gc   .s:fgn   .s:ba2
-exe "hi! SpellCap"       .s:gc   .s:fgn   .s:ba4
-exe "hi! SpellRare"      .s:gc   .s:fgn   .s:ba6
-exe "hi! SpellLocal"     .s:gc   .s:fgn   .s:ba0
+exe "hi! SpellBad"   .s:gc   .s:fgn   .s:ba2
+exe "hi! SpellCap"   .s:gc   .s:fgn   .s:ba4
+exe "hi! SpellRare"   .s:gc   .s:fgn   .s:ba6
+exe "hi! SpellLocal"   .s:gc   .s:fgn   .s:ba0
 endif
-exe "hi! Pmenu"          .s:gn   .s:fg0   .s:bgd 
-exe "hi! PmenuSel"       .s:gn   .s:fg2   .s:bgl 
-exe "hi! PmenuSbar"      .s:gn   .s:fgl   .s:bg0 
-exe "hi! PmenuThumb"     .s:gn   .s:fg0   .s:bgD 
-exe "hi! TabLine"        .s:gu   .s:fg0   .s:bgd
-exe "hi! TabLineFill"    .s:gu   .s:fg0   .s:bgd
-exe "hi! TabLineSel"     .s:gu   .s:fg2   .s:bgl
+exe "hi! Pmenu"   .s:gn   .s:fg0   .s:bgd 
+exe "hi! PmenuSel"   .s:gn   .s:fg2   .s:bgl 
+exe "hi! PmenuSbar"   .s:gn   .s:fgl   .s:bg0 
+exe "hi! PmenuThumb"   .s:gn   .s:fg0   .s:bgD 
+exe "hi! TabLine"   .s:gu   .s:fg0   .s:bgd
+exe "hi! TabLineFill"   .s:gu   .s:fg0   .s:bgd
+exe "hi! TabLineSel"   .s:gu   .s:fg2   .s:bgl
 exe "hi! CursorColumn"   .s:gn   .s:fgn   .s:bgd
-exe "hi! CursorLine"     .s:gn   .s:fgn   .s:bgl
-exe "hi! ColorColumn"    .s:gn   .s:fgn   .s:bgd
-exe "hi! Cursor"         .s:gr   .s:fgn   .s:ba2
+exe "hi! CursorLine"   .s:gn   .s:fgn   .s:bgl
+exe "hi! ColorColumn"   .s:gn   .s:fgn   .s:bgd
+exe "hi! Cursor"   .s:gr   .s:fgn   .s:ba2
 hi! link lCursor Cursor
-exe "hi! MatchParen"     .s:gb   .s:fa2   .s:bgd
+exe "hi! MatchParen"   .s:gb   .s:fa2   .s:bgd
 "}}}
 " vim syntax highlighting "{{{
 " ---------------------------------------------------------------------
-"exe "hi! vimLineComment" . s:fg2 .s:bgn   .s:gi
+"exe "hi! vimLineComment" . s:fg2   .s:bgn   .s:gi
 "hi! link vimComment Comment
 "hi! link vimLineComment Comment
 hi! link vimVar Identifier
@@ -281,21 +281,21 @@ hi! link vimUserFunc Function
 hi! link helpSpecial Special
 hi! link vimSet Normal
 hi! link vimSetEqual Normal
-exe "hi! vimCommentString"  .s:gn    .s:fa4 .s:bgn
-exe "hi! vimCommand"        .s:gn    .s:fa0 .s:bgn
-exe "hi! vimCmdSep"         .s:gb    .s:fa5   .s:bgn
-exe "hi! helpExample"       .s:gn    .s:fg1  .s:bgn
-exe "hi! helpOption"        .s:gn    .s:fa6   .s:bgn
-exe "hi! helpNote"          .s:gn    .s:fa3.s:bgn
-exe "hi! helpVim"           .s:gn    .s:fa3.s:bgn
-exe "hi! helpHyperTextJump" .s:gu    .s:fa5   .s:bgn
-exe "hi! helpHyperTextEntry".s:gn    .s:fa7  .s:bgn
-exe "hi! vimIsCommand"      .s:gn    .s:fg3 .s:bgn
-exe "hi! vimSynMtchOpt"     .s:gn    .s:fa0 .s:bgn
-exe "hi! vimSynType"        .s:gn    .s:fa6   .s:bgn
-exe "hi! vimHiLink"         .s:gn    .s:fa5   .s:bgn
-exe "hi! vimHiGroup"        .s:gn    .s:fa5   .s:bgn
-exe "hi! vimGroup"          .s:gu    .s:fa5   .s:bgn
+exe "hi! vimCommentString"   .s:gn   .s:fa4   .s:bgn
+exe "hi! vimCommand"   .s:gn   .s:fa0   .s:bgn
+exe "hi! vimCmdSep"   .s:gb   .s:fa5   .s:bgn
+exe "hi! helpExample"   .s:gn   .s:fg1   .s:bgn
+exe "hi! helpOption"   .s:gn   .s:fa6   .s:bgn
+exe "hi! helpNote"   .s:gn   .s:fa3.s:bgn
+exe "hi! helpVim"   .s:gn   .s:fa3.s:bgn
+exe "hi! helpHyperTextJump"   .s:gu   .s:fa5   .s:bgn
+exe "hi! helpHyperTextEntry".s:gn   .s:fa7   .s:bgn
+exe "hi! vimIsCommand"   .s:gn   .s:fg3   .s:bgn
+exe "hi! vimSynMtchOpt"   .s:gn   .s:fa0   .s:bgn
+exe "hi! vimSynType"   .s:gn   .s:fa6   .s:bgn
+exe "hi! vimHiLink"   .s:gn   .s:fa5   .s:bgn
+exe "hi! vimHiGroup"   .s:gn   .s:fa5   .s:bgn
+exe "hi! vimGroup"   .s:gu   .s:fa5   .s:bgn
 "}}}
 " diff highlighting "{{{
 " ---------------------------------------------------------------------
@@ -325,26 +325,26 @@ hi! link diffLine Identifier
 "exe "hi! gitDiffRemoved"
 "gitcommit
 "exe "hi! gitcommitSummary"      
-exe "hi! gitcommitComment"      .s:gi     .s:fg2    .s:bgn
+exe "hi! gitcommitComment"   .s:gi   .s:fg2   .s:bgn
 hi! link gitcommitUntracked gitcommitComment
 hi! link gitcommitDiscarded gitcommitComment
 hi! link gitcommitSelected  gitcommitComment
-exe "hi! gitcommitUnmerged"     .s:gb     .s:fa7     .s:bgn
-exe "hi! gitcommitOnBranch"     .s:gb     .s:fg2    .s:bgn
-exe "hi! gitcommitBranch"       .s:gb     .s:fa3   .s:bgn
+exe "hi! gitcommitUnmerged"   .s:gb   .s:fa7   .s:bgn
+exe "hi! gitcommitOnBranch"   .s:gb   .s:fg2   .s:bgn
+exe "hi! gitcommitBranch"   .s:gb   .s:fa3   .s:bgn
 hi! link gitcommitNoBranch gitcommitBranch
-exe "hi! gitcommitDiscardedType".s:gn     .s:fa2       .s:bgn
-exe "hi! gitcommitSelectedType" .s:gn     .s:fa7     .s:bgn
+exe "hi! gitcommitDiscardedType".s:gn   .s:fa2   .s:bgn
+exe "hi! gitcommitSelectedType"   .s:gn   .s:fa7   .s:bgn
 "exe "hi! gitcommitUnmergedType"
 "exe "hi! gitcommitType"
 "exe "hi! gitcommitNoChanges"
 "exe "hi! gitcommitHeader"
-exe "hi! gitcommitHeader"       .s:gn     .s:fg2    .s:bgn
-exe "hi! gitcommitUntrackedFile".s:gb     .s:fa6      .s:bgn
-exe "hi! gitcommitDiscardedFile".s:gb     .s:fa2       .s:bgn
-exe "hi! gitcommitSelectedFile" .s:gb     .s:fa7     .s:bgn
-exe "hi! gitcommitUnmergedFile" .s:gb     .s:fa0    .s:bgn
-exe "hi! gitcommitFile"         .s:gb     .s:fg0     .s:bgn
+exe "hi! gitcommitHeader"   .s:gn   .s:fg2   .s:bgn
+exe "hi! gitcommitUntrackedFile".s:gb   .s:fa6   .s:bgn
+exe "hi! gitcommitDiscardedFile".s:gb   .s:fa2   .s:bgn
+exe "hi! gitcommitSelectedFile"   .s:gb   .s:fa7   .s:bgn
+exe "hi! gitcommitUnmergedFile"   .s:gb   .s:fa0   .s:bgn
+exe "hi! gitcommitFile"   .s:gb   .s:fg0   .s:bgn
 hi! link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi! link gitcommitSelectedArrow  gitcommitSelectedFile
 hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
@@ -354,32 +354,32 @@ hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
 " }}}
 " html highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! htmlTag"           .s:gn .s:fg2 .s:bgn
-exe "hi! htmlEndTag"        .s:gn .s:fg2 .s:bgn
-exe "hi! htmlTagN"          .s:gb .s:fg1  .s:bgn
-exe "hi! htmlTagName"       .s:gb .s:fa5   .s:bgn
-exe "hi! htmlSpecialTagName".s:gi .s:fa5   .s:bgn
-exe "hi! htmlArg"           .s:gn .s:fg3 .s:bgn
-exe "hi! javaScript"        .s:gn .s:fa0 .s:bgn
+exe "hi! htmlTag"   .s:gn   .s:fg2   .s:bgn
+exe "hi! htmlEndTag"   .s:gn   .s:fg2   .s:bgn
+exe "hi! htmlTagN"   .s:gb   .s:fg1   .s:bgn
+exe "hi! htmlTagName"   .s:gb   .s:fa5   .s:bgn
+exe "hi! htmlSpecialTagName".s:gi   .s:fa5   .s:bgn
+exe "hi! htmlArg"   .s:gn   .s:fg3   .s:bgn
+exe "hi! javaScript"   .s:gn   .s:fa0   .s:bgn
 "}}}
 " perl highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! perlHereDoc"    . s:fg1  .s:bg0   .s:gn
-exe "hi! perlVarPlain"   . s:fa0 .s:bg0   .s:gn
+exe "hi! perlHereDoc"    . s:fg1   .s:bg0   .s:gn
+exe "hi! perlVarPlain"   . s:fa0   .s:bg0   .s:gn
 exe "hi! perlStatementFileDesc". s:fa6.s:bg0.s:gn
 
 "}}}
 " tex highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! texStatement"   . s:fa6   .s:bg0   .s:gn
-exe "hi! texMathZoneX"   . s:fa0 .s:bg0   .s:gn
-exe "hi! texMathMatcher" . s:fa0 .s:bg0   .s:gn
-exe "hi! texMathMatcher" . s:fa0 .s:bg0   .s:gn
-exe "hi! texRefLabel"    . s:fa0 .s:bg0   .s:gn
+exe "hi! texStatement"   .s:fa6   .s:bg0   .s:gn
+exe "hi! texMathZoneX"   .s:fa0   .s:bg0   .s:gn
+exe "hi! texMathMatcher" .s:fa0   .s:bg0   .s:gn
+exe "hi! texMathMatcher" .s:fa0   .s:bg0   .s:gn
+exe "hi! texRefLabel"    .s:fa0   .s:bg0   .s:gn
 "}}}
 " ruby highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! rubyDefine"     . s:fg1  .s:bg0   .s:gb
+exe "hi! rubyDefine"     .s:fg1   .s:bg0   .s:gb
 "rubyInclude
 "rubySharpBang
 "rubyAccess
@@ -417,20 +417,20 @@ let hs_highlight_delimiters=1
 exe "hi! cPreCondit". s:fa1.s:bgn   .s:gn
 
 exe "hi! VarId"    . s:fa5   .s:bgn   .s:gn
-exe "hi! ConId"    . s:fa0 .s:bgn   .s:gn
+exe "hi! ConId"    . s:fa0   .s:bgn   .s:gn
 exe "hi! hsImport" . s:fa3.s:bgn   .s:gn
-exe "hi! hsString" . s:fg3 .s:bgn   .s:gn
+exe "hi! hsString" . s:fg3   .s:bgn   .s:gn
 
 exe "hi! hsStructure"        . s:fa6   .s:bgn   .s:gn
 exe "hi! hs_hlFunctionName"  . s:fa5   .s:bgn
 exe "hi! hsStatement"        . s:fa6   .s:bgn   .s:gn
 exe "hi! hsImportLabel"      . s:fa6   .s:bgn   .s:gn
-exe "hi! hs_OpFunctionName"  . s:fa0 .s:bgn   .s:gn
-exe "hi! hs_DeclareFunction" . s:fa1 .s:bgn   .s:gn
+exe "hi! hs_OpFunctionName"  . s:fa0   .s:bgn   .s:gn
+exe "hi! hs_DeclareFunction" . s:fa1   .s:bgn   .s:gn
 exe "hi! hsVarSym"           . s:fa6   .s:bgn   .s:gn
-exe "hi! hsType"             . s:fa0 .s:bgn   .s:gn
+exe "hi! hsType"             . s:fa0   .s:bgn   .s:gn
 exe "hi! hsTypedef"          . s:fa6   .s:bgn   .s:gn
-exe "hi! hsModuleName"       . s:fa7  .s:bgn   .s:gu
+exe "hi! hsModuleName"       . s:fa7   .s:bgn   .s:gu
 exe "hi! hsModuleStartLabel" . s:fa3.s:bgn   .s:gn
 hi! link hsImportParams      Delimiter
 hi! link hsDelimTypeExport   Delimiter
@@ -444,12 +444,12 @@ exe "hi! hsniceoperator"     . s:fa6   .s:bgn   .s:gn
 
 "}}}
 "" rust highlighting {{{
-exe "hi! rustDerive"            .s:bg0  .s:fa1  .s:gn
-exe "hi! rustStorage"           .s:bg0  .s:fa0  .s:gn
-exe "hi! rustReservedKeyword"   .s:bg0  .s:fa0  .s:gn
+exe "hi! rustDerive"   .s:bg0   .s:fa1   .s:gn
+exe "hi! rustStorage"   .s:bg0   .s:fa0   .s:gn
+exe "hi! rustReservedKeyword"   .s:bg0   .s:fa0   .s:gn
 " }}}
 " ce_skin hightlighting{{{
-exe "hi! CEReplace"             .s:bg0  .s:fa4  .s:gn
-exe "hi! CEMat"                 .s:bg0  .s:fa4  .s:gn
-exe "hi! CESkn"                 .s:bg0  .s:fa3  .s:gn
+exe "hi! CEReplace"   .s:bg0   .s:fa4   .s:gn
+exe "hi! CEMat"   .s:bg0   .s:fa4   .s:gn
+exe "hi! CESkn"   .s:bg0   .s:fa3   .s:gn
 " }}}
