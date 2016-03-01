@@ -97,7 +97,6 @@ endif
 if has('win32')
     Plug 'nfvs/vim-perforce'
 endif
-Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
