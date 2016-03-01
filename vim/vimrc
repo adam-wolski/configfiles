@@ -4,7 +4,11 @@ let g:email='miniupuchaty@gmail.com'
 let g:github='https://github.com/miniukof'
 
 set encoding=utf-8
-set statusline=[%n]\ %f%m%r%h%w\ %=\ %Y\ %l,%v\ %p%%
+set statusline=[%n]                 " Buffer number
+set statusline+=%f%m%r%h%w\         " Filename and modification
+set statusline+=%=\                 " Bring rest to right
+set statusline+=%Y\                 " Filetype"
+set statusline+=%l,%v\ %p%%         " Line num col num and % of file
 set laststatus=2                    " Show statusline always
 set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
 set foldmethod=syntax               " Set foldmethod to one based on syntax
@@ -93,6 +97,8 @@ endif
 if has('win32')
     Plug 'nfvs/vim-perforce'
 endif
+Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
