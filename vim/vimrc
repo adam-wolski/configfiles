@@ -38,7 +38,12 @@ endif
 " Load plugins {{{
 call plug#begin()
 " Navigation Plugins {{{
-Plug 'ctrlpvim/ctrlp.vim'
+if has('unix')
+    Plug 'junegunn/fzf' " Don't build this one, use one from repo.
+    Plug 'junegunn/fzf.vim'
+else
+    Plug 'ctrlpvim/ctrlp.vim'
+endif
 Plug 'Lokaltog/vim-easymotion'
 Plug 'derekwyatt/vim-fswitch'
 " }}} Navigation Plugins
@@ -207,6 +212,27 @@ nnoremap <C-B> :CtrlPBuffer<CR>
 nnoremap <C-P> :CtrlP<CR>
 nnoremap <C-C> :CtrlPTag<CR>
 " }}} CtrlP
+"   FSF {{{
+nnoremap <c-p> :Files<CR>
+nnoremap <c-b> :Buffers<CR>
+nnoremap <c-c> :Tags<CR>
+nnoremap <c-C> :BTags<CR>
+ " This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+" - window (nvim only)
+let g:fzf_layout = { 'down': '~40%' }    
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+"}}} FSF
 "   Indent Guides {{{
 nnoremap <leader>ig :IndentGuidesToggle<CR>
 " }}} Indent Guides
