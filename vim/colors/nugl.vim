@@ -206,7 +206,7 @@ exe "hi! SpecialComment"   .s:gi   .s:fa0   .s:bgn
 exe "hi! Underlined"   .s:gn   .s:fa4   .s:bgn
 "       *Underlined      text that stands out, HTML links
 
-exe "hi! Ignore"   .s:gn   .s:fgn   .s:bgn
+exe "hi! Ignore"   .s:gn   .s:fgb   .s:bgn
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
 exe "hi! Error"   .s:gb   .s:fa2   .s:bgn
