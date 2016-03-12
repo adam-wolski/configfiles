@@ -216,7 +216,7 @@ nnoremap <C-C> :CtrlPTag<CR>
 nnoremap <c-p> :Files<CR>
 nnoremap <c-b> :Buffers<CR>
 nnoremap <c-c> :Tags<CR>
-nnoremap <c-C> :BTags<CR>
+nnoremap <c-f> :BTags<CR>
  " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
