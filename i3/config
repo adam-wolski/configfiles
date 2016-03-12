@@ -172,6 +172,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 
+# Take a screenshot
+bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png
 bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
 
 # Numix colors
