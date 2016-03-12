@@ -122,4 +122,8 @@ stty -ixon
 source "$HOME/.MASTERSCRIPT"
 source "$HOME/.startup.mine"
 
+# Set ag as the default source for fzf
+# Helps with .gitignore files.
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 . /etc/profile.d/fzf.zsh
