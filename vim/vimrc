@@ -1,6 +1,6 @@
 " Init {{{
 let g:author='Adam Wolski'
-let g:email='miniupuchaty@gmail.com'
+let g:email='miniukof@gmail.com'
 let g:github='https://github.com/miniukof'
 
 set encoding=utf-8
