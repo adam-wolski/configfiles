@@ -21,19 +21,6 @@ alias v='$EDITOR'
 alias qnvim='nvim-qt'
 alias pyvim='PYTHONPATH=./ nvim'
 # }}}
-# GIT {{{
-alias gpull='git pull'
-alias gpush='git push'
-alias gstatus='git status'
-alias gcommit='git commit'
-alias gdiff='git diff'
-alias gcheckout='git checkout'
-alias ginit='git init'
-alias gclone='git clone'
-alias gadd='git add'
-alias gmv='git mv'
-alias grm='git rm'
-# }}}
 # cd {{{
 alias cdbin='cd ~/bin/'
 alias cdb='cd ~/builds/'
