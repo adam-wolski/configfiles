@@ -12,12 +12,10 @@ set cin "
 " --- Column/Row Stuff ---
 set cul                      " Highlight the current line
 :set number                  " Show Line Numbers
-:set colorcolumn=120         " Right Margin
+:set colorcolumn=100         " Right Margin
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
-autocmd BufWrite *.c :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
-autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
 
 " Generate Minunit Macros
 "
@@ -68,4 +66,9 @@ function! AutoGenMinunitSuiteMacros()
     call setpos('.', startpos)
 endfunction
 
-au BufWritePre *test*.c call AutoGenMinunitSuiteMacros()
+if !exists("c_autocmdloaded")
+    let c_autocmdloaded = 1
+    au BufWritePre *test*.c call AutoGenMinunitSuiteMacros()
+    autocmd BufWrite *.c :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
+    autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
+endif

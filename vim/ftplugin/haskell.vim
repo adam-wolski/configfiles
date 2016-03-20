@@ -9,11 +9,6 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-au BufNewFile,BufRead *.hs map <buffer> <F1> :Hoogle 
-au BufNewFile,BufRead *.hs map <buffer> <C-F1> :HoogleClose<CR>
-au BufNewFile,BufRead *.hs map <buffer> <S-F1> :HoogleLine<CR>
 
 " Tags 
 
@@ -119,4 +114,13 @@ nnoremap <silent> <leader>hz :HoogleClose<CR>
 " Bigger font for haskell so changed symbols are nicer to read
 if has('gui_running') || has('nvim')
         :set guifont=Source\ Code\ Pro\ Ultra-Light\ 14
+endif
+
+
+if !exists("haskell_autocmdloaded")
+    let haskell_autocmdloaded = 1
+    au FileType haskell setlocal omnifunc=necoghc#omnifunc
+    au BufNewFile,BufRead *.hs map <buffer> <F1> :Hoogle 
+    au BufNewFile,BufRead *.hs map <buffer> <C-F1> :HoogleClose<CR>
+    au BufNewFile,BufRead *.hs map <buffer> <S-F1> :HoogleLine<CR>
 endif
