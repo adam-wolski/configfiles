@@ -331,6 +331,8 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
+" Paste last yanked
+nnoremap P "0p
 
 " Take cursor to end of pasted line
 vnoremap <silent> y y`]
