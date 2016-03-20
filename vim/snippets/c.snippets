@@ -18,7 +18,7 @@ MU_TEST_SUITE(test_suite) {
 	MU_RUN_TEST(test_$2)
 }
 
-int `!v expand('%:r')`()
+int `!v expand('%:t:r')`()
 {
 	MU_RUN_SUITE(test_suite);
 	MU_REPORT();
