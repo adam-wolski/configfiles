@@ -251,10 +251,10 @@ exe "hi! SpellCap"   .s:gc   .s:fg0   .s:bgn   .s:gs4
 exe "hi! SpellRare"   .s:gc   .s:fg0   .s:bgn   .s:gs6
 exe "hi! SpellLocal"   .s:gc   .s:fg0   .s:bgn   .s:gs0
 else
-exe "hi! SpellBad"   .s:gc   .s:fgn   .s:ba2
-exe "hi! SpellCap"   .s:gc   .s:fgn   .s:ba4
-exe "hi! SpellRare"   .s:gc   .s:fgn   .s:ba6
-exe "hi! SpellLocal"   .s:gc   .s:fgn   .s:ba0
+exe "hi! SpellBad"   .s:gc   .s:fg0   .s:ba2
+exe "hi! SpellCap"   .s:gc   .s:fg0   .s:ba4
+exe "hi! SpellRare"   .s:gc   .s:fg0   .s:ba6
+exe "hi! SpellLocal"   .s:gc   .s:fg0   .s:ba0
 endif
 exe "hi! Pmenu"   .s:gn   .s:fg0   .s:bgd 
 exe "hi! PmenuSel"   .s:gn   .s:fg2   .s:bgl 
