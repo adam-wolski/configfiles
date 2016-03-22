@@ -66,9 +66,14 @@ function! AutoGenMinunitSuiteMacros()
     call setpos('.', startpos)
 endfunction
 
+function! AddPragmaOnce()
+    execute "normal i#pragma once"
+endfunction
+
 if !exists("c_autocmdloaded")
     let c_autocmdloaded = 1
     au BufWritePre *test*.c call AutoGenMinunitSuiteMacros()
     autocmd BufWrite *.c :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
     autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
+    autocmd BufNewFile *.h call AddPragmaOnce()
 endif
