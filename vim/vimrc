@@ -353,6 +353,10 @@ nnoremap Q @
 
 " Handy shortcut for macro named q
 nnoremap QQ @q
+
+" Go back to previous buffer
+nnoremap <Leader>b :b#<CR>
+
 " }}} Other Shortcuts
 " }}} Shortcuts
 " Functions {{{
