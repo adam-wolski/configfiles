@@ -88,19 +88,6 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Make ctrl z go go back and forth between processes
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    fg
-    zle redisplay
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 PATH=$HOME/.cabal/bin:$PATH
