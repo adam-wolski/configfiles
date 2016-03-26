@@ -85,6 +85,7 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'PotatoesMaster/i3-vim-syntax'
 " }}} Language Specific Plugins
 " Themes {{{
 Plug 'altercation/vim-colors-solarized'
