@@ -17,23 +17,23 @@ set $mod Mod4
 # chose a FreeType font.
 font pango:Open Sans 9
 
-# }}} Font
+# }}}
 # Use Mouse+$mod to drag floating windows to their wanted position {{{
 
 floating_modifier $mod
 
-# }}} Use Mouse+$mod to drag floating windows to their wanted position
+# }}}
 # start a terminal {{{
 
 bindsym $mod+Return exec i3-sensible-terminal
 
-# }}} start a terminal
+# }}}
 # kill focused window {{{
 
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 
-# }}} kill focused window
+# }}}
 # dmenu {{{
 
 # (a program launcher)
@@ -44,7 +44,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run -nb \#333333 -nf \#f9f9f9 -sb \#33
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# }}} dmenu
+# }}}
 # change focus {{{
 
 bindsym $mod+h focus left
@@ -52,7 +52,7 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# }}} change focus
+# }}}
 # move focused window {{{
 
 bindsym $mod+Shift+h move left
@@ -60,7 +60,7 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# }}} move focused window
+# }}}
 # splits {{{
 
 # split in horizontal orientation
@@ -68,12 +68,12 @@ bindsym $mod+g split h
 # split in vertical orientation
 bindsym $mod+v split v
 
-# }}} splits
+# }}}
 # enter fullscreen mode for the focused container {{{
 
 bindsym $mod+f fullscreen
 
-# }}} enter fullscreen mode for the focused container
+# }}}
 # change container layout {{{
 
 # (stacked, tabbed, toggle split)
@@ -88,7 +88,7 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
-# }}} toggle tiling / floating
+# }}}
 # focus container {{{
 
 # focus the parent container
@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# }}} focus container
+# }}}
 # Workspace {{{
 
 # switch to workspace {{{
@@ -113,7 +113,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# }}} switch to workspace
+# }}}
 # move focused container to workspace {{{
 
 bindsym $mod+Shift+1 move container to workspace 1
@@ -127,9 +127,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# }}} move focused container to workspace 
+# }}}
 
-# }}} workspace
+# }}}
 # reload/restart/exit {{{
 
 bindsym $mod+Shift+c reload
@@ -140,7 +140,7 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Use i3-msg exit
 
-# }}} reload/restart/exit
+# }}}
 # resize window {{{
 
 # (you can also use the mouse for that)
@@ -167,7 +167,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# }}} resize window
+# }}}
 # Additional shortcuts {{{
 
 # i3 control shortcuts {{{
@@ -176,27 +176,27 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+Left move workspace to output left
 bindsym $mod+shift+Right move workspace to output right
 
-# }}} i3 control shortcuts
+# }}}
 # Application shortcuts {{{
 
 bindsym $mod+space exec chromium
 bindsym $mod+e exec thunar
 bindsym $mod+shift+e exec "i3-sensible-terminal -e ranger"
 
-# }}} Application shortcuts
+# }}}
 # Tablet shortcuts {{{
 
 bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
 bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
 
-# }}} Tablet shortcuts
+# }}}
 # Audio volume {{{
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# }}} Audio volume
+# }}}
 # Brighntess {{{
 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
@@ -204,19 +204,19 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 
-# }}} Brighntess
+# }}}
 # Take a screenshot {{{
 
 bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png
 
-# }}} Take a screenshot
+# }}}
 # Lock {{{
 
 bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
 
-# }}} Lock
+# }}}
 
-# }}} Additional shortcuts
+# }}}
 # Colors {{{
 
 # Numix colors defines {{{
@@ -227,7 +227,7 @@ set $num_orange d64937
 set $num_darkgrey 333333
 set $num_black 2d2d2d
 
-# }}} Numix colors defines
+# }}}
 # Window Colors {{{
 
 ## class                 border  backgr. text    indicator
@@ -237,7 +237,7 @@ client.focused_inactive #333333 #333333 #dedede #333333
 client.unfocused        #2d2d2d #2d2d2d #666666 #2d2d2d
 client.urgent           #d64937 #d64937 #dedede #2d2d2d
 
-# }}} Window Colors
+# }}}
 
 # }}}
 # Bar {{{
@@ -267,14 +267,14 @@ bar {
             }
 }
 
-# }}} Bar
+# }}}
 # Createa workspace nr5 on display DVI-... {{{
 
 workspace 5 output DVI-I-0
 
-# }}} Createa workspace nr5 on display DVI-...
+# }}}
 
-# }}} i3config
+# }}}
 # Autostart {{{
 
 exec --no-startup-id sh ~/.fehbg &
@@ -290,4 +290,4 @@ exec --no-startup-id ~/bin/swapCtlAlt y
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 0
 
-# }}} Autostart
+# }}}
