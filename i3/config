@@ -83,7 +83,9 @@ bindsym $mod+t layout toggle split
 
 # }}}
 # toggle tiling / floating {{{
+
 bindsym $mod+Shift+space floating toggle
+
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
 # }}} toggle tiling / floating
@@ -133,14 +135,15 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # Use i3-msg exit
 
 # }}} reload/restart/exit
 # resize window {{{
-# (you can also use the mouse for that)
 
+# (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -168,57 +171,77 @@ mode "resize" {
 # Additional shortcuts {{{
 
 # i3 control shortcuts {{{
+
 bindsym $mod+r mode "resize"
 bindsym $mod+shift+Left move workspace to output left
 bindsym $mod+shift+Right move workspace to output right
+
 # }}} i3 control shortcuts
 # Application shortcuts {{{
+
 bindsym $mod+space exec chromium
 bindsym $mod+e exec thunar
 bindsym $mod+shift+e exec "i3-sensible-terminal -e ranger"
+
 # }}} Application shortcuts
 # Tablet shortcuts {{{
+
 bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
 bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
+
 # }}} Tablet shortcuts
 # Audio volume {{{
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 # }}} Audio volume
 # Brighntess {{{
+
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
+
 # }}} Brighntess
 # Take a screenshot {{{
+
 bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png
+
 # }}} Take a screenshot
 # Lock {{{
+
 bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
+
 # }}} Lock
 
 # }}} Additional shortcuts
 # Colors {{{
+
 # Numix colors defines {{{
+
 set $num_white f9f9f9
 set $num_grey dedede
 set $num_orange d64937
 set $num_darkgrey 333333
 set $num_black 2d2d2d
-# }}} Numix colors defines
 
+# }}} Numix colors defines
 # Window Colors {{{
+
 ## class                 border  backgr. text    indicator
 # Numix like
 client.focused          #333333 #333333 #f9f9f9 #d64937
 client.focused_inactive #333333 #333333 #dedede #333333
 client.unfocused        #2d2d2d #2d2d2d #666666 #2d2d2d
 client.urgent           #d64937 #d64937 #dedede #2d2d2d
+
 # }}} Window Colors
+
 # }}}
 # Bar {{{
+
 bar {
         status_command "python ~/.i3/i3pystatus_config.py"
         workspace_buttons yes
@@ -243,9 +266,12 @@ bar {
             urgent_workspace        #d64937 #d64937 #f9f9f9          
             }
 }
+
 # }}} Bar
 # Createa workspace nr5 on display DVI-... {{{
+
 workspace 5 output DVI-I-0
+
 # }}} Createa workspace nr5 on display DVI-...
 
 # }}} i3config
