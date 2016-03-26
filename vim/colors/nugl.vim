@@ -11,7 +11,8 @@ endif
 let colors_name = 'nugl'
 set background=dark
 
-" Some Color Defines {{{
+" Some Color Defines  {{{
+
 let s:white = '#f9f9f9'
 let s:whitepp = '#fefefe'
 let s:gray = '#dedede'
@@ -34,8 +35,10 @@ let s:purple = '#9C27B0'
 let s:deeppurple = '#673AB7'
 let s:teal = '#009688'
 let s:lime = '#CDDC39'
-" }}} Some Color Defines
-" Solarized colors {{{
+
+" }}}
+" Solarized colors  {{{
+
 " Solarized Accents
 let s:s_yellow      = "#b58900"
 let s:s_orange      = "#cb4b16"
@@ -45,8 +48,10 @@ let s:s_violet      = "#6c71c4"
 let s:s_blue        = "#268bd2"
 let s:s_cyan        = "#2aa198"
 let s:s_green       = "#719e07"
+
 " }}}
-" Colors Palette a {{{
+" Colors Palette a  {{{
+
 let s:a0 = s:s_yellow
 let s:a1 = s:s_orange      
 let s:a2 = s:s_red         
@@ -55,8 +60,10 @@ let s:a4 = s:s_violet
 let s:a5 = s:s_blue        
 let s:a6 = s:s_cyan        
 let s:a7 = s:s_green       
+
 " }}}
-" Colors Palette b {{{
+" Colors Palette b  {{{
+
 let s:b0 = '#D64937'
 let s:b1 = '#75E36B' 
 let s:b2 = '#EDC853'
@@ -65,8 +72,10 @@ let s:b4 = '#63DAE3'
 let s:b5 = '#7788A3'        
 let s:b6 = '#ED9A49'
 let s:b7 = '#ED3EDF'
+
 " }}}
-" Palette chosser {{{
+" Palette chosser  {{{
+
 let g:nugl_pallete = 0
 
 if g:nugl_pallete == 0
@@ -88,21 +97,31 @@ else
     let s:c6 = s:b6
     let s:c7 = s:b7
 endif
+
 " }}}
-" Main defines {{{
+" Main defines  {{{
+
+" Base {{{
+
 let s:none = 'NONE'
 let s:b = " guibg="
 let s:f = " guifg="
 let s:g = " gui="
 let s:gsp = " guisp="
-" Default backgrounds
+
+" }}}
+" Default backgrounds {{{
+
 let s:bg0 = " guibg=".s:darkgray " Main background
 let s:bgn = " guibg=".s:none
 let s:bgl = " guibg=".s:darkgraylighter " Light back
 let s:bgL = " guibg=".s:darkgraylighterpp " Even brighter light back
 let s:bgd = " guibg=".s:darkgraypp " Dark back
 let s:bgD = " guibg=".s:darkgray " Even darker back
-" Accented backgrounds
+
+" }}}
+" Accented backgrounds {{{
+
 let s:ba0 = " guibg=".s:c0
 let s:ba1 = " guibg=".s:c1
 let s:ba2 = " guibg=".s:c2
@@ -111,7 +130,10 @@ let s:ba4 = " guibg=".s:c4
 let s:ba5 = " guibg=".s:c5
 let s:ba6 = " guibg=".s:c6
 let s:ba7 = " guibg=".s:c7
-" Default foregrounds
+
+" }}}
+" Default foregrounds {{{
+
 let s:fgn = " guifg=NONE"
 let s:fgb = " guifg=".s:darkgray " Same color as bg0
 let s:fge = " guifg=".s:red " Error fg
@@ -123,7 +145,10 @@ let s:fgl = " guifg=".s:darkgraylighter " Light back
 let s:fgL = " guifg=".s:darkgraylighterpp " Even brighter light back
 let s:fgd = " guifg=".s:darkgraypp " Dark back
 let s:fgD = " guifg=".s:darkgray " Even darker back
-" Accented foregrounds
+
+" }}}
+" Accented foregrounds {{{
+
 let s:fa0 = " guifg=".s:c0
 let s:fa1 = " guifg=".s:c1
 let s:fa2 = " guifg=".s:c2
@@ -132,7 +157,10 @@ let s:fa4 = " guifg=".s:c4
 let s:fa5 = " guifg=".s:c5
 let s:fa6 = " guifg=".s:c6
 let s:fa7 = " guifg=".s:c7
-" Default gui formats
+
+" }}}
+" Default gui formats {{{
+
 let s:gn = " gui=NONE"
 let s:gb = " gui=bold"
 let s:gu = " gui=underline"
@@ -140,7 +168,10 @@ let s:gi = " gui=italic"
 let s:gc = " gui=undercurl"
 let s:gr = " gui=reverse"
 let s:gs = " gui=standout"
-" Special colors
+
+" }}}
+" Special colors {{{
+
 let s:gs0 = " guisp=".s:c0
 let s:gs1 = " guisp=".s:c1
 let s:gs2 = " guisp=".s:c2
@@ -149,11 +180,11 @@ let s:gs4 = " guisp=".s:c4
 let s:gs5 = " guisp=".s:c5
 let s:gs6 = " guisp=".s:c6
 let s:gs7 = " guisp=".s:c7
+
 " }}}
-" Basic highlighting"{{{
-" ---------------------------------------------------------------------
-" note that link syntax to avoid duplicate configuration doesn't work with the
-" exe compiled formats
+
+" }}}
+" Basic highlighting" {{{
 
 exe "hi! Normal"   .s:gn   .s:fg0   .s:bg0
 
@@ -216,11 +247,12 @@ exe "hi! Todo"   .s:gb   .s:fa2   .s:bgn
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
-"}}}
-" Extended highlighting "{{{
-" ---------------------------------------------------------------------
-exe "hi! SpecialKey"   .s:gb   .s:fgd   .s:bgn
-exe "hi! NonText"   .s:gb   .s:fgd   .s:bgn
+
+" }}}
+" Extended highlighting " {{{
+
+exe "hi! SpecialKey"   .s:gb   .s:fa0   .s:bgn
+exe "hi! NonText"   .s:gb   .s:fgL   .s:bgn
 exe "hi! StatusLine"   .s:gn   .s:fg1   .s:bgn
 exe "hi! StatusLineNC"   .s:gn   .s:fg3   .s:bgn
 exe "hi! Visual"   .s:gr   .s:fg2   .s:bgD
@@ -236,7 +268,7 @@ exe "hi! VertSplit"   .s:gn   .s:fg3   .s:bg0
 exe "hi! Title"   .s:gb   .s:fa1   .s:bgn
 exe "hi! VisualNOS"   .s:gs   .s:fgn   .s:bgd
 exe "hi! WarningMsg"   .s:gb   .s:fa2   .s:bgn
-exe "hi! WildMenu"   .s:gn   .s:fgl   .s:bgd
+exe "hi! WildMenu"   .s:gn   .s:fg2   .s:bgl
 exe "hi! Folded"   .s:gn   .s:fg0   .s:bgn
 exe "hi! FoldColumn"   .s:gn   .s:fg0   .s:bgd
 exe "hi! DiffAdd"   .s:gb   .s:fa7   .s:bgd   .s:gs7
@@ -269,9 +301,10 @@ exe "hi! ColorColumn"   .s:gn   .s:fgn   .s:bgd
 exe "hi! Cursor"   .s:gr   .s:fgn   .s:ba2
 hi! link lCursor Cursor
 exe "hi! MatchParen"   .s:gb   .s:fa2   .s:bgd
-"}}}
-" vim syntax highlighting "{{{
-" ---------------------------------------------------------------------
+
+" }}}
+" vim syntax highlighting " {{{
+
 "exe "hi! vimLineComment" . s:fg2   .s:bgn   .s:gi
 "hi! link vimComment Comment
 "hi! link vimLineComment Comment
@@ -296,13 +329,16 @@ exe "hi! vimSynType"   .s:gn   .s:fa6   .s:bgn
 exe "hi! vimHiLink"   .s:gn   .s:fa5   .s:bgn
 exe "hi! vimHiGroup"   .s:gn   .s:fa5   .s:bgn
 exe "hi! vimGroup"   .s:gu   .s:fa5   .s:bgn
-"}}}
-" diff highlighting "{{{
-" ---------------------------------------------------------------------
+
+" }}}
+" diff highlighting " {{{
+
 hi! link diffAdded Statement
 hi! link diffLine Identifier
-"}}}
-" git & gitcommit highlighting "{{{
+
+" }}}
+" git & gitcommit highlighting " {{{
+
 "git
 "exe "hi! gitDateHeader"
 "exe "hi! gitIdentityHeader"
@@ -351,9 +387,10 @@ hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
 "exe "hi! gitcommitArrow"
 "exe "hi! gitcommitOverflow"
 "exe "hi! gitcommitBlank"
+
 " }}}
-" html highlighting "{{{
-" ---------------------------------------------------------------------
+" html highlighting " {{{
+
 exe "hi! htmlTag"   .s:gn   .s:fg2   .s:bgn
 exe "hi! htmlEndTag"   .s:gn   .s:fg2   .s:bgn
 exe "hi! htmlTagN"   .s:gb   .s:fg1   .s:bgn
@@ -361,47 +398,27 @@ exe "hi! htmlTagName"   .s:gb   .s:fa5   .s:bgn
 exe "hi! htmlSpecialTagName".s:gi   .s:fa5   .s:bgn
 exe "hi! htmlArg"   .s:gn   .s:fg3   .s:bgn
 exe "hi! javaScript"   .s:gn   .s:fa0   .s:bgn
-"}}}
-" perl highlighting "{{{
-" ---------------------------------------------------------------------
+
+" }}}
+" perl highlighting " {{{
+
 exe "hi! perlHereDoc"    . s:fg1   .s:bg0   .s:gn
 exe "hi! perlVarPlain"   . s:fa0   .s:bg0   .s:gn
 exe "hi! perlStatementFileDesc". s:fa6.s:bg0.s:gn
 
-"}}}
-" tex highlighting "{{{
-" ---------------------------------------------------------------------
+
+" }}}
+" tex highlighting " {{{
+
 exe "hi! texStatement"   .s:fa6   .s:bg0   .s:gn
 exe "hi! texMathZoneX"   .s:fa0   .s:bg0   .s:gn
 exe "hi! texMathMatcher" .s:fa0   .s:bg0   .s:gn
 exe "hi! texMathMatcher" .s:fa0   .s:bg0   .s:gn
 exe "hi! texRefLabel"    .s:fa0   .s:bg0   .s:gn
-"}}}
-" ruby highlighting "{{{
-" ---------------------------------------------------------------------
-exe "hi! rubyDefine"     .s:fg1   .s:bg0   .s:gb
-"rubyInclude
-"rubySharpBang
-"rubyAccess
-"rubyPredefinedVariable
-"rubyBoolean
-"rubyClassVariable
-"rubyBeginEnd
-"rubyRepeatModifier
-"hi! link rubyArrayDelimiter    Special  " [ , , ]
-"rubyCurlyBlock  { , , }
 
-"hi! link rubyClass             Keyword
-"hi! link rubyModule            Keyword
-"hi! link rubyKeyword           Keyword
-"hi! link rubyOperator          Operator
-"hi! link rubyIdentifier        Identifier
-"hi! link rubyInstanceVariable  Identifier
-"hi! link rubyGlobalVariable    Identifier
-"hi! link rubyClassVariable     Identifier
-"hi! link rubyConstant          Type
-"}}}
-" haskell syntax highlighting"{{{
+" }}}
+" haskell syntax highlighting" {{{
+
 " ---------------------------------------------------------------------
 " For use with syntax/haskell.vim : Haskell Syntax File
 " http://www.vim.org/scripts/script.php?script_id=3034
@@ -442,14 +459,18 @@ hi! link hsModuleWhereLabel  hsModuleStartLabel
 exe "hi! hsNiceOperator"     . s:fa6   .s:bgn   .s:gn
 exe "hi! hsniceoperator"     . s:fa6   .s:bgn   .s:gn
 
-"}}}
-"" rust highlighting {{{
+" }}}
+" Rust highlighting  {{{
+
 exe "hi! rustDerive"   .s:bg0   .s:fa1   .s:gn
 exe "hi! rustStorage"   .s:bg0   .s:fa0   .s:gn
 exe "hi! rustReservedKeyword"   .s:bg0   .s:fa0   .s:gn
+
 " }}}
-" ce_skin hightlighting{{{
+" ce_skin hightlighting {{{
+
 exe "hi! CEReplace"   .s:bg0   .s:fa4   .s:gn
 exe "hi! CEMat"   .s:bg0   .s:fa4   .s:gn
 exe "hi! CESkn"   .s:bg0   .s:fa3   .s:gn
+
 " }}}
