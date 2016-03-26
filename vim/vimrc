@@ -1,4 +1,5 @@
 " Init {{{
+
 let g:author='Adam Wolski'
 let g:email='miniukof@gmail.com'
 let g:github='https://github.com/miniukof'
@@ -33,28 +34,34 @@ if has('unix')
         set dir=~/tmp/vim                                   " Directory for .swp files
         set dict+=/usr/share/dict/words
 endif
-" }}} Init
+
+" }}}
 " Plugins {{{
+
 " Load plugins {{{
+
 call plug#begin()
 " Navigation Plugins {{{
+
 if has('unix')
-    Plug 'junegunn/fzf' " Don't build this one, use one from repo.
+    Plug 'junegunn/fzf' " Don't build this one, install from repo.
     Plug 'junegunn/fzf.vim'
 else
     Plug 'ctrlpvim/ctrlp.vim'
 endif
 Plug 'Lokaltog/vim-easymotion'
 Plug 'derekwyatt/vim-fswitch'
-" }}} Navigation Plugins
+
+" }}}
 " Completation Plugins {{{
+
 if has('unix')
     Plug 'ervandew/supertab', {'for': 'python'}
     Plug 'davidhalter/jedi-vim', {'for': 'python'}
     Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
 else
         " use supertab and jedi-vim on Windows always not only for python, as
-        " compiling YouCompleteMe on win is to combersome.
+        " compiling YouCompleteMe on win is to cumbersome.
         if has('win32')
             Plug 'ervandew/supertab'
             Plug 'davidhalter/jedi-vim'
@@ -65,16 +72,22 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-" }}} Completation Plugins
+
+" }}}
 " Error Checking Plugins {{{
+
 Plug 'scrooloose/syntastic'
-" }}} Error Checking Plugins
+
+" }}}
 " Visual Plugins {{{
+
 Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'luochen1990/rainbow'
-" }}} Visual Plugins
+
+" }}}
 " Language specific Plugins {{{
+
 Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
 Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
@@ -86,8 +99,10 @@ Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'PotatoesMaster/i3-vim-syntax'
-" }}} Language Specific Plugins
+
+" }}}
 " Themes {{{
+
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'chankaward/vim-railscasts-theme'
@@ -95,8 +110,10 @@ Plug 'jaapie/vim-colours-dusk'
 Plug 'Wutzara/vim-materialtheme'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'gosukiwi/vim-atom-dark'
-" }}} Themes
+
+" }}}
 " Other Plugins {{{
+
 if has('unix')
     Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 endif
@@ -108,39 +125,55 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
 " Other Plugins }}}
 call plug#end()
-" }}} Load Plugins
+
+" }}}
 " Plugin configuration {{{
+
 "   Eunch {{{
+
 cmap w!! SudoWrite
-" }}} Euch
+
+" }}}
 "   Fugitive {{{
+
 noremap <leader>gd :Gdiff<CR>
 noremap <leader>gc :Gcommit<CR>
 noremap <leader>gs :Gstatus<CR>
 noremap <leader>gw :Gwrite<CR>
-" }}} Fugitive
+
+" }}}
 "   Dispatch {{{
+
 nnoremap <F5> :Make<CR>
 nnoremap <C-F5> :Make!<CR>
 nnoremap <F6> :Dispatch<CR>
 nnoremap <C-F6> :Dispatch!<CR>
-" }}} Dispatch
+
+" }}}
 "   FSwitch {{{
+
 nnoremap <leader>fs :FSHere<cr>
 au BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
 au BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
 au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
 au BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
-" }}} FSwitch
+
+" }}}
 "   Tagbar {{{
+
 nnoremap <leader>tb :TagbarOpenAutoClose<cr>
-" }}} Tagbar
+
+" }}}
 "   Number Toggle {{{
+
 let g:NumberToggleTrigger="<leader>nt"
-" }}} Number Toggle
+
+" }}}
 "   UltiSnips {{{
+
 " Snippets variables
 let g:snips_author=g:author
 let g:snips_email=g:email
@@ -151,8 +184,10 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 let g:UltiSnipsExpandTrigger='<c-s>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-" }}} UltiSnips
+
+" }}}
 "   Rainbow Parentheses {{{
+
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \	'guifgs': ['#F44336', '#9C27B0', '#2aa198', '#009688'],
@@ -166,8 +201,10 @@ let g:rainbow_conf = {
 \		},
 \	}
 \}
-" }}} Rainbow Parentheses
+
+" }}}
 "   Easymotion {{{
+
 nmap <Leader>s <Plug>(easymotion-s2)
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
@@ -177,11 +214,15 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0                " Keep cursor column when in JK motion
 let g:EasyMotion_smartcase = 1
-" }}} Easymotion
+
+" }}}
 "   SuperTab {{{
+
 let g:SuperTabDefaultCompletionType = "<c-n>"   " Make tab go from top to bottom
-" }}} SuperTab
+
+" }}}
 "   JediVim {{{
+
 if has('nvim') || has('win32')
         let g:jedi#goto_command = "<leader>d"
         let g:jedi#goto_assignments_command = "<leader>g"
@@ -191,8 +232,10 @@ if has('nvim') || has('win32')
         let g:jedi#completions_command = "<C-Space>"
         let g:jedi#rename_command = "<leader>r"
 endif
-" }}} JediVim
+
+" }}}
 "   YouCompleteMe {{{
+
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 let g:ycm_global_ycm_extra_conf = "~/.config/ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
@@ -201,19 +244,25 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
-" }}} YouCompleteMe
+
+" }}}
 "   Semantic Highlight {{{
+
 source ~/.config/SemanticHighlightPluginSettings.vim
 nnoremap <Leader>sh :SemanticHighlightToggle<cr>
 let g:semanticEnableFileTypes = {'python': 'py'}
 let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
-" }}} Semantic Highlight
+
+" }}}
 "   CtrlP {{{
+
 nnoremap <C-B> :CtrlPBuffer<CR>
 nnoremap <C-P> :CtrlP<CR>
 nnoremap <C-C> :CtrlPTag<CR>
-" }}} CtrlP
+
+" }}}
 "   FSF {{{
+
 nnoremap <c-p> :Files<CR>
 nnoremap <c-b> :Buffers<CR>
 nnoremap <c-c> :Tags<CR>
@@ -233,41 +282,50 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-"}}} FSF
+
+" }}}
 "   Indent Guides {{{
+
 nnoremap <leader>ig :IndentGuidesToggle<CR>
-" }}} Indent Guides
+
+" }}}
 "   Makeshift {{{
+
 let g:makeshift_on_startup = 1
 let g:makeshift_use_pwd_first = 1
 let g:makeshift_chdir = 1
-" }}} Makeshift
-" }}} Plugin configuration
-" }}} Plugins
+
+" }}}
+
+" }}}
+
+" }}}
 " Editing Settings {{{
+
 set autoindent              " Keep indent of last line
 set smartindent             " Use smart indent if there is no indent file
 set scrolloff=5             " Keep x context lines above and below the cursor
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set tabstop=4               " <tab> inserts x spaces
-" }}} Editing Settings
+
+" }}}
 " Searching Settings {{{
+
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
-" }}} Searching Settings
+
+" }}}
 " Visual Settings {{{
+
 set background=dark         " Dark background by default
 set showmatch               " Show matching parentesis
 set cursorline              " Have a line indicate the cursor location
 set wrap                    " Wrap text
 set linebreak               " But don't wrap text in the middle of a word
-
 set noerrorbells            " Don't bell or blink
 set vb t_vb=
-
-" GUI Settings {{{
 if has('gui_running') || has('nvim')
     :set guioptions=
 	:set guiheadroom=0
@@ -280,10 +338,13 @@ if has('gui_running') || has('nvim')
 else
     colorscheme solarized
 endif
-" }}} GUI Settings
-" }}} Visual Settings
+
+
+" }}}
 " Shortcuts {{{
+
 " File/Windows Operation Shortcuts {{{
+
 " Write file
 nnoremap <Leader>w :w<CR>
 
@@ -292,8 +353,10 @@ nnoremap <leader>q :q<CR>
 
 " Save session
 nnoremap <C-S> :mksession! .vimsession.vim
-" }}} File/Windows Operation Shortcuts
+
+" }}}
 " Navigation Shortcuts {{{
+
 " Line Navigation, so it moves line down/up even with wrapping
 nnoremap j gj
 nnoremap k gk
@@ -305,8 +368,10 @@ nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-" }}} Navigations Shortcuts
+
+" }}}
 " Neovim Terminal Mode Shortcuts {{{
+
 if has('nvim')
 " Start/Exit
         nnoremap <leader>t :vsp term://zsh<CR>
@@ -317,8 +382,10 @@ if has('nvim')
         tnoremap <C-k> <C-\><C-n><C-w>k
         tnoremap <C-l> <C-\><C-n><C-w>l
 endif
-" }}} Neovim Terminal Mode Shortcuts
+
+" }}}
 " Other Shortcuts {{{
+
 " Add ; on end line
 inoremap <C-t> <ESC>$a;
 
@@ -358,36 +425,49 @@ nnoremap QQ @q
 " Go back to previous buffer
 nnoremap <Leader>b :b#<CR>
 
-" }}} Other Shortcuts
-" }}} Shortcuts
+" }}}
+
+" }}}
 " Functions {{{
+
 function MyFoldText()
   let line = getline(v:foldstart)
   let sub = substitute(line, '"\|/\*\|\*/\|{{{\d\=\|}}}', '', 'g')
   return v:folddashes . sub
 endfunction
-" }}} Functions
+
+" }}}
 " Filetype Specific Settings {{{
+
 " C {{{
+
 " Override setting for .h files, which defaults to cpp for me.
 au BufEnter,BufRead,BufNewFile *.h set filetype=c
-" }}} C
+
+" }}}
 " Python {{{
+
 au FileType python set sts=4 ts=4 sw=4 colorcolumn=80   " Make Python follow PEP8
 au FileType python nnoremap <F8> :!pep8 %<CR>
 au BufNewFile,BufRead SConstruct set filetype=python    " Recognize SConstruct file as python.
-" }}} Python
+
+" }}}
 " Rust {{{
+
 " Set compiler for rust. Needs to be done here instead of ftplugin/rust.vim
 " because rust.vim plugin that defines compiler loads after ftplugin and we
 " get missing compiler warning.
 au FileType rust compiler cargo
-" }}} Rust
+
+" }}}
 " Chrome  {{{
+
 au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
 au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
-" }}} Chrome
+
+" }}}
 " Vim {{{
+
 au filetype vim
   \ syn match fmrkr '"*{{{\|"*}}}'
   \ containedin=vimLineComment contained |
@@ -395,5 +475,7 @@ au filetype vim
   \ set fdm=marker |
   \ set foldenable
 au FileType vim set sts=4 ts=4 sw=4
-" }}} Vim
-" }}} Filetype Specific Settings
+
+" }}}
+
+" }}}
