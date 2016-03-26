@@ -55,10 +55,18 @@ Plug 'derekwyatt/vim-fswitch'
 " }}}
 " Completation Plugins {{{
 
+if has('nvim')
+    Plug 'ervandew/supertab'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'racer-rust/vim-racer'
+    Plug 'zchee/deoplete-clang'
+    Plug 'zchee/deoplete-jedi'
+    Plug 'Shougo/neco-vim'
+endif
 if has('unix')
-    Plug 'ervandew/supertab', {'for': 'python'}
-    Plug 'davidhalter/jedi-vim', {'for': 'python'}
-    Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
+"    Plug 'ervandew/supertab', {'for': 'python'}
+"    Plug 'davidhalter/jedi-vim', {'for': 'python'}
+"    Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
 else
         " use supertab and jedi-vim on Windows always not only for python, as
         " compiling YouCompleteMe on win is to cumbersome.
@@ -67,7 +75,7 @@ else
             Plug 'davidhalter/jedi-vim'
         endif
 endif
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
@@ -246,6 +254,15 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
 
 " }}}
+"   Deoplete {{{
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_start_length = 2
+
+let g:racer_cmd = "/usr/bin/racer"
+let $RUST_SRC_PATH="/usr/local/rust/rust/src"
+
+"   }}}
 "   Semantic Highlight {{{
 
 source ~/.config/SemanticHighlightPluginSettings.vim
