@@ -44,6 +44,9 @@ LINKS = {
     'zprofile': ["{}",
                  "~/.{}"],
 
+    'synaptic_settings': ["{}",
+                          "~/.config/{}"],
+
     # Vim
     'vimrc': ["vim/{}",
               "~/.{}"],
