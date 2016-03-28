@@ -58,7 +58,8 @@ Plug 'derekwyatt/vim-fswitch'
 if has('nvim')
     Plug 'ervandew/supertab'
     Plug 'Shougo/deoplete.nvim'
-    Plug 'racer-rust/vim-racer'
+    "Plug 'racer-rust/vim-racer'
+    Plug 'miniukof/vim-racer'
     Plug 'zchee/deoplete-clang'
     Plug 'zchee/deoplete-jedi'
     Plug 'Shougo/neco-vim'
@@ -133,6 +134,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'Konfekt/FastFold'
 
 " Other Plugins }}}
 call plug#end()
@@ -226,7 +228,7 @@ let g:EasyMotion_smartcase = 1
 " }}}
 "   SuperTab {{{
 
-let g:SuperTabDefaultCompletionType = "<c-n>"   " Make tab go from top to bottom
+let g:SuperTabDefaultCompletionType = "context"
 
 " }}}
 "   JediVim {{{
@@ -258,6 +260,7 @@ let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 2
+let g:deoplete#enable_debug = 1
 
 let g:racer_cmd = "/usr/bin/racer"
 let $RUST_SRC_PATH="/usr/local/rust/rust/src"
