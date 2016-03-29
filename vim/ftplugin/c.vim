@@ -16,6 +16,7 @@ set cul                      " Highlight the current line
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
+let g:gdb_debugger = "gdb"
 
 " Generate Minunit Macros
 "
