@@ -67,6 +67,9 @@ LINKS = {
     'ftplugin': ["vim/{}",
                  "~/.vim/{}"],
 
+    'plugin': ["vim/{}",
+               "~/.vim/{}"],
+
     'syntax': ["vim/{}",
                "~/.vim/{}"],
 
