@@ -60,23 +60,15 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim'
     "Plug 'racer-rust/vim-racer'
     Plug 'miniukof/vim-racer'
+    Plug 'miniukof/deoplete-jedi'
     Plug 'zchee/deoplete-clang'
-    Plug 'zchee/deoplete-jedi'
+    "Plug 'zchee/deoplete-jedi'
     Plug 'Shougo/neco-vim'
 endif
-if has('unix')
-"    Plug 'ervandew/supertab', {'for': 'python'}
-"    Plug 'davidhalter/jedi-vim', {'for': 'python'}
-"    Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost', 'for': ['c', 'cpp', 'haskell', 'clojure', 'rust', 'bash']}
-else
-        " use supertab and jedi-vim on Windows always not only for python, as
-        " compiling YouCompleteMe on win is to cumbersome.
-        if has('win32')
-            Plug 'ervandew/supertab'
-            Plug 'davidhalter/jedi-vim'
-        endif
+if has('win32')
+    Plug 'ervandew/supertab'
+    Plug 'davidhalter/jedi-vim'
 endif
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
@@ -99,14 +91,18 @@ Plug 'luochen1990/rainbow'
 
 Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
 Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
+
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 Plug 'PotatoesMaster/i3-vim-syntax'
 
 " }}}
@@ -114,11 +110,6 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
-Plug 'chankaward/vim-railscasts-theme'
-Plug 'jaapie/vim-colours-dusk'
-Plug 'Wutzara/vim-materialtheme'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'gosukiwi/vim-atom-dark'
 
 " }}}
 " Other Plugins {{{
@@ -132,7 +123,7 @@ endif
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-dispatch'
+Plug 'benekastah/neomake'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'Konfekt/FastFold'
 
@@ -155,14 +146,6 @@ noremap <leader>gs :Gstatus<CR>
 noremap <leader>gw :Gwrite<CR>
 
 " }}}
-"   Dispatch {{{
-
-nnoremap <F5> :Make<CR>
-nnoremap <C-F5> :Make!<CR>
-nnoremap <F6> :Dispatch<CR>
-nnoremap <C-F6> :Dispatch!<CR>
-
-" }}}
 "   FSwitch {{{
 
 nnoremap <leader>fs :FSHere<cr>
@@ -170,11 +153,6 @@ au BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
 au BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
 au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
 au BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
-
-" }}}
-"   Tagbar {{{
-
-nnoremap <leader>tb :TagbarOpenAutoClose<cr>
 
 " }}}
 "   Number Toggle {{{
@@ -231,31 +209,6 @@ let g:EasyMotion_smartcase = 1
 let g:SuperTabDefaultCompletionType = "context"
 
 " }}}
-"   JediVim {{{
-
-if has('nvim') || has('win32')
-        let g:jedi#goto_command = "<leader>d"
-        let g:jedi#goto_assignments_command = "<leader>g"
-        let g:jedi#goto_definitions_command = ""
-        let g:jedi#documentation_command = "K"
-        let g:jedi#usages_command = "<leader>n"
-        let g:jedi#completions_command = "<C-Space>"
-        let g:jedi#rename_command = "<leader>r"
-endif
-
-" }}}
-"   YouCompleteMe {{{
-
-nnoremap <leader>d :YcmCompleter GoTo<CR>
-let g:ycm_global_ycm_extra_conf = "~/.config/ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
-let g:ycm_complete_in_comments = 1              " Complete in comments
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
-
-" }}}
 "   Deoplete {{{
 
 let g:deoplete#enable_at_startup = 1
@@ -264,6 +217,11 @@ let g:deoplete#enable_debug = 1
 
 let g:racer_cmd = "/usr/bin/racer"
 let $RUST_SRC_PATH="/usr/local/rust/rust/src"
+
+let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
+
+let g:deoplete#sources#jedi#show_docstring = 1
 
 "   }}}
 "   Semantic Highlight {{{
@@ -314,6 +272,13 @@ nnoremap <leader>ig :IndentGuidesToggle<CR>
 let g:makeshift_on_startup = 1
 let g:makeshift_use_pwd_first = 1
 let g:makeshift_chdir = 1
+
+" }}}
+"   Neomake {{{
+
+nnoremap <F5> :Neomake!<CR>
+let g:neomake_place_signs = 0
+let g:neomake_open_list = 2
 
 " }}}
 
@@ -470,14 +435,6 @@ au BufEnter,BufRead,BufNewFile *.h set filetype=c
 au FileType python set sts=4 ts=4 sw=4 colorcolumn=80   " Make Python follow PEP8
 au FileType python nnoremap <F8> :!pep8 %<CR>
 au BufNewFile,BufRead SConstruct set filetype=python    " Recognize SConstruct file as python.
-
-" }}}
-" Rust {{{
-
-" Set compiler for rust. Needs to be done here instead of ftplugin/rust.vim
-" because rust.vim plugin that defines compiler loads after ftplugin and we
-" get missing compiler warning.
-au FileType rust compiler cargo
 
 " }}}
 " Chrome  {{{
