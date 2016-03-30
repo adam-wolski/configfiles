@@ -207,6 +207,7 @@ let g:EasyMotion_smartcase = 1
 "   SuperTab {{{
 
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-n>" "Go from top to bottom.
 
 " }}}
 "   Deoplete {{{
