@@ -58,11 +58,9 @@ Plug 'derekwyatt/vim-fswitch'
 if has('nvim')
     Plug 'ervandew/supertab'
     Plug 'Shougo/deoplete.nvim'
-    "Plug 'racer-rust/vim-racer'
-    Plug 'miniukof/vim-racer'
-    Plug 'miniukof/deoplete-jedi'
+    Plug 'racer-rust/vim-racer'
     Plug 'zchee/deoplete-clang'
-    "Plug 'zchee/deoplete-jedi'
+    Plug 'zchee/deoplete-jedi'
     Plug 'Shougo/neco-vim'
 endif
 if has('win32')
@@ -223,6 +221,10 @@ let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
 let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
 
 let g:deoplete#sources#jedi#show_docstring = 1
+
+" Don't add parentheses in completion. 
+call deoplete#custom#set('_', 'converters',
+            \ ['converter_remove_paren'])
 
 "   }}}
 "   Semantic Highlight {{{
