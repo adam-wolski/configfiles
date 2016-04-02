@@ -215,6 +215,11 @@ bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png
 bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
 
 # }}}
+# Show system monitor {{{
+
+bindsym Ctrl+Shift+Escape exec --no-startup-id gnome-system-monitor
+
+# }}}
 
 # }}}
 # Colors {{{
@@ -283,7 +288,7 @@ exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.config/synaptic_settings
 
-# Swap ctral with alt and make caps lock an esc key
+# Swap ctrl with alt and make caps lock an esc key
 exec --no-startup-id ~/bin/swapCtlAlt y
 
 # Disable screensaver
