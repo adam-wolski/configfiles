@@ -1,29 +1,40 @@
 sign define GdbBreakpoint text=●
 sign define GdbCurrentLine text=⇒
 
-" Set global variables g:gdb_debugger and g:gdb_file before using.
+" ================================================================
+"
+" Set global variables g:gdb_debugger and g:gdb_file before using!
+"
+" ================================================================
 
 let s:gdb_port = 7778
 let s:breakpoints = {}
 let s:max_breakpoint_sign_id = 0
 
+" TODO: Let user decide if they want hot keys.
+nnoremap <silent> <f11> :GdbDebugStart<cr>
+nnoremap <silent> <f12> :GdbDebugStop<cr>
+
 function! s:BindKeys()
-    nnoremap <silent> <f11> :GdbDebugStart<cr>
-    nnoremap <silent> <f12> :GdbFinish<cr>
-    nnoremap <silent> <C-S-r> :GdbRun<cr>
-    nnoremap <silent> <C-S-c> :GdbContinue<cr>
-    nnoremap <silent> <C-S-n> :GdbNext<cr>
-    nnoremap <silent> <C-S-s> :GdbStep<cr>
-    nnoremap <silent> <C-S-b> :GdbToggleBreakpoint<cr>
+    nnoremap <silent> <C-A-R> :GdbRun<cr>
+    nnoremap <silent> <C-A-C> :GdbContinue<cr>
+    nnoremap <silent> <C-A-N> :GdbNext<cr>
+    nnoremap <silent> <C-A-S> :GdbStep<cr>
+    nnoremap <silent> <C-A-B> :GdbToggleBreakpoint<cr>
     nnoremap <silent> <C-pageup> :GdbFrameUp<cr>
     nnoremap <silent> <C-pagedown> :GdbFrameDown<cr>
-    nnoremap <silent> <C-S-e> :GdbEvalWord<cr>
-    vnoremap <silent> <C-S-e> :GdbEvalRange<cr>
-    nnoremap <silent> <C-S-w> :GdbWatchWord<cr>
-    vnoremap <silent> <C-S-w> :GdbWatchRange<cr>
+    nnoremap <silent> <C-A-E> :GdbEvalWord<cr>
+    vnoremap <silent> <C-A-E> :GdbEvalRange<cr>
+    nnoremap <silent> <C-A-P> :GdbEvalWord<cr>
+    vnoremap <silent> <C-A-P> :GdbEvalRange<cr>
+    nnoremap <silent> <C-A-W> :GdbWatchWord<cr>
+    vnoremap <silent> <C-A-W> :GdbWatchRange<cr>
+    nnoremap <silent> <C-A-D> :GdbDisplayWord<cr>
+    vnoremap <silent> <C-A-D> :GdbDisplayRange<cr>
 endfunction
 
 function s:run_gdb()
+    " TODO: Define some defaults.
     return g:gdb_debugger." -q -f ".g:gdb_file
 endfunction
 
@@ -123,10 +134,6 @@ let s:Gdb = {}
 
 
 function s:Gdb.kill()
-  tunmap <f8>
-  tunmap <f10>
-  tunmap <f11>
-  tunmap <f12>
   call self.update_current_line_sign(0)
   exe 'bd! '.self._client_buf
   if self._server_buf != -1
@@ -303,6 +310,11 @@ function! s:Eval(expr)
 endfunction
 
 
+function! s:Display(expr)
+  call s:Send(printf('display %s', a:expr))
+endfunction
+
+
 function! s:Watch(expr)
   let expr = a:expr
   if expr[0] != '&'
@@ -336,17 +348,25 @@ command! -nargs=1 GdbDebugServer call s:Spawn(0, s:run_gdb(), 'localhost:'.<q-ar
 command! -bang -nargs=? GdbDebugTest call s:Test(<q-bang>, <q-args>)
 command! -nargs=1 -complete=file GdbInspectCore call s:Spawn(0, printf('gdb -q -f -c %s build/bin/nvim', <q-args>), 0, 0)
 command! GdbDebugStop call s:Kill()
+
 command! GdbToggleBreakpoint call s:ToggleBreak()
 command! GdbClearBreakpoints call s:ClearBreak()
+
 command! GdbContinue call s:Send("c")
 command! GdbNext call s:Send("n")
 command! GdbStep call s:Send("s")
 command! GdbRun call s:Send("r")
+
 command! GdbFinish call s:Send("finish")
 command! GdbFrameUp call s:Send("up")
 command! GdbFrameDown call s:Send("down")
 command! GdbInterrupt call s:Interrupt()
+
 command! GdbEvalWord call s:Eval(expand('<cword>'))
 command! -range GdbEvalRange call s:Eval(s:GetExpression(<f-args>))
+
 command! GdbWatchWord call s:Watch(expand('<cword>')
 command! -range GdbWatchRange call s:Watch(s:GetExpression(<f-args>))
+
+command! GdbDisplayWord call s:Display(expand('<cword>'))
+command! -range GdbDisplayRange call s:Display(s:GetExpression(<f-args>))
