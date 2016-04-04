@@ -237,16 +237,16 @@ let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB
 " }}}
 "   CtrlP {{{
 
-nnoremap <C-B> :CtrlPBuffer<CR>
-nnoremap <C-P> :CtrlP<CR>
-nnoremap <C-C> :CtrlPTag<CR>
+nnoremap <C-b> :CtrlPBuffer<CR>
+nnoremap <C-p> :CtrlP<CR>
+nnoremap <C-t> :CtrlPTag<CR>
 
 " }}}
 "   FSF {{{
 
 nnoremap <c-p> :Files<CR>
 nnoremap <c-b> :Buffers<CR>
-nnoremap <c-c> :Tags<CR>
+nnoremap <c-t> :Tags<CR>
 nnoremap <c-f> :BTags<CR>
  " This is the default extra key bindings
 let g:fzf_action = {
