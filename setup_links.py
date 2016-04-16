@@ -119,7 +119,7 @@ def link(target, lnk, force=False):
     Creates symbolic link 'lnk' pointing to 'target'.
     """
 
-    if system() != 'Linux' and system() != 'Windows':
+    if system() not in ('Linux', 'Windows', 'MSYS_NT-6.1'):
         print("{} operating system is not supported.".format(system()))
         return
 
@@ -142,7 +142,7 @@ def link(target, lnk, force=False):
         else:
             remove(lnk)
 
-    if system() == 'Linux':
+    if system() in ('Linux', 'MSYS_NT-6.1'):
         Popen(['ln', '-s', target, lnk]).wait()
     elif system() == 'Windows':
         if isdir:
