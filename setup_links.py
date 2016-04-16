@@ -47,6 +47,9 @@ LINKS = {
     'synaptic_settings': ["{}",
                           "~/.config/{}"],
 
+    'spacemacs': ["./emacs/{}",
+                  "~/.{}"],
+
     # Vim
     'vimrc': ["vim/{}",
               "~/.{}"],
