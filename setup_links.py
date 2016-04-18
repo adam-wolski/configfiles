@@ -15,6 +15,7 @@ from subprocess import Popen
 if system() == 'Windows':
     from win32file import CreateSymbolicLink
 
+
 LINKS = {
     # 'filename': ['relative/path/from/config/to/target/{}'
     #              'full/path/to/link/{}']
@@ -114,6 +115,7 @@ LINKS_WIN = {
               r"~\vimfiles\{}"],
     }
 
+
 def link(target, lnk, force=False):
     """
     Creates symbolic link 'lnk' pointing to 'target'.
@@ -149,6 +151,7 @@ def link(target, lnk, force=False):
             CreateSymbolicLink(lnk, target, 1)
         else:
             CreateSymbolicLink(lnk, target, 0)
+
 
 if __name__ == '__main__':
 
