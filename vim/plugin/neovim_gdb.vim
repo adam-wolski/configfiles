@@ -1,3 +1,4 @@
+if has('nvim')
 sign define GdbBreakpoint text=●
 sign define GdbCurrentLine text=⇒
 
@@ -370,3 +371,4 @@ command! -range GdbWatchRange call s:Watch(s:GetExpression(<f-args>))
 
 command! GdbDisplayWord call s:Display(expand('<cword>'))
 command! -range GdbDisplayRange call s:Display(s:GetExpression(<f-args>))
+endif
