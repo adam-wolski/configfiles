@@ -51,9 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export KEYTIMEOUT=1
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #Custom Keybindings
 #
@@ -72,7 +70,6 @@ bindkey '^w' backward-kill-word
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 
-export PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor for local and remote sessions
@@ -88,29 +85,10 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-PATH=$HOME/bin:$PATH
-PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
-PATH=$HOME/.cabal/bin:$PATH
-PATH=$HOME/.cargo/bin:$PATH
-
-# go back to ranger using rg
-rg() {
-    if [ -z "$RANGER_LEVEL" ]
-    then
-        ranger
-    else
-        exit
-    fi
-}
-
 #free ctrl s for terminal vim
-stty -ixon 
+stty -ixon
 
 source "$HOME/.MASTERSCRIPT"
 source "$HOME/.startup.mine"
-
-# Set ag as the default source for fzf
-# Helps with .gitignore files.
-export FZF_DEFAULT_COMMAND='ag -g ""'
 
 . /etc/profile.d/fzf.zsh
