@@ -48,8 +48,13 @@ LINKS = {
     'synaptic_settings': ["{}",
                           "~/.config/{}"],
 
+    # Emacs
+
     'spacemacs': ["./emacs/{}",
                   "~/.{}"],
+
+    'private': ["./emacs/{}",
+                "~/.emacs.d/{}"],
 
     # Vim
     'vimrc': ["vim/{}",
@@ -97,6 +102,12 @@ LINKS_WIN = {
 
     'SemanticHighlightPluginSettings.vim': [r"vim\{}",
                                             r"~\.config\{}"],
+
+    'spacemacs': ["./emacs/{}",
+                  "~/.{}"],
+
+    'private': ["./emacs/{}",
+                "~/.emacs.d/{}"],
 
     # Vim folders
     'ftplugin': [r"vim\{}",
