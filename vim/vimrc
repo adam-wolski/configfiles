@@ -191,6 +191,7 @@ let g:rainbow_conf = {
 " }}}
 "   Easymotion {{{
 
+nmap \ <Plug>(easymotion-s)
 nmap <Leader>s <Plug>(easymotion-s2)
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
@@ -210,6 +211,7 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>" "Go from top to bottom.
 " }}}
 "   Deoplete {{{
 
+if has('nvim')
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_start_length = 2
 let g:deoplete#enable_debug = 1
@@ -225,6 +227,7 @@ let g:deoplete#sources#jedi#show_docstring = 1
 " Don't add parentheses in completion. 
 call deoplete#custom#set('_', 'converters',
             \ ['converter_remove_paren'])
+endif
 
 "   }}}
 "   Semantic Highlight {{{
