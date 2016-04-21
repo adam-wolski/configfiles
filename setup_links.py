@@ -93,21 +93,24 @@ LINKS = {
     }
 
 LINKS_WIN = {
+    'spacemacs': ["./emacs/{}",
+                  "~/.{}"],
+
+    'private': ["./emacs/{}",
+                "~/.emacs.d/{}"],
+
     # Vim
     'vimrc': [r"vim\{}",
               r"~\_{}"],
+
+    'vimrc': [r"vim\{}",
+              r"~\vimfiles\init.vim"],
 
     'gvimrc': [r"vim\{}",
                r"~\_{}"],
 
     'SemanticHighlightPluginSettings.vim': [r"vim\{}",
                                             r"~\.config\{}"],
-
-    'spacemacs': ["./emacs/{}",
-                  "~/.{}"],
-
-    'private': ["./emacs/{}",
-                "~/.emacs.d/{}"],
 
     # Vim folders
     'ftplugin': [r"vim\{}",
