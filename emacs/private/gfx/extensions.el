@@ -9,7 +9,7 @@
 
 (defun gfx/init-hlsl-mode ()
   (use-package hlsl-mode
-               :mode "\\.hlsl\\'" "\\.mt\\'" "\\.mth\\'"))
+               :mode "\\.hlsl\\'" "\\.mt\\'" "\\.mth\\'" "\\.ppfx\\'"))
 
 
 (defun gfx/init-glsl-mode ()
