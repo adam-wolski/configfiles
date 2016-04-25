@@ -59,7 +59,7 @@
             Plug 'ervandew/supertab'
             Plug 'Shougo/deoplete.nvim'
             Plug 'racer-rust/vim-racer'
-            Plug 'zchee/deoplete-clang'
+            " Plug 'zchee/deoplete-clang'
             Plug 'zchee/deoplete-jedi'
             Plug 'Shougo/neco-vim'
         endif
@@ -122,7 +122,6 @@
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-eunuch'
         Plug 'benekastah/neomake'
-        Plug 'jeffkreeftmeijer/vim-numbertoggle'
         Plug 'Konfekt/FastFold'
 
     " }}}
@@ -383,8 +382,8 @@ endif
     " Toggle {{{
 
         nnoremap <silent><leader>tS :set spell!<CR>
-        let g:NumberToggleTrigger="<leader>tnr"
         nnoremap <leader>tn :set number!<CR>
+        nnoremap <leader>tr :set relativenumber!<CR>
         nnoremap <Leader>tsh :SemanticHighlightToggle<cr>
         nnoremap <leader>tig :IndentGuidesToggle<CR>
         nnoremap <leader>t? :map <leader>t<CR>
