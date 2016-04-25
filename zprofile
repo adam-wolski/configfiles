@@ -2,7 +2,7 @@
 # Helps with .gitignore files.
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export TERMINAL=konsole
+export TERMINAL=st
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=True
 
