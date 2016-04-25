@@ -1,6 +1,8 @@
-nnoremap <F5> :Neomake! cargo<CR>
-
-nnoremap <leader>rf :RustFmt<CR>
+nnoremap <leader>mcc :Neomake! cargo<CR>
+nnoremap <leader>mcd :!cargo doc<CR>
+nnoremap <leader>mct :!cargo test<CR>
+nnoremap <leader>mcb :!cargo bench<CR>
+nnoremap <leader>mf :RustFmt<CR>
 
 setlocal tags=rusty-tags.vi
 
