@@ -1,290 +1,237 @@
 " Init {{{
 
-let g:author='Adam Wolski'
-let g:email='miniukof@gmail.com'
-let g:github='https://github.com/miniukof'
+    let g:author='Adam Wolski'
+    let g:email='miniukof@gmail.com'
+    let g:github='https://github.com/miniukof'
 
-set encoding=utf-8
-set statusline=[%n]\                " Buffer number
-set statusline+=%f%m%r%h%w\         " Filename and modification
-set statusline+=%=\                 " Bring rest to right
-set statusline+=%Y\                 " Filetype"
-set statusline+=%l,%v\ %p%%         " Line num col num and % of file
-set laststatus=2                    " Show statusline always
-set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
-set foldmethod=syntax               " Set foldmethod to one based on syntax
-set softtabstop=4                   " Number of spaces that a <Tab> counts for while editing
-set tabstop=4                       " Number of spaces that a <Tab> counts for
-set shiftwidth=4                    " Number of spaces that << >> move by.
-set exrc                            " Load vimrc from current dir
-set hidden                          " Hide buffer instead of closing it
-syntax on                           " Enable syntax highlighting
-filetype on                         " Detect filetypes
-filetype plugin indent on           " Enable loading indent file for filetype
-set number                          " Display line numbers
-set title                           " Show title in console title bar
-set mouse=a                         " Mouse, sometimes usefull
-set timeoutlen=1000 ttimeoutlen=0   " Faster insert to normal jump
-set nofoldenable                    " Disable folds on start, toggle with zi
-set wildmenu                        " Menu completion in command mode on <Tab>
-set wildmode=full                   " <Tab> cycles between all matching choices.
-let mapleader="\<Space>"            " Set leader shortcut to spacebar
-set backspace=indent,eol,start
-if has('unix')
-        set dir=~/tmp/vim                                   " Directory for .swp files
-        set dict+=/usr/share/dict/words
-endif
+    set encoding=utf-8
+    set statusline=[%n]\                " Buffer number
+    set statusline+=%f%m%r%h%w\         " Filename and modification
+    set statusline+=%=\                 " Bring rest to right
+    set statusline+=%Y\                 " Filetype"
+    set statusline+=%l,%v\ %p%%         " Line num col num and % of file
+    set laststatus=2                    " Show statusline always
+    set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
+    set foldmethod=syntax               " Set foldmethod to one based on syntax
+    set softtabstop=4                   " Number of spaces that a <Tab> counts for while editing
+    set tabstop=4                       " Number of spaces that a <Tab> counts for
+    set shiftwidth=4                    " Number of spaces that << >> move by.
+    set exrc                            " Load vimrc from current dir
+    set hidden                          " Hide buffer instead of closing it
+    syntax on                           " Enable syntax highlighting
+    filetype on                         " Detect filetypes
+    filetype plugin indent on           " Enable loading indent file for filetype
+    set nonumber                        " Don't display line numbers
+    set title                           " Show title in console title bar
+    set mouse=a                         " Mouse, sometimes usefull
+    set timeoutlen=1000 ttimeoutlen=0   " Faster insert to normal jump
+    set nofoldenable                    " Disable folds on start, toggle with zi
+    set wildmenu                        " Menu completion in command mode on <Tab>
+    set wildmode=full                   " <Tab> cycles between all matching choices.
+    let mapleader="\<Space>"            " Set leader shortcut to spacebar
+    set backspace=indent,eol,start
+    if has('unix')
+            set dir=~/tmp/vim                                   " Directory for .swp files
+            set dict+=/usr/share/dict/words
+    endif
 
 " }}}
 " Plugins {{{
 
 " Load plugins {{{
 
-call plug#begin()
-" Navigation Plugins {{{
+    call plug#begin()
+    " Navigation Plugins {{{
 
-if has('unix')
-    Plug 'junegunn/fzf' " Don't build this one, install from repo.
-    Plug 'junegunn/fzf.vim'
-else
-    Plug 'ctrlpvim/ctrlp.vim'
-endif
-Plug 'Lokaltog/vim-easymotion'
-Plug 'derekwyatt/vim-fswitch'
+        if has('unix')
+            Plug 'junegunn/fzf' " Don't build this one, install from repo.
+            Plug 'junegunn/fzf.vim'
+        else
+            Plug 'ctrlpvim/ctrlp.vim'
+        endif
+        Plug 'Lokaltog/vim-easymotion'
+        Plug 'derekwyatt/vim-fswitch'
 
-" }}}
-" Completation Plugins {{{
+    " }}}
+    " Completation Plugins {{{
 
-if has('nvim')
-    Plug 'ervandew/supertab'
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'racer-rust/vim-racer'
-    Plug 'zchee/deoplete-clang'
-    Plug 'zchee/deoplete-jedi'
-    Plug 'Shougo/neco-vim'
-endif
-if has('win32')
-    Plug 'ervandew/supertab'
-    Plug 'davidhalter/jedi-vim'
-endif
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
+        if has('nvim')
+            Plug 'ervandew/supertab'
+            Plug 'Shougo/deoplete.nvim'
+            Plug 'racer-rust/vim-racer'
+            Plug 'zchee/deoplete-clang'
+            Plug 'zchee/deoplete-jedi'
+            Plug 'Shougo/neco-vim'
+        endif
+        if has('win32')
+            Plug 'ervandew/supertab'
+            Plug 'davidhalter/jedi-vim'
+        endif
+        Plug 'honza/vim-snippets'
+        Plug 'SirVer/ultisnips'
+        Plug 'jiangmiao/auto-pairs'
+        Plug 'tpope/vim-surround'
 
-" }}}
-" Error Checking Plugins {{{
+    " }}}
+    " Error Checking Plugins {{{
 
-Plug 'scrooloose/syntastic'
+        Plug 'scrooloose/syntastic'
 
-" }}}
-" Visual Plugins {{{
+    " }}}
+    " Visual Plugins {{{
 
-Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
-Plug 'jaxbot/semantic-highlight.vim'
-Plug 'luochen1990/rainbow'
+        Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
+        Plug 'jaxbot/semantic-highlight.vim'
+        Plug 'luochen1990/rainbow'
 
-" }}}
-" Language specific Plugins {{{
+    " }}}
+    " Language specific Plugins {{{
 
-Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
-Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
+        Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
+        Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
 
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+        Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+        Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+        Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+        Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+        Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+        Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 
-Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+        Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+        Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-Plug 'PotatoesMaster/i3-vim-syntax'
+        Plug 'PotatoesMaster/i3-vim-syntax'
 
-" }}}
-" Themes {{{
+    " }}}
+    " Themes {{{
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
+        Plug 'altercation/vim-colors-solarized'
+        Plug 'tomasr/molokai'
 
-" }}}
-" Other Plugins {{{
+    " }}}
+    " Other Plugins {{{
 
-if has('unix')
-    Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-endif
-if has('win32')
-    Plug 'nfvs/vim-perforce'
-endif
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'benekastah/neomake'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'Konfekt/FastFold'
+        if has('unix')
+            Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+        endif
+        if has('win32')
+            Plug 'nfvs/vim-perforce'
+        endif
+        Plug 'godlygeek/tabular'
+        Plug 'tpope/vim-fugitive'
+        Plug 'tpope/vim-eunuch'
+        Plug 'benekastah/neomake'
+        Plug 'jeffkreeftmeijer/vim-numbertoggle'
+        Plug 'Konfekt/FastFold'
 
-" Other Plugins }}}
-call plug#end()
+    " }}}
+    call plug#end()
 
 " }}}
 " Plugin configuration {{{
 
-"   Eunch {{{
+    "   FSwitch {{{
 
-cmap w!! SudoWrite
+        au BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
+        au BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
+        au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
+        au BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
 
-" }}}
-"   Fugitive {{{
+    " }}}
+    "   UltiSnips {{{
 
-noremap <leader>gd :Gdiff<CR>
-noremap <leader>gc :Gcommit<CR>
-noremap <leader>gs :Gstatus<CR>
-noremap <leader>gw :Gwrite<CR>
+        " Snippets variables
+        let g:snips_author=g:author
+        let g:snips_email=g:email
+        let g:snips_github=g:github
+        " Setup directories.
+        let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
-" }}}
-"   FSwitch {{{
+    " }}}
+    "   Rainbow Parentheses {{{
 
-nnoremap <leader>fs :FSHere<cr>
-au BufEnter *.frag let b:fswitchdst = 'vert' | let b:fswitchlocs = '.'
-au BufEnter *.vert let b:fswitchdst = 'frag' | let b:fswitchlocs = '.'
-au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = '.'
-au BufEnter *.c let b:fswitchdst = 'h' | let b:fswitchlocs = '.'
+        let g:rainbow_active = 1
+        let g:rainbow_conf = {
+        \	'guifgs': ['#F44336', '#9C27B0', '#2aa198', '#009688'],
+        \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+        \	'operators': '_,_',
+        \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+        \	'separately': {
+        \		'*': {},
+        \		'vim': {
+        \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+        \		},
+        \	}
+        \}
 
-" }}}
-"   Number Toggle {{{
+    " }}}
+    "   Easymotion {{{
 
-let g:NumberToggleTrigger="<leader>nt"
+        let g:EasyMotion_startofline = 0                " Keep cursor column when in JK motion
+        let g:EasyMotion_smartcase = 1
 
-" }}}
-"   UltiSnips {{{
+    " }}}
+    "   SuperTab {{{
 
-" Snippets variables
-let g:snips_author=g:author
-let g:snips_email=g:email
-let g:snips_github=g:github
-" Setup directories.
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
-" Shortcuts
-let g:UltiSnipsExpandTrigger='<c-s>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextDefaultCompletionType = "<c-n>" "Go from top to bottom.
 
-" }}}
-"   Rainbow Parentheses {{{
+    " }}}
+    "   Deoplete {{{
 
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\	'guifgs': ['#F44336', '#9C27B0', '#2aa198', '#009688'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\	'operators': '_,_',
-\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\	'separately': {
-\		'*': {},
-\		'vim': {
-\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\		},
-\	}
-\}
+        if has('nvim')
+        let g:deoplete#enable_at_startup = 1
+        let g:deoplete#auto_complete_start_length = 2
+        let g:deoplete#enable_debug = 1
 
-" }}}
-"   Easymotion {{{
+        let g:racer_cmd = "/usr/bin/racer"
+        let $RUST_SRC_PATH="/usr/local/rust/rust/src"
 
-nmap \ <Plug>(easymotion-s)
-nmap <Leader>s <Plug>(easymotion-s2)
-map <Leader>f <Plug>(easymotion-f)
-map <Leader>F <Plug>(easymotion-F)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0                " Keep cursor column when in JK motion
-let g:EasyMotion_smartcase = 1
+        let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+        let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
 
-" }}}
-"   SuperTab {{{
+        let g:deoplete#sources#jedi#show_docstring = 1
 
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-n>" "Go from top to bottom.
+        " Don't add parentheses in completion. 
+        call deoplete#custom#set('_', 'converters',
+                    \ ['converter_remove_paren'])
+        endif
 
-" }}}
-"   Deoplete {{{
+    "   }}}
+    "   Semantic Highlight {{{
 
-if has('nvim')
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_start_length = 2
-let g:deoplete#enable_debug = 1
+        source ~/.config/SemanticHighlightPluginSettings.vim
+        let g:semanticEnableFileTypes = {'python': 'py'}
+        let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
 
-let g:racer_cmd = "/usr/bin/racer"
-let $RUST_SRC_PATH="/usr/local/rust/rust/src"
+    " }}}
+    "   FSF {{{
 
-let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
-let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
+         " This is the default extra key bindings
+        let g:fzf_action = {
+          \ 'ctrl-t': 'tab split',
+          \ 'ctrl-x': 'split',
+          \ 'ctrl-v': 'vsplit' }
 
-let g:deoplete#sources#jedi#show_docstring = 1
+        " Default fzf layout
+        " - down / up / left / right
+        " - window (nvim only)
+        let g:fzf_layout = { 'down': '~40%' }    
 
-" Don't add parentheses in completion. 
-call deoplete#custom#set('_', 'converters',
-            \ ['converter_remove_paren'])
-endif
+    " }}}
+    "   Makeshift {{{
 
-"   }}}
-"   Semantic Highlight {{{
+        let g:makeshift_on_startup = 1
+        let g:makeshift_use_pwd_first = 1
+        let g:makeshift_chdir = 1
 
-source ~/.config/SemanticHighlightPluginSettings.vim
-nnoremap <Leader>sh :SemanticHighlightToggle<cr>
-let g:semanticEnableFileTypes = {'python': 'py'}
-let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
+    " }}}
+    "   Neomake {{{
 
-" }}}
-"   CtrlP {{{
-
-nnoremap <C-b> :CtrlPBuffer<CR>
-nnoremap <C-p> :CtrlP<CR>
-nnoremap <C-t> :CtrlPTag<CR>
-
-" }}}
-"   FSF {{{
-
-nnoremap <c-p> :Files<CR>
-nnoremap <c-b> :Buffers<CR>
-nnoremap <c-t> :Tags<CR>
-nnoremap <c-f> :BTags<CR>
- " This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-" Default fzf layout
-" - down / up / left / right
-" - window (nvim only)
-let g:fzf_layout = { 'down': '~40%' }    
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" }}}
-"   Indent Guides {{{
-
-nnoremap <leader>ig :IndentGuidesToggle<CR>
-
-" }}}
-"   Makeshift {{{
-
-let g:makeshift_on_startup = 1
-let g:makeshift_use_pwd_first = 1
-let g:makeshift_chdir = 1
-
-" }}}
-"   Neomake {{{
-
-nnoremap <F5> :Neomake!<CR>
-let g:neomake_place_signs = 0
-let g:neomake_open_list = 2
+        nnoremap <F5> :Neomake!<CR>
+        let g:neomake_place_signs = 0
+        let g:neomake_open_list = 2
 
 " }}}
 
@@ -334,131 +281,216 @@ endif
 " }}}
 " Shortcuts {{{
 
-" File/Windows Operation Shortcuts {{{
+    " Global {{{
 
-" Write file
-nnoremap <Leader>w :w<CR>
+        " Write file
+        nnoremap <Leader>w :w<CR>
 
-" Quit window
-nnoremap <leader>q :q<CR>
+        " Quit window
+        nnoremap <leader>q :q<CR>
 
-" Save session
-nnoremap <C-S> :mksession! .vimsession.vim
+        " Easymotion
+        nmap <leader><leader> <Plug>(easymotion-s)
 
-" }}}
-" Navigation Shortcuts {{{
+        " Line Navigation, so it moves line down/up even with wrapping
+        nnoremap j gj
+        nnoremap k gk
+        xnoremap j gj
+        xnoremap k gk
 
-" Line Navigation, so it moves line down/up even with wrapping
-nnoremap j gj
-nnoremap k gk
-xnoremap j gj
-xnoremap k gk
+        " window navigation
+        nnoremap <silent> <C-k> :wincmd k<CR>
+        nnoremap <silent> <C-j> :wincmd j<CR>
+        nnoremap <silent> <C-h> :wincmd h<CR>
+        nnoremap <silent> <C-l> :wincmd l<CR>
 
-" window navigation
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-j> :wincmd j<CR>
-nnoremap <silent> <C-h> :wincmd h<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
+        " Paste from clipboard
+        vnoremap <Leader>y "+y
+        vnoremap <Leader>d "+d
+        nnoremap <Leader>p "+p
+        nnoremap <Leader>P "+P
+        vnoremap <Leader>p "+p
+        vnoremap <Leader>P "+P
+        " Paste last yanked
+        nnoremap P "0p
 
-" }}}
-" Neovim Terminal Mode Shortcuts {{{
+        " Take cursor to end of pasted line
+        vnoremap <silent> y y`]
+        vnoremap <silent> p p`]
+        nnoremap <silent> p p`]
 
-if has('nvim')
-" Start/Exit
-        nnoremap <leader>t :vsp term://zsh<CR>
+        " hide matches on <leader>space
+        nnoremap <leader>/ :nohlsearch<cr>
+
+        " Add new line in insert mode
+        inoremap <C-O> <C-o>o
+
+        " Rebind macro playback
+        nnoremap Q @
+
+        " Handy shortcut for macro named q
+        nnoremap QQ @q
+
+        " Ultisnips
+        let g:UltiSnipsExpandTrigger='<c-s>'
+        let g:UltiSnipsJumpForwardTrigger='<c-j>'
+        let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+        " Insert mode completion with fzf
+        imap <c-x><c-k> <plug>(fzf-complete-word)
+        imap <c-x><c-f> <plug>(fzf-complete-path)
+        imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+        imap <c-x><c-l> <plug>(fzf-complete-line)
+
+
+    " }}}
+    " File {{{
+
+        nnoremap <leader>fs :w<CR>
+        nnoremap <leader>fS :FSHere<CR>
+        nnoremap <leader>f! :SudoWrite<CR>
+        nnoremap <leader>fd :Remove<CR>
+        nnoremap <leader>fm :Move<CR>
+        nnoremap <leader>fr :Rename<CR>
+
+    " }}}
+    " Window {{{
+
+        nnoremap <leader>wc :q<CR>
+        nnoremap <leader>ws :split<CR>
+        nnoremap <leader>wx :vsplit<CR>
+        nnoremap <silent><leader>wk :wincmd k<CR>
+        nnoremap <silent><leader>wj :wincmd j<CR>
+        nnoremap <silent><leader>wh :wincmd h<CR>
+        nnoremap <silent><leader>wl :wincmd l<CR>
+        nnoremap <silent><leader>w= :wincmd =<CR>
+
+    " }}}
+    " Buffer {{{
+
+        nnoremap <leader><tab> :b#<CR>
+        nnoremap <leader>b# :b#<CR>
+        nnoremap <leader>bp :b#<CR>
+        nnoremap <leader>bb FindBuffer()
+        nnoremap <leader>bt FindBufferTags()
+        nnoremap <leader>bd :bd<CR>
+        nnoremap <leader>bl :ls<CR>
+        nnoremap <leader>bY :%y+<CR>
+        nnoremap <leader>bs :w<CR>
+
+    " }}}
+    " Toggle {{{
+
+        nnoremap <silent><leader>tS :set spell!<CR>
+        let g:NumberToggleTrigger="<leader>tnr"
+        nnoremap <leader>tn :set number!<CR>
+        nnoremap <Leader>tsh :SemanticHighlightToggle<cr>
+        nnoremap <leader>tig :IndentGuidesToggle<CR>
+
+    " }}}
+    " Terminal {{{
+
+        if has('nvim')
+
+        " Start/Exit
+        nnoremap <leader>' :vsp term://zsh<CR>
         tnoremap <C-e> <C-\><C-n>
-" window navigation
+
+        " window navigation
         tnoremap <C-h> <C-\><C-n><C-w>h
         tnoremap <C-j> <C-\><C-n><C-w>j
         tnoremap <C-k> <C-\><C-n><C-w>k
         tnoremap <C-l> <C-\><C-n><C-w>l
-endif
 
-" }}}
-" Other Shortcuts {{{
+        endif
 
-" Add ; on end line
-inoremap <C-t> <ESC>$a;
+    " }}}
+    " Util {{{
 
-" Quick spellcheck toggle
-nnoremap <silent> <F10> :set spell!<CR>
+        " Remove whitespace
+        nnoremap <leader>uws :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Paste from clipboard
-vnoremap <Leader>y "+y
-vnoremap <Leader>d "+d
-nnoremap <Leader>p "+p
-nnoremap <Leader>P "+P
-vnoremap <Leader>p "+p
-vnoremap <Leader>P "+P
-" Paste last yanked
-nnoremap P "0p
+    " }}}
+    " Git {{{
 
-" Take cursor to end of pasted line
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
+        nnoremap <leader>gd :Gdiff<CR>
+        nnoremap <leader>gc :Gcommit<CR>
+        nnoremap <leader>gs :Gstatus<CR>
+        nnoremap <leader>gw :Gwrite<CR>
 
-" hide matches on <leader>space
-nnoremap <leader>/ :nohlsearch<cr>
-
-" Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Add new line in insert mode
-inoremap <C-O> <C-o>o
-
-" Rebind macro playback
-nnoremap Q @
-
-" Handy shortcut for macro named q
-nnoremap QQ @q
-
-" Go back to previous buffer
-nnoremap <Leader>b :b#<CR>
-
-" }}}
+    " }}}
 
 " }}}
 " Functions {{{
 
-function MyFoldText()
-  let line = getline(v:foldstart)
-  let sub = substitute(line, '"\|/\*\|\*/\|{{{\d\=\|}}}', '', 'g')
-  return v:folddashes . sub
-endfunction
+    function FindBuffer()
+        if has('unix')
+            execute "Buffers"
+        else
+            execute "CtrlP"
+        endif
+    endfunction
+    function FindFile()
+        if has('unix')
+            execute "Files"
+        else
+            execute "CtrlPBuffer"
+        endif
+    endfunction
+    function FindTags()
+        if has('unix')
+            execute "Tags"
+        else
+            execute "CtrlPTag"
+        endif
+    endfunction
+    function FindBufferTags()
+        if has('unix')
+            execute "BTags"
+        else
+            execute "CtrlPTag"
+        endif
+    endfunction
+
+
+    function MyFoldText()
+      let line = getline(v:foldstart)
+      let sub = substitute(line, '"\|/\*\|\*/\|{{{\d\=\|}}}', '', 'g')
+      return v:folddashes . sub
+    endfunction
 
 " }}}
 " Filetype Specific Settings {{{
 
-" C {{{
+    " C {{{
 
-" Override setting for .h files, which defaults to cpp for me.
-au BufEnter,BufRead,BufNewFile *.h set filetype=c
+        " Override setting for .h files, which defaults to cpp for me.
+        au BufEnter,BufRead,BufNewFile *.h set filetype=c
 
-" }}}
-" Python {{{
+    " }}}
+    " Python {{{
 
-au FileType python set sts=4 ts=4 sw=4 colorcolumn=80   " Make Python follow PEP8
-au FileType python nnoremap <F8> :!pep8 %<CR>
-au BufNewFile,BufRead SConstruct set filetype=python    " Recognize SConstruct file as python.
+        au FileType python set sts=4 ts=4 sw=4 colorcolumn=80   " Make Python follow PEP8
+        au FileType python nnoremap <F8> :!pep8 %<CR>
+        au BufNewFile,BufRead SConstruct set filetype=python    " Recognize SConstruct file as python.
 
-" }}}
-" Chrome  {{{
+    " }}}
+    " Chrome  {{{
 
-au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
-au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
+        au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
+        au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
 
-" }}}
-" Vim {{{
+    " }}}
+    " Vim {{{
 
-au filetype vim
-  \ syn match fmrkr '"*{{{\|"*}}}'
-  \ containedin=vimLineComment contained |
-  \ hi def link fmrkr Ignore |
-  \ set fdm=marker |
-  \ set foldenable
-au FileType vim set sts=4 ts=4 sw=4
+        au filetype vim
+          \ syn match fmrkr '"*{{{\|"*}}}'
+          \ containedin=vimLineComment contained |
+          \ hi def link fmrkr Ignore |
+          \ set fdm=marker |
+          \ set foldenable
+        au FileType vim set sts=4 ts=4 sw=4
 
-" }}}
+    " }}}
 
 " }}}
