@@ -343,7 +343,7 @@ endif
     " File {{{
 
         nnoremap <leader>fs :w<CR>
-        nnoremap <leader>ff :call FindFile()
+        nnoremap <leader>ff :call FindFile()<CR>
         nnoremap <leader>fS :FSHere<CR>
         nnoremap <leader>f! :SudoWrite<CR>
         nnoremap <leader>fd :Remove<CR>
@@ -368,8 +368,8 @@ endif
         nnoremap <leader><tab> :b#<CR>
         nnoremap <leader>b# :b#<CR>
         nnoremap <leader>bp :b#<CR>
-        nnoremap <leader>bb :call FindBuffer()
-        nnoremap <leader>bt :call FindBufferTags()
+        nnoremap <leader>bb :call FindBuffer()<CR>
+        nnoremap <leader>bt :call FindBufferTags()<CR>
         nnoremap <leader>bd :bd<CR>
         nnoremap <leader>bl :ls<CR>
         nnoremap <leader>bY :%y+<CR>
