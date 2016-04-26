@@ -343,13 +343,12 @@ endif
     " File {{{
 
         nnoremap <leader>fs :w<CR>
-        nnoremap <leader>ff FindFile()
+        nnoremap <leader>ff :call FindFile()
         nnoremap <leader>fS :FSHere<CR>
         nnoremap <leader>f! :SudoWrite<CR>
         nnoremap <leader>fd :Remove<CR>
         nnoremap <leader>fm :Move<CR>
         nnoremap <leader>fr :Rename<CR>
-        nnoremap <leader>f? :map <space>f<CR>
 
     " }}}
     " Window {{{
@@ -362,7 +361,6 @@ endif
         nnoremap <silent><leader>wh :wincmd h<CR>
         nnoremap <silent><leader>wl :wincmd l<CR>
         nnoremap <silent><leader>w= :wincmd =<CR>
-        nnoremap <leader>w? :map <leader>w<CR>
 
     " }}}
     " Buffer {{{
@@ -370,13 +368,12 @@ endif
         nnoremap <leader><tab> :b#<CR>
         nnoremap <leader>b# :b#<CR>
         nnoremap <leader>bp :b#<CR>
-        nnoremap <leader>bb FindBuffer()
-        nnoremap <leader>bt FindBufferTags()
+        nnoremap <leader>bb :call FindBuffer()
+        nnoremap <leader>bt :call FindBufferTags()
         nnoremap <leader>bd :bd<CR>
         nnoremap <leader>bl :ls<CR>
         nnoremap <leader>bY :%y+<CR>
         nnoremap <leader>bs :w<CR>
-        nnoremap <leader>b? :map <leader>b<CR>
 
     " }}}
     " Toggle {{{
@@ -386,7 +383,6 @@ endif
         nnoremap <leader>tr :set relativenumber!<CR>
         nnoremap <Leader>tsh :SemanticHighlightToggle<cr>
         nnoremap <leader>tig :IndentGuidesToggle<CR>
-        nnoremap <leader>t? :map <leader>t<CR>
 
     " }}}
     " Terminal {{{
@@ -410,7 +406,6 @@ endif
 
         " Remove whitespace
         nnoremap <leader>uws :%s/\s\+$//<cr>:let @/=''<CR>
-        nnoremap <leader>u? :map <leader>u<CR>
 
     " }}}
     " Git {{{
@@ -419,35 +414,34 @@ endif
         nnoremap <leader>gc :Gcommit<CR>
         nnoremap <leader>gs :Gstatus<CR>
         nnoremap <leader>gw :Gwrite<CR>
-        nnoremap <leader>g? :map <leader>g<CR>
 
     " }}}
 
 " }}}
 " Functions {{{
 
-    function FindBuffer()
+    function! FindBuffer()
         if has('unix')
             execute "Buffers"
         else
             execute "CtrlP"
         endif
     endfunction
-    function FindFile()
+    function! FindFile()
         if has('unix')
             execute "Files"
         else
             execute "CtrlPBuffer"
         endif
     endfunction
-    function FindTags()
+    function! FindTags()
         if has('unix')
             execute "Tags"
         else
             execute "CtrlPTag"
         endif
     endfunction
-    function FindBufferTags()
+    function! FindBufferTags()
         if has('unix')
             execute "BTags"
         else
