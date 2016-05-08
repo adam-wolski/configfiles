@@ -91,4 +91,4 @@ stty -ixon
 source "$HOME/.MASTERSCRIPT"
 source "$HOME/.startup.mine"
 
-. /etc/profile.d/fzf.zsh
+. /usr/share/fzf/key-bindings.zsh
