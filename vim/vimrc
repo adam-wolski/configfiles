@@ -289,6 +289,9 @@ endif
         " Easymotion
         nmap \ <Plug>(easymotion-s)
 
+        " CtrlP and similiar shortcut
+        nnoremap <C-p> :call FindFile()<CR>
+
         " Line Navigation, so it moves line down/up even with wrapping
         nnoremap j gj
         nnoremap k gk
@@ -356,7 +359,7 @@ endif
 
         nnoremap <leader>wc :q<CR>
         nnoremap <leader>ws :split<CR>
-        nnoremap <leader>wx :vsplit<CR>
+        nnoremap <leader>wv :vsplit<CR>
         nnoremap <silent><leader>wk :wincmd k<CR>
         nnoremap <silent><leader>wj :wincmd j<CR>
         nnoremap <silent><leader>wh :wincmd h<CR>
