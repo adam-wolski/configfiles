@@ -17,24 +17,11 @@ let s:white = '#f9f9f9'
 let s:whitepp = '#fefefe'
 let s:gray = '#dedede'
 let s:graypp = '#e3e3e3'
-let s:orange = '#d64937'
 let s:darkgray = '#333333'
 let s:darkgraypp = '#383838'
 let s:darkgraylighter = '#404040'
 let s:darkgraylighterpp = '#454545'
-let s:black = '#2d2d2d'
-let s:green = '#81C784'
-let s:blue = '#42A5F5'
-let s:lightblue = '#4FC3F7'
-let s:indigo = '#7986CB'
 let s:red = '#F44336'
-let s:cyan = '#00BCD4'
-let s:amber = '#FFC107'
-let s:pink = '#E91E63'
-let s:purple = '#9C27B0'
-let s:deeppurple = '#673AB7'
-let s:teal = '#009688'
-let s:lime = '#CDDC39'
 
 " }}}
 " Solarized colors  {{{
@@ -50,53 +37,16 @@ let s:s_cyan        = "#2aa198"
 let s:s_green       = "#719e07"
 
 " }}}
-" Colors Palette a  {{{
+" Colors Palette {{{
 
-let s:a0 = s:s_yellow
-let s:a1 = s:s_orange      
-let s:a2 = s:s_red         
-let s:a3 = s:s_magenta     
-let s:a4 = s:s_violet      
-let s:a5 = s:s_blue        
-let s:a6 = s:s_cyan        
-let s:a7 = s:s_green       
-
-" }}}
-" Colors Palette b  {{{
-
-let s:b0 = '#D64937'
-let s:b1 = '#75E36B' 
-let s:b2 = '#EDC853'
-let s:b3 = '#9861ED'
-let s:b4 = '#63DAE3' 
-let s:b5 = '#7788A3'        
-let s:b6 = '#ED9A49'
-let s:b7 = '#ED3EDF'
-
-" }}}
-" Palette chosser  {{{
-
-let g:nugl_pallete = 0
-
-if g:nugl_pallete == 0
-    let s:c0 = s:a0
-    let s:c1 = s:a1
-    let s:c2 = s:a2
-    let s:c3 = s:a3
-    let s:c4 = s:a4
-    let s:c5 = s:a5
-    let s:c6 = s:a6
-    let s:c7 = s:a7
-else
-    let s:c0 = s:b0
-    let s:c1 = s:b1
-    let s:c2 = s:b2
-    let s:c3 = s:b3
-    let s:c4 = s:b4
-    let s:c5 = s:b5
-    let s:c6 = s:b6
-    let s:c7 = s:b7
-endif
+let s:c0 = s:s_yellow
+let s:c1 = s:s_orange      
+let s:c2 = s:s_red         
+let s:c3 = s:s_magenta     
+let s:c4 = s:s_violet      
+let s:c5 = s:s_blue        
+let s:c6 = s:s_cyan        
+let s:c7 = s:s_green       
 
 " }}}
 " Main defines  {{{
