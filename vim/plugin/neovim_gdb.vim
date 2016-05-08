@@ -12,26 +12,23 @@ let s:gdb_port = 7778
 let s:breakpoints = {}
 let s:max_breakpoint_sign_id = 0
 
-" TODO: Let user decide if they want hot keys.
-nnoremap <silent> <f11> :GdbDebugStart<cr>
-nnoremap <silent> <f12> :GdbDebugStop<cr>
+nnoremap <silent> <leader>dS :GdbDebugStart<cr>
+nnoremap <silent> <leader>dE :GdbDebugStop<cr>
 
 function! s:BindKeys()
-    nnoremap <silent> <C-A-R> :GdbRun<cr>
-    nnoremap <silent> <C-A-C> :GdbContinue<cr>
-    nnoremap <silent> <C-A-N> :GdbNext<cr>
-    nnoremap <silent> <C-A-S> :GdbStep<cr>
-    nnoremap <silent> <C-A-B> :GdbToggleBreakpoint<cr>
-    nnoremap <silent> <C-pageup> :GdbFrameUp<cr>
-    nnoremap <silent> <C-pagedown> :GdbFrameDown<cr>
-    nnoremap <silent> <C-A-E> :GdbEvalWord<cr>
-    vnoremap <silent> <C-A-E> :GdbEvalRange<cr>
-    nnoremap <silent> <C-A-P> :GdbEvalWord<cr>
-    vnoremap <silent> <C-A-P> :GdbEvalRange<cr>
-    nnoremap <silent> <C-A-W> :GdbWatchWord<cr>
-    vnoremap <silent> <C-A-W> :GdbWatchRange<cr>
-    nnoremap <silent> <C-A-D> :GdbDisplayWord<cr>
-    vnoremap <silent> <C-A-D> :GdbDisplayRange<cr>
+    nnoremap <silent> <leader>dr :GdbRun<cr>
+    nnoremap <silent> <leader>dc :GdbContinue<cr>
+    nnoremap <silent> <leader>dn :GdbNext<cr>
+    nnoremap <silent> <leader>ds :GdbStep<cr>
+    nnoremap <silent> <leader>db :GdbToggleBreakpoint<cr>
+    nnoremap <silent> <leader>dfu :GdbFrameUp<cr>
+    nnoremap <silent> <leader>dfd :GdbFrameDown<cr>
+    nnoremap <silent> <leader>dp :GdbEvalWord<cr>
+    vnoremap <silent> <leader>dp :GdbEvalRange<cr>
+    nnoremap <silent> <leader>dw :GdbWatchWord<cr>
+    vnoremap <silent> <leader>dw :GdbWatchRange<cr>
+    nnoremap <silent> <leader>dd :GdbDisplayWord<cr>
+    vnoremap <silent> <leader>dd :GdbDisplayRange<cr>
 endfunction
 
 function s:run_gdb()
