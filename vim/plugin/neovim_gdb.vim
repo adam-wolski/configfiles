@@ -199,10 +199,6 @@ function! s:Spawn(server_cmd, client_cmd, server_addr, reconnect)
   wincmd j
   enew | let gdb._client_id = termopen(a:client_cmd, gdb)
   let gdb._client_buf = bufnr('%')
-  tnoremap <silent> <C-S-c> <c-\><c-n>:GdbContinue<cr>i
-  tnoremap <silent> <C-S-n> <c-\><c-n>:GdbNext<cr>i
-  tnoremap <silent> <C-S-s> <c-\><c-n>:GdbStep<cr>i
-  tnoremap <silent> <f12> <c-\><c-n>:GdbFinish<cr>i
   " go to the window that displays the current file
   exe gdb._jump_window 'wincmd w'
   let g:gdb = gdb
