@@ -287,7 +287,8 @@ endif
         nnoremap <leader>q :q<CR>
 
         " Easymotion
-        nmap \ <Plug>(easymotion-s)
+        map <Leader>e <Plug>(easymotion-prefix)
+        nmap <Leader><Leader> <Plug>(easymotion-s)
 
         " CtrlP and similiar shortcut
         nnoremap <C-p> :call FindFile()<CR>
