@@ -1,3 +1,11 @@
+let g:gdb_debugger = "gdb"
+
+
+function! AddPragmaOnce()
+    execute "normal i#pragma once"
+endfunction
+
+
 if !exists("cpp_autocmdloaded")
     let cpp_autocmdloaded = 1
 
@@ -7,5 +15,9 @@ if !exists("cpp_autocmdloaded")
 
     " Override default setting which i have i setup in vimrc.
     au BufRead,BufNewFile *.h set filetype=cpp
-    autocmd BufWrite *.rs :Dispatch! !ctags -R
+
+    autocmd BufWrite *.cpp :Dispatch! !ctags -R --fields=+l --langmap=cpp:.cpp.h
+    autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=cpp:.cpp.h
+
+    autocmd BufNewFile *.h call AddPragmaOnce()
 endif
