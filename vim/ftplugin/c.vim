@@ -74,7 +74,7 @@ endfunction
 if !exists("c_autocmdloaded")
     let c_autocmdloaded = 1
     au BufWritePre *test*.c call AutoGenMinunitSuiteMacros()
-    autocmd BufWrite *.c :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
-    autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=c:.c.h
+    autocmd BufWrite *.c call jobstart("ctags -R --fields=+l --langmap=c:.c.h")
+    autocmd BufWrite *.h call jobstart("ctags -R --fields=+l --langmap=c:.c.h")
     autocmd BufNewFile *.h call AddPragmaOnce()
 endif

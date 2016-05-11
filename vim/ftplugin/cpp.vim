@@ -16,8 +16,8 @@ if !exists("cpp_autocmdloaded")
     " Override default setting which i have i setup in vimrc.
     au BufRead,BufNewFile *.h set filetype=cpp
 
-    autocmd BufWrite *.cpp :Dispatch! !ctags -R --fields=+l --langmap=cpp:.cpp.h
-    autocmd BufWrite *.h :Dispatch! !ctags -R --fields=+l --langmap=cpp:.cpp.h
+    autocmd BufWrite *.cpp call jobstart("ctags -R --fields=+l --langmap=c++:.cpp.h")
+    autocmd BufWrite *.h call jobstart("ctags -R --fields=+l --langmap=c++:.cpp.h")
 
     autocmd BufNewFile *.h call AddPragmaOnce()
 endif
