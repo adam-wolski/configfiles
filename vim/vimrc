@@ -352,8 +352,8 @@ endif
         nnoremap <leader>fS :FSHere<CR>
         nnoremap <leader>f! :SudoWrite<CR>
         nnoremap <leader>fd :Remove<CR>
-        nnoremap <leader>fm :Move<CR>
-        nnoremap <leader>fr :Rename<CR>
+        nnoremap <leader>fm :Move 
+        nnoremap <leader>fr :Rename 
 
     " }}}
     " Window {{{
@@ -365,7 +365,16 @@ endif
         nnoremap <silent><leader>wj :wincmd j<CR>
         nnoremap <silent><leader>wh :wincmd h<CR>
         nnoremap <silent><leader>wl :wincmd l<CR>
+        nnoremap <silent><leader>wK :wincmd K<CR>
+        nnoremap <silent><leader>wJ :wincmd J<CR>
+        nnoremap <silent><leader>wH :wincmd H<CR>
+        nnoremap <silent><leader>wL :wincmd L<CR>
         nnoremap <silent><leader>w= :wincmd =<CR>
+        nnoremap <silent><leader>wx :wincmd x<CR>
+        nnoremap <silent><leader>wr :wincmd r<CR>
+        nnoremap <silent><leader>wR :wincmd R<CR>
+        nnoremap <silent><leader>w| :vertical-resize<CR>
+
 
     " }}}
     " Buffer {{{
