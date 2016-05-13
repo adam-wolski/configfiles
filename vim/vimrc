@@ -373,8 +373,6 @@ endif
         nnoremap <silent><leader>wx :wincmd x<CR>
         nnoremap <silent><leader>wr :wincmd r<CR>
         nnoremap <silent><leader>wR :wincmd R<CR>
-        nnoremap <silent><leader>w| :vertical-resize<CR>
-
 
     " }}}
     " Buffer {{{
