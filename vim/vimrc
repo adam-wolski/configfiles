@@ -100,7 +100,7 @@
 
         Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 
-        Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+        Plug 'rust-lang/rust.vim'
 
         Plug 'PotatoesMaster/i3-vim-syntax'
 
