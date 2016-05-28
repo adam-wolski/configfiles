@@ -59,7 +59,7 @@
             Plug 'ervandew/supertab'
             Plug 'Shougo/deoplete.nvim'
             Plug 'racer-rust/vim-racer'
-            " Plug 'zchee/deoplete-clang'
+            Plug 'zchee/deoplete-clang'
             Plug 'zchee/deoplete-jedi'
             Plug 'Shougo/neco-vim'
         endif
