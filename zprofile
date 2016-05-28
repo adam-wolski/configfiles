@@ -2,7 +2,7 @@
 # Helps with .gitignore files.
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export TERMINAL=st
+export TERMINAL=xterm
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=True
 
@@ -19,3 +19,5 @@ PATH=$HOME/bin:$PATH
 PATH=$HOME/.gem/ruby/2.1.0/bin:$PATH
 PATH=$HOME/.cabal/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.multirust/toolchains/stable/cargo/bin:$PATH
+PATH=$HOME/.multirust/toolchains/nightly/cargo/bin:$PATH
