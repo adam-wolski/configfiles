@@ -85,8 +85,7 @@ alias palsb='pactl list sinks | grep -B 2 Blaster'
 alias wacomDisableTouch="xsetwacom --set 'Wacom Bamboo 2FG 4x5 Finger touch' touch off"
 alias irc='weechat'
 alias youtube-dl-allnighter='youtube-dl -i --retries infinite'
-alias rust-clewn="clewn -gc=rust-gdb -ga"
-alias clewn='clewn -ga'
+alias i3-exit='i3-msg exit'
 
 # }}}
 
