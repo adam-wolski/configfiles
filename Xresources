@@ -1,12 +1,5 @@
 Xcursor.theme: Human
 
-URxvt.intensityStyles: false
-
-! URxvt*font: xft:Monospace Regular:pixelsize=12:antialias=true:hinting=true
-URxvt*font: xft:Source Code Pro ExtraLight:pixelsize=14:antialias=true:hinting=true
-URxvt.scrollBar: false
-urxvt*meta8: True
-
 ! Better font rendering
 ! Xft.lcdfilter: lcddefault
 ! Xft.antialias: true
@@ -15,11 +8,19 @@ urxvt*meta8: True
 ! Xft.hintstyle: hintslight
 ! Xft.rgba: rgb
 ! Xft.dpi: 96
+
+
+xterm*termName: xterm-256color
+XTerm*locale: true
+XTerm*metaSendsEscape: true
+Xterm*saveLines: 4096
+xterm*faceName: Source Code Pro:style=ExtraLight:size=11:antialias=true
+xterm*font: 7x13
+xterm.*backarrowKey: false
+
 ! Solarized color scheme for the X Window System
 !
 ! http://ethanschoonover.com/solarized
-
-
 ! Common
 
 #define S_yellow        #b58900
