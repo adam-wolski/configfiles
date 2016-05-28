@@ -16,13 +16,15 @@ set cul                      " Highlight the current line
 
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
+" --- Shortcuts ---
+nnoremap <leader>mf :pyf /usr/share/clang/clang-format.py<CR>
+
+" --- Debug setup ---
 let g:gdb_debugger = "gdb"
 
-" Generate Minunit Macros
-"
+" --- Generate Minunit Macros ---
 " Gets MU_TEST(function_name) marcros and adds them to first existing
 " MU_TEST_SUITE() macro.
-"
 let s:minunit_auto = 1
 function! AutoGenMinunitSuiteMacros()
     if s:minunit_auto == 0
