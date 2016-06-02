@@ -63,10 +63,6 @@
             Plug 'zchee/deoplete-jedi'
             Plug 'Shougo/neco-vim'
         endif
-        if has('win32')
-            Plug 'ervandew/supertab'
-            Plug 'davidhalter/jedi-vim'
-        endif
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
         Plug 'jiangmiao/auto-pairs'
@@ -101,6 +97,9 @@
         Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 
         Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+        Plug 'beyondmarc/hlsl.vim'
+        Plug 'beyondmarc/glsl.vim'
 
         Plug 'PotatoesMaster/i3-vim-syntax'
 
@@ -489,6 +488,9 @@ endif
 
         au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
         au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
+        au BufNewFile,BufRead *.mt set filetype=hlsl
+        au BufNewFile,BufRead *.mth set filetype=hlsl
+        au BufNewFile,BufRead *.ppfx set filetype=hlsl
 
     " }}}
     " Vim {{{
