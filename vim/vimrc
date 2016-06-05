@@ -96,6 +96,9 @@
 
         Plug 'rust-lang/rust.vim'
 
+        Plug 'beyondmarc/hlsl.vim'
+        Plug 'beyondmarc/glsl.vim'
+
         Plug 'PotatoesMaster/i3-vim-syntax'
 
     " }}}
@@ -470,6 +473,9 @@ endif
 
         au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
         au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
+        au BufNewFile,BufRead *.mt set filetype=hlsl
+        au BufNewFile,BufRead *.mth set filetype=hlsl
+        au BufNewFile,BufRead *.ppfx set filetype=hlsl
 
     " }}}
     " Vim {{{

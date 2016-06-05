@@ -32,6 +32,7 @@ values."
      syntax-checking
      rust
      c-c++
+     javascript
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
