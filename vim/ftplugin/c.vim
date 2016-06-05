@@ -17,7 +17,8 @@ set cul                      " Highlight the current line
 set scrolloff=3              " Scroll when cursor gets within 3 characters of top/bottom edge
 
 " --- Shortcuts ---
-nnoremap <leader>mf :pyf /usr/share/clang/clang-format.py<CR>
+nnoremap <leader>mf :%pyf /usr/share/clang/clang-format.py<CR>
+vnoremap <leader>mf :'<,'>pyf /usr/share/clang/clang-format.py<CR>
 
 " --- Debug setup ---
 let g:gdb_debugger = "gdb"

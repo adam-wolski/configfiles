@@ -6,6 +6,10 @@ function! AddPragmaOnce()
 endfunction
 
 
+nnoremap <leader>mf :%pyf /usr/share/clang/clang-format.py<CR>
+vnoremap <leader>mf :'<,'>pyf /usr/share/clang/clang-format.py<CR>
+
+
 if !exists("cpp_autocmdloaded")
     let cpp_autocmdloaded = 1
 
