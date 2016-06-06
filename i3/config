@@ -283,16 +283,16 @@ workspace 5 output DVI-I-0
 # Autostart {{{
 
 exec --no-startup-id sh ~/.fehbg &
-exec --no-startup-id "compton --config ~/.config/compton.conf -b"
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
-exec --no-startup-id ~/.config/synaptic_settings
 
 # Swap ctrl with alt and make caps lock an esc key
-exec --no-startup-id ~/bin/swapCtlAlt y
+exec --no-startup-id ~/bin/swap_ctl_alt y
 
 # Disable screensaver
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 0
+
+exec --no-startup-id ~/.config/autostart
 
 # }}}
