@@ -1,0 +1,3 @@
+#/bin/bash
+~/.config/synaptic_settings
+compton --config ~/.config/compton.conf -b
