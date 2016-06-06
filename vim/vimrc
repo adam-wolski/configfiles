@@ -4,6 +4,9 @@
     let g:email='miniukof@gmail.com'
     let g:github='https://github.com/miniukof'
 
+    if has('nvim')
+        set termguicolors                   " True color in terminal
+    endif
     set encoding=utf-8
     set statusline=[%n]\                " Buffer number
     set statusline+=%f%m%r%h%w\         " Filename and modification
