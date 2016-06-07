@@ -216,6 +216,7 @@ status.register("pulseaudio",
 #        "stop": "◾",
 #    },)
 
-status.register(NetSpeed)
+if gethostname() == 'miniucer':
+    status.register(NetSpeed)
 
 status.run()
