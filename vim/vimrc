@@ -250,7 +250,9 @@ set cursorline              " Have a line indicate the cursor location
 set wrap                    " Wrap text
 set linebreak               " But don't wrap text in the middle of a word
 set noerrorbells            " Don't bell or blink
-set vb t_vb=
+set novisualbell
+set t_vb=
+
 if has('gui_running') || has('nvim')
     :set guioptions=
 	:set guiheadroom=0
