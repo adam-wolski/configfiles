@@ -287,7 +287,7 @@ exec --no-startup-id redshift-gtk &
 exec --no-startup-id nm-applet
 
 # Swap ctrl with alt and make caps lock an esc key
-exec --no-startup-id ~/bin/swap_ctl_alt y
+exec --no-startup-id ~/bin/swap_ctl_alt
 
 # Disable screensaver
 exec --no-startup-id xset -dpms
