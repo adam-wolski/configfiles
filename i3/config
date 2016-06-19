@@ -293,6 +293,6 @@ exec --no-startup-id ~/bin/swap_ctl_alt
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 0
 
-exec --no-startup-id ~/.config/autostart
+exec --no-startup-id ~/.config/auto_start
 
 # }}}
