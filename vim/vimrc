@@ -58,11 +58,11 @@
     " }}}
     " Completation Plugins {{{
 
-        Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost'}
         Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
         if has('win32')
-            Plug 'ervandew/supertab'
-            Plug 'davidhalter/jedi-vim'
+            Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --clang-completer'}
+        else
+            Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --racer-completer --system-libclang --system-boost'}
         endif
         Plug 'honza/vim-snippets'
         Plug 'SirVer/ultisnips'
