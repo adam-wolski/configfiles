@@ -86,6 +86,7 @@ alias wacomDisableTouch="xsetwacom --set 'Wacom Bamboo 2FG 4x5 Finger touch' tou
 alias irc='weechat'
 alias youtube-dl-allnighter='youtube-dl -i --retries infinite'
 alias i3-exit='i3-msg exit'
+alias set_backlight='sudo tee /sys/class/backlight/intel_backlight/brightness <<< ' # Set backlight on laptopn goes from 0 to 999
 
 # }}}
 
