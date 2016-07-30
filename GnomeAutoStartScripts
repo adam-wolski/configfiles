@@ -1,7 +1,0 @@
-xrdb /home/miniu/.Xresources
-#mpd &
-#mpdscribble &
-#"compton --config /home/miniu/.config/.compton.conf -b"
-~/bin/AutoStartScripts
-redshift-gtk &
-"thunar --daemon"
