@@ -53,6 +53,7 @@ alias aurupg='pacaur -Syu'                  # Synchronize with repositories and 
 alias aur='pacaur -S --noedit'              
 alias aurs='cower --sort votes -s'          # Search
 alias aursearch='cower --sort votes -s'     # Search
+alias aurclearcache='rm -rf ~/.cache/pacaur'
 
 # }}}
 # other {{{
