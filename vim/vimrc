@@ -496,5 +496,8 @@ endif
         au FileType vim set sts=4 ts=4 sw=4
 
     " }}}
+    " Shaders {{{
+        au BufNewFile,BufRead *.shader set filetype=glsl
+    " }}}
 
 " }}}
