@@ -293,6 +293,9 @@ exec --no-startup-id ~/bin/swap_ctl_alt
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s 0
 
+# Hide mouse cursor on idle using unclutter
+exec --no-startup-id unclutter
+
 exec --no-startup-id ~/.config/auto_start
 
 # }}}
