@@ -199,8 +199,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # }}}
 # Brighntess {{{
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo python /home/miniu/bin/set_backlight.py 10
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo python /home/miniu/bin/set_backlight.py -10
 bindsym $mod+XF86MonBrightnessUp exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`xbacklight -get`" 0
 
