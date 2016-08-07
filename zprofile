@@ -23,4 +23,5 @@ PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/.multirust/toolchains/stable/cargo/bin:$PATH
 PATH=$HOME/.multirust/toolchains/nightly/cargo/bin:$PATH
 
-startx
+# Start ssh-agent and X session on login
+ssh-agent startx
