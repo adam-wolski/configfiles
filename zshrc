@@ -78,3 +78,4 @@ source "$HOME/.MASTERSCRIPT"
 source "$HOME/.startup.mine"
 
 . /usr/share/fzf/key-bindings.zsh
+. /usr/share/fzf/completion.zsh
