@@ -12,7 +12,20 @@ setlocal tags=rusty-tags.vi
 
 let g:gdb_debugger = "rust-gdb"
 
+let g:neomake_place_signs = 1
+let g:neomake_open_list = 0
+
+
+let g:neomake_error_sign = {'text': 'E>', 'texthl': 'Error'}
+let g:neomake_warning_sign = {'text': 'W>', 'texthl': 'WarningMsg'}
+let g:neomake_message_sign = {'text': 'M>', 'texthl': 'WarningMsg'}
+let g:neomake_info_sign = {'text': 'I>', 'texthl': 'WarningMsg'}
+
+
 if !exists("rust_autocmdloaded")
     let rust_autocmdloaded = 1
     autocmd BufWrite *.rs call jobstart("rusty-tags vi")
+    autocmd BufWrite *.rs RustFmt
+    autocmd BufWritePost *.rs Neomake! cargo
+    autocmd VimLeave * let g:neomake_verbose = 0
 endif
