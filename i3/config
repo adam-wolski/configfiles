@@ -186,8 +186,8 @@ bindsym $mod+shift+e exec --no-startup-id "i3-sensible-terminal -e ranger"
 # }}}
 # Tablet shortcuts {{{
 
-bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1917x1080+0+0'"
-bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL stylus' MapToOutput '1680x1050+1920+0'"
+bindsym $mod+shift+a exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL Pen stylus' MapToOutput '1917x1080+0+0'"
+bindsym $mod+shift+d exec --no-startup-id "xsetwacom set 'Wacom Intuos4 WL Pen stylus' MapToOutput '1680x1050+1920+0'"
 
 # }}}
 # Audio volume {{{
