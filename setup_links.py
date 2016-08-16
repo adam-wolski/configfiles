@@ -93,17 +93,11 @@ LINKS = {
     }
 
 LINKS_WIN = {
-    'spacemacs': ["./emacs/{}",
-                  "~/.{}"],
-
-    'gfx': ["./emacs/private/{}",
-                "~/.emacs.d/private/{}"],
-
     # Vim
-    'vimrc': [r"vim\{}",
-              r"~\_{}"],
+    'vimrc': [r"vim\vimrc",
+              r"~\_vimrc"],
 
-    'vimrc': [r"vim\{}",
+    'vimrc_init': [r"vim\vimrc",
               r"~\vimfiles\init.vim"],
 
     'gvimrc': [r"vim\{}",
