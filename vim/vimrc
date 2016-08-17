@@ -221,6 +221,24 @@
         let g:neomake_place_signs = 0
         let g:neomake_open_list = 2
 
+        let g:neomake_rust_clippy_maker = {
+            \ 'exe': 'cargo',
+            \ 'args': ['clippy'],
+            \ 'errorformat':
+                \   '%-Gerror: Could not compile%.%#,'
+                \.  '%-Gerror: aborting due to%.%#,'
+                \.  '%Eerror[%.%#]: %m,%C\\s%#--> %f:%l:%c,'
+                \.  '%Eerror: %m,%C\\s%#--> %f:%l:%c,'
+                \.  '%Wwarning: %m,%C\\s%#--> %f:%l:%c,'
+                \.  '%I\\s%#= help: %m,'
+                \.  '%I\\s%#= note: %m,'
+                \,
+            \ 'append_file': 0,
+            \ }
+
+        " Use cargo clippy by default
+        let g:neomake_rust_enabled_makers = ['clippy']
+
 " }}}
 
 " }}}
