@@ -26,6 +26,6 @@ if !exists("rust_autocmdloaded")
     let rust_autocmdloaded = 1
     autocmd BufWrite *.rs call jobstart("rusty-tags vi")
     autocmd BufWrite *.rs RustFmt
-    autocmd BufWritePost *.rs Neomake! cargo
+    autocmd BufWritePost *.rs Neomake! clippy
     autocmd VimLeave * let g:neomake_verbose = 0
 endif
