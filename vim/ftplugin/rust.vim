@@ -1,4 +1,4 @@
-nnoremap <leader>mcc :Neomake! clippy<CR>
+nnoremap <leader>mcc :Neomake! rust_clippy<CR>
 nnoremap <leader>mcd :!cargo doc<CR>
 nnoremap <leader>mct :!cargo test<CR>
 nnoremap <leader>mcb :!cargo bench<CR>
@@ -26,6 +26,6 @@ if !exists("rust_autocmdloaded")
     let rust_autocmdloaded = 1
     autocmd BufWrite *.rs call jobstart("rusty-tags vi")
     autocmd BufWrite *.rs RustFmt
-    autocmd BufWritePost *.rs Neomake! clippy
+    autocmd BufWritePost *.rs Neomake! rust_clippy
     autocmd VimLeave * let g:neomake_verbose = 0
 endif
