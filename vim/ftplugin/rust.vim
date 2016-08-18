@@ -1,4 +1,4 @@
-nnoremap <leader>mcc :Neomake! cargo<CR>
+nnoremap <leader>mcc :Neomake! clippy<CR>
 nnoremap <leader>mcd :!cargo doc<CR>
 nnoremap <leader>mct :!cargo test<CR>
 nnoremap <leader>mcb :!cargo bench<CR>
