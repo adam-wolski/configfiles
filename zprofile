@@ -24,4 +24,4 @@ PATH=$HOME/.multirust/toolchains/stable/cargo/bin:$PATH
 PATH=$HOME/.multirust/toolchains/nightly/cargo/bin:$PATH
 
 # Start ssh-agent and X session on login
-ssh-agent startx
+[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec ssh-agent startx
