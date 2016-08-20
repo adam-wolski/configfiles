@@ -220,6 +220,11 @@ bindsym $mod+Shift+s exec ~/bin/lock_and_suspend
 bindsym Ctrl+Shift+Escape exec --no-startup-id gnome-system-monitor
 
 # }}}
+# Sleep {{{
+
+bindsym XF86Sleep exec --no-startup-id systemctl suspend
+
+# }}}
 
 # }}}
 # Colors {{{
