@@ -49,7 +49,8 @@ alias pfiles='pkgfile -l'
 alias pfilesupdate='sudo pkgfile --update'
 
 # aur aliases
-alias aurupg='pacaur -Syu'                  # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+# Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias aurupg='rm -rf ~/.cache/pacaur && pacaur -Syu'                  
 alias aur='pacaur -S --noedit'              
 alias aurs='cower --sort votes -s'          # Search
 alias aursearch='cower --sort votes -s'     # Search
