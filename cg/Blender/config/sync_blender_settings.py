@@ -1,4 +1,5 @@
 from os import path
+from os import remove
 import shutil
 from platform import system
 from subprocess import Popen
@@ -7,8 +8,7 @@ if system() == 'Windows':
     from win32file import CreateSymbolicLink
     BLENDER_FOLDER = "~/AppData/Roaming/Blender Foundation/Blender/2.77/config/"
 else:
-    BLENDER_FOLDER = "~/.config/Blender Foundation/Blender/2.77/config/"
-
+    BLENDER_FOLDER = "~/.config/blender/2.77/config/"
 
 
 def link(target, lnk, force=False):
@@ -61,8 +61,8 @@ if __name__ == "__main__":
     if int(input("(1): Copy configuration from blender folder to this one.\n"
                  " 2 : Link configuration from this folder to blenders\n"
                  ": ")) == 2:
-        link(this_startup_file, blender_startup_file)
-        link(this_prefs_file, blender_prefs_file)
+        link(this_startup_file, blender_startup_file, True)
+        link(this_prefs_file, blender_prefs_file, True)
     else:
         shutil.copyfile(blender_startup_file, this_startup_file)
         shutil.copyfile(blender_prefs_file, this_prefs_file)
