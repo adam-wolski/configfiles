@@ -60,10 +60,10 @@ XTerm.*backarrowKey: false
 
 ! Numix colors
 #define N_white         #f9f9f9
-#define N_gray          #dedede
+#define N_grey          #dedede
 #define N_orange        #d64937
-#define N_darkgray      #333333
-#define N_darkgrayl     #404040
+#define N_darkgrey      #333333
+#define N_darkgreyl     #404040
 #define N_black         #2d2d2d
 #define N_green         #81C784
 
@@ -72,7 +72,7 @@ XTerm.*backarrowKey: false
 !
 ! URxvt*background:            S_base03
 
-*background:              N_darkgray
+*background:              N_darkgrey
 *foreground:              N_white
 *fading:                  40
 *fadeColor:               S_base03
@@ -96,3 +96,19 @@ XTerm.*backarrowKey: false
 *color13:                 S_violet
 *color14:                 S_base1
 *color15:                 S_base3
+
+
+! Rofi
+rofi.color-enabled: true
+!                  background  border      separator
+rofi.color-window: N_darkgrey, N_darkgrey, N_orange
+!                  bg,         fg,     bg alt,     hl_bg,      hl_fg
+rofi.color-normal: N_darkgrey, N_grey, N_darkgrey, N_darkgreyl, N_white
+rofi.color-active: N_darkgrey, N_white, N_darkgrey, N_darkgreyl, N_white
+rofi.color-urgent: N_darkgrey, N_orange, N_darkgrey, N_darkgreyl, N_orange
+
+! Auto detect threads
+rofi.threads: 0
+rofi.hide-scrollbar: true
+rofi.location: 2
+rofi.terminal: "xterm"

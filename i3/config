@@ -37,7 +37,8 @@ bindsym $mod+q kill
 # dmenu {{{
 
 # (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -nb \#333333 -nf \#f9f9f9 -sb \#333333 -sf \#d64937 -i
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
