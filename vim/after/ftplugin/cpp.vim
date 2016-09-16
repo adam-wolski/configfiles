@@ -1,13 +1,18 @@
 let g:gdb_debugger = "gdb"
 
 
-function! AddPragmaOnce()
-    execute "normal i#pragma once"
-endfunction
+set colorcolumn=100
+set tabstop=4
+set shiftwidth=4
 
 
 nnoremap <leader>mf :%pyf /usr/share/clang/clang-format.py<CR>
 vnoremap <leader>mf :'<,'>pyf /usr/share/clang/clang-format.py<CR>
+
+
+function! AddPragmaOnce()
+    execute "normal i#pragma once"
+endfunction
 
 
 if !exists("cpp_autocmdloaded")
