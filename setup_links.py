@@ -24,6 +24,9 @@ LINKS = {
     'gtkrc-2.0.mine': ["{}",
                        "~/.{}"],
 
+    'config.fish': ["{}",
+                    "~/.config/fish/{}"],
+
     'aliases': ["{}",
                 "~/.config/{}"],
 
