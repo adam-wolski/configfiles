@@ -4,6 +4,7 @@ let g:gdb_debugger = "gdb"
 set colorcolumn=100
 set tabstop=4
 set shiftwidth=4
+set nonumber
 
 
 nnoremap <leader>mf :%pyf /usr/share/clang/clang-format.py<CR>
