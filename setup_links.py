@@ -24,8 +24,11 @@ LINKS = {
     'gtkrc-2.0.mine': ["{}",
                        "~/.{}"],
 
+    'aliases': ["{}",
+                "~/.config/{}"],
+
     'MASTERSCRIPT': ["{}",
-                     "~/.{}"],
+                     "~/.config/{}"],
 
     'vtrgb': ["{}",
               "~/.config/{}"],
@@ -38,6 +41,9 @@ LINKS = {
 
     'Xresources': ["{}",
                    "~/.{}"],
+
+    'bashrc': ["{}",
+               "~/.{}"],
 
     'zshrc': ["{}",
               "~/.{}"],
