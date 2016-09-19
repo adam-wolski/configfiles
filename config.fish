@@ -1,7 +1,10 @@
 # vim: fdm=marker foldenable
 
+# Variables {{{
+
 set -gx EDITOR nvim
 
+# }}}
 # Aliases {{{
 
 # Script shortcuts {{{
@@ -89,5 +92,14 @@ abbr -a set_backlight 'sudo tee /sys/class/backlight/intel_backlight/brightness 
 abbr -a hdmi 'xrandr --output HDMI-1 --auto'  # Enable HDMI on laptop
 
 # }}}
+
+# }}}
+# Functions {{{
+
+# Change directory and print it's content
+function c
+    cd $argv
+    ls
+end
 
 # }}}
