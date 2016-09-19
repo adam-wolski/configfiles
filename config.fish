@@ -102,4 +102,9 @@ function c
     ls
 end
 
+# Custom ls
+function l
+    ls -1 --size --human-readable --group-directories-first --color=auto --dereference -H $argv
+end
+
 # }}}
