@@ -51,8 +51,14 @@ LINKS = {
     'zshrc': ["{}",
               "~/.{}"],
 
+    'profile': ["{}",
+                "~/.{}"],
+
     'zprofile': ["{}",
                  "~/.{}"],
+
+    'bash_profile': ["{}",
+                     "~/.{}"],
 
     'synaptic_settings': ["{}",
                           "~/.config/{}"],
