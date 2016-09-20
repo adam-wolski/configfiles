@@ -237,7 +237,6 @@ set smartindent             " Use smart indent if there is no indent file
 set scrolloff=5             " Keep x context lines above and below the cursor
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set tabstop=4               " <tab> inserts x spaces
-set iskeyword-=_            " make underscore not be a part of the 'word' object
 
 " }}}
 " Searching Settings {{{
