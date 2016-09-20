@@ -70,11 +70,6 @@
         Plug 'tpope/vim-surround'
 
     " }}}
-    " Error Checking Plugins {{{
-
-        Plug 'scrooloose/syntastic'
-
-    " }}}
     " Visual Plugins {{{
 
         Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
@@ -88,15 +83,6 @@
         Plug 'beyondmarc/opengl.vim', { 'for': ['c', 'cpp'] }
         Plug 'johnsyweb/vim-makeshift', { 'for': ['c', 'cpp'] }
 
-        Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-        Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
-        Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-        Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
-        Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-        Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
-
-        Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
-
         Plug 'rust-lang/rust.vim'
 
         Plug 'beyondmarc/hlsl.vim'
@@ -108,18 +94,18 @@
     " Themes {{{
 
         Plug 'altercation/vim-colors-solarized'
-        Plug 'tomasr/molokai'
 
+    " }}}
+    " Additional text objects {{{
+    
+        Plug 'michaeljsmith/vim-indent-object'
+        
     " }}}
     " Other Plugins {{{
 
-        if has('unix')
-            Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-        endif
         if has('win32')
             Plug 'nfvs/vim-perforce'
         endif
-        Plug 'godlygeek/tabular'
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-eunuch'
         Plug 'benekastah/neomake'
@@ -251,6 +237,7 @@ set smartindent             " Use smart indent if there is no indent file
 set scrolloff=5             " Keep x context lines above and below the cursor
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set tabstop=4               " <tab> inserts x spaces
+set iskeyword-=_            " make underscore not be a part of the 'word' object
 
 " }}}
 " Searching Settings {{{
