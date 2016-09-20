@@ -73,7 +73,6 @@
     " Visual Plugins {{{
 
         Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
-        Plug 'jaxbot/semantic-highlight.vim'
         Plug 'luochen1990/rainbow'
         Plug 'equalsraf/neovim-gui-shim'
 
@@ -171,13 +170,6 @@
         let g:ycm_filepath_completion_use_working_dir=1
         " Use default system python
         let g:ycm_python_binary_path = '/usr/bin/python'
-
-    " }}}
-    "   Semantic Highlight {{{
-
-        source ~/.config/SemanticHighlightPluginSettings.vim
-        let g:semanticEnableFileTypes = {'python': 'py'}
-        let g:semanticGUIColors = [ "#BBDEFB", "#64B5F6", "#B39DDB", "#B39DDB", "#B39DDB", "#64B5F6", "#B39DDB", "#64B5F6", "#BBDEFB", "#90CAF9", "#90CAF9", "#64B5F6", "#64B5F6", "#90CAF9", "#B39DDB", "#B39DDB", "#BBDEFB", "#90CAF9", "#64B5F6", "#B39DDB", "#90CAF9", "#BBDEFB", "#BBDEFB", "#64B5F6", "#64B5F6", "#90CAF9" ]
 
     " }}}
     "   FSF {{{
