@@ -84,9 +84,6 @@ LINKS = {
     'ycm_extra_conf_cpp.py': ["vim/{}",
                               "~/.config/{}"],
 
-    'SemanticHighlightPluginSettings.vim': ["vim/{}",
-                                            "~/.config/{}"],
-
     # Vim folders
     'ftplugin': ["vim/{}",
                  "~/.vim/{}"],
@@ -117,9 +114,6 @@ LINKS_WIN = {
 
     'gvimrc': [r"vim\{}",
                r"~\_{}"],
-
-    'SemanticHighlightPluginSettings.vim': [r"vim\{}",
-                                            r"~\.config\{}"],
 
     # Vim folders
     'ftplugin': [r"vim\{}",
