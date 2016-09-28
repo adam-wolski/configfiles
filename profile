@@ -1,6 +1,6 @@
 # Set ag as the default source for fzf
 # Helps with .gitignore files.
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 export TERMINAL=xterm
 
