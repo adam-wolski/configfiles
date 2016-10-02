@@ -32,10 +32,11 @@
     set wildmenu                        " Menu completion in command mode on <Tab>
     set wildmode=full                   " <Tab> cycles between all matching choices.
     let mapleader="\<Space>"            " Set leader shortcut to spacebar
+    set lazyredraw 
     set backspace=indent,eol,start
     set grepprg=rg\ --vimgrep
     if has('unix')
-            set dir=~/tmp/vim                                   " Directory for .swp files
+            set dir=~/tmp/vim           " Directory for .swp files
             set dict+=/usr/share/dict/words
     endif
 
@@ -242,6 +243,7 @@ set incsearch               " Incrementally search while typing a /regex
 " }}}
 " Visual Settings {{{
 
+set showcmd                 " Show command in bottom right
 set background=dark         " Dark background by default
 set showmatch               " Show matching parentesis
 set cursorline              " Have a line indicate the cursor location
