@@ -434,14 +434,14 @@ endif
         if has('unix')
             execute "Buffers"
         else
-            execute "CtrlP"
+            execute "CtrlPBuffer"
         endif
     endfunction
     function! FindFile()
         if has('unix')
             execute "Files"
         else
-            execute "CtrlPBuffer"
+            execute "CtrlP"
         endif
     endfunction
     function! FindTags()
@@ -455,7 +455,7 @@ endif
         if has('unix')
             execute "BTags"
         else
-            execute "CtrlPTag"
+            execute "CtrlPBufTag"
         endif
     endfunction
 
