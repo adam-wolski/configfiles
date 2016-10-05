@@ -1,3 +1,11 @@
+" Notes {{{
+
+" # Dependencies
+" * vim-plug plugin
+" * ~/tmp/vim directory
+" * ripgrep
+
+" }}}
 " Init {{{
 
     let g:author='Adam Wolski'
@@ -5,7 +13,7 @@
     let g:github='https://github.com/miniukof'
 
     if has('nvim')
-        set termguicolors                   " True color in terminal
+        set termguicolors               " True color in terminal
     endif
     set encoding=utf-8
     set statusline=[%n]\                " Buffer number
@@ -34,8 +42,10 @@
     let mapleader="\<Space>"            " Set leader shortcut to spacebar
     set backspace=indent,eol,start
     set grepprg=rg\ --vimgrep
+    set undofile
+    set undodir=~/tmp/vim               " Directory for undo files
+    set dir=~/tmp/vim                   " Directory for .swp files
     if has('unix')
-            set dir=~/tmp/vim                                   " Directory for .swp files
             set dict+=/usr/share/dict/words
     endif
 
