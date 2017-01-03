@@ -259,7 +259,7 @@ bar {
         position bottom
     	mode dock
     	hidden_state hide
-#	    tray_output primary
+	    tray_output primary
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Open Sans 9
 
