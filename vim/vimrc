@@ -14,6 +14,7 @@
 
     if has('nvim')
         set termguicolors               " True color in terminal
+        set inccommand=split            " Show incremental feedback for substitute
     endif
     set encoding=utf-8
     set statusline=[%n]\                " Buffer number
