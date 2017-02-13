@@ -59,12 +59,8 @@
     call plug#begin()
     " Navigation Plugins {{{
 
-        if has('unix')
-            Plug 'junegunn/fzf' " Don't build this one, install from repo.
-            Plug 'junegunn/fzf.vim'
-        else
-            Plug 'ctrlpvim/ctrlp.vim'
-        endif
+        Plug 'junegunn/fzf' " Don't build this one, install from repo.
+        Plug 'junegunn/fzf.vim'
         Plug 'Lokaltog/vim-easymotion'
         Plug 'derekwyatt/vim-fswitch'
 
@@ -291,7 +287,7 @@ endif
         nmap <Leader><Leader> <Plug>(easymotion-s)
 
         " CtrlP and similiar shortcut
-        nnoremap <C-p> :call FindFile()<CR>
+        nnoremap <C-p> :Files<CR>
 
         " Line Navigation, so it moves line down/up even with wrapping
         nnoremap j gj
@@ -337,18 +333,20 @@ endif
         let g:UltiSnipsJumpForwardTrigger='<c-j>'
         let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
-        " Insert mode completion with fzf
-        imap <c-x><c-k> <plug>(fzf-complete-word)
-        imap <c-x><c-f> <plug>(fzf-complete-path)
-        imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-        imap <c-x><c-l> <plug>(fzf-complete-line)
+        if has('unix')
+            " Insert mode completion with fzf
+            imap <c-x><c-k> <plug>(fzf-complete-word)
+            imap <c-x><c-f> <plug>(fzf-complete-path)
+            imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+            imap <c-x><c-l> <plug>(fzf-complete-line)
+        endif
 
 
     " }}}
     " File {{{
 
         nnoremap <leader>fs :w<CR>
-        nnoremap <leader>ff :call FindFile()<CR>
+        nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fS :FSHere<CR>
         nnoremap <leader>f! :SudoWrite<CR>
         nnoremap <leader>fd :Remove<CR>
@@ -380,8 +378,8 @@ endif
         nnoremap <leader><tab> :b#<CR>
         nnoremap <leader>b# :b#<CR>
         nnoremap <leader>bp :b#<CR>
-        nnoremap <leader>bb :call FindBuffer()<CR>
-        nnoremap <leader>bt :call FindBufferTags()<CR>
+        nnoremap <leader>bb :Buffers<CR>
+        nnoremap <leader>bt :BTags<CR>
         nnoremap <leader>bd :bd<CR>
         nnoremap <leader>bl :ls<CR>
         nnoremap <leader>bY :%y+<CR>
@@ -432,36 +430,6 @@ endif
 
 " }}}
 " Functions {{{
-
-    function! FindBuffer()
-        if has('unix')
-            execute "Buffers"
-        else
-            execute "CtrlPBuffer"
-        endif
-    endfunction
-    function! FindFile()
-        if has('unix')
-            execute "Files"
-        else
-            execute "CtrlP"
-        endif
-    endfunction
-    function! FindTags()
-        if has('unix')
-            execute "Tags"
-        else
-            execute "CtrlPTag"
-        endif
-    endfunction
-    function! FindBufferTags()
-        if has('unix')
-            execute "BTags"
-        else
-            execute "CtrlPBufTag"
-        endif
-    endfunction
-
 
     function MyFoldText()
       let line = getline(v:foldstart)
