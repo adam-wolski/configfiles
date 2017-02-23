@@ -175,7 +175,7 @@
         let g:ycm_collect_identifiers_from_tags_files = 1
         let g:ycm_seed_identifiers_with_syntax = 1
         let g:ycm_add_preview_to_completeopt = 1
-        let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
+        let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust'
         let g:ycm_filepath_completion_use_working_dir=1
         " Use default system python
         let g:ycm_python_binary_path = '/usr/bin/python'
