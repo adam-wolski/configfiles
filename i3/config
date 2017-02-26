@@ -198,6 +198,21 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # }}}
+# Spotify {{{
+
+# Play/Pause
+bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+# Next
+bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+# Previous
+bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+# Stop
+bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+
+# }}}
 # Brighntess {{{
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo python /home/miniu/bin/set_backlight.py 10
@@ -254,7 +269,7 @@ client.urgent           #d64937 #d64937 #dedede #2d2d2d
 # Bar {{{
 
 bar {
-        status_command "python ~/.i3/i3pystatus_config.py"
+        status_command "python ~/.config/i3/i3pystatus_config.py"
         workspace_buttons yes
         position bottom
     	mode dock
