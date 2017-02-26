@@ -50,7 +50,7 @@ abbr -a pfilesupdate 'sudo pkgfile --update'
 
 # aur abbr -aes
 # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-abbr -a aurupg 'rm -rf ~/.cache/pacaur ; pacaur -Syu'                  
+abbr -a aurupg 'rm -rf ~/.cache/pacaur ; pacaur -Syu --noconfirm --noedit'                  
 abbr -a aur 'pacaur -S --noedit'              
 abbr -a aurs 'cower --sort votes -s'          # Search
 abbr -a aursearch 'cower --sort votes -s'     # Search
