@@ -77,9 +77,9 @@ abbr -a e 'nvim'
 abbr -a ev 'qvim'                               #Editor gui
 abbr -a pyev 'pynvim'
 abbr -a sx 'startx'
-abbr -a wine 'env PULSE_LATENCY_MSEC=60 wine'       #Fix for audio playing to fast
+abbr -a winepulsefix 'env PULSE_LATENCY_MSEC=60 wine'       #Fix for audio playing to fast
 abbr -a xboxdrvDarkSouls 'sudo xboxdrv --detach-kernel-driver --buttonmap 1=3,3=1,2=4,4=2,rt=start,lt=back,start=rt,back=lt --ui-buttonmap guide=KEY_LEFTSHIFT+KEY_TAB,rt=KEY_END,lt=KEY_G --detach --dbus disabled --daemon' #Fix for not correct mapping in dark souls
-abbr -a pulseaudiofix 'PULSE_LATENCY_MSEC=60'
+abbr -a pulseaudiofix 'env PULSE_LATENCY_MSEC=60'
 abbr -a winesteam 'wine "/home/miniu/.wine/drive_c/Program Files (x86)/Steam/Steam.exe" --no-dwrite'
 abbr -a pasds 'pactl set-default-sink'
 abbr -a pals 'pactl list sinks'

@@ -37,10 +37,10 @@ LINKS = {
               "~/.config/{}"],
 
     'i3pystatus_config.py': ["i3/{}",
-                             "~/.i3/{}"],
+                             "~/.config/i3/{}"],
 
-    'config': ["i3/{}",
-               "~/.i3/{}"],
+    'i3_config': ["i3/config",
+               "~/.config/i3/config"],
 
     'Xresources': ["{}",
                    "~/.{}"],
