@@ -263,7 +263,6 @@ set t_vb=
 
 if has('gui_running') || has('nvim')
     :set guioptions=
-	:set guiheadroom=0
     if has('unix')
         :set guifont=Source\ Code\ Pro\ Ultra-Light\ 11
     else
