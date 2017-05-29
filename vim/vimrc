@@ -459,10 +459,7 @@ endif
 
         au BufNewFile,BufRead *.skn set filetype=ce_skin    " Chrome Engine skin filetype
         au BufNewFile,BufRead *.dmt set filetype=ce_mat     " Chrome Engine Material filetype
-        au BufNewFile,BufRead *.mt set filetype=hlsl autoindent noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-        au BufNewFile,BufRead *.mth set filetype=hlsl autoindent noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-        au BufNewFile,BufRead *.ppfx set filetype=hlsl autoindent noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-        au BufNewFile,BufRead *.scr set filetype=hlsl autoindent noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+        au BufNewFile,BufRead *.mt,*.mth,*.ppfx,*.scr,*.scd set filetype=hlsl autoindent noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
 
     " }}}
     " Vim {{{
