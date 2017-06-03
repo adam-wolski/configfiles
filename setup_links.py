@@ -37,10 +37,10 @@ LINKS = {
               "~/.config/{}"],
 
     'i3pystatus_config.py': ["i3/{}",
-                             "~/.i3/{}"],
+                             "~/.config/i3/{}"],
 
-    'config': ["i3/{}",
-               "~/.i3/{}"],
+    'i3_config': ["i3/config",
+               "~/.config/i3/config"],
 
     'Xresources': ["{}",
                    "~/.{}"],
@@ -130,6 +130,26 @@ LINKS_WIN = {
 
     'after': [r"vim\{}",
               r"~\vimfiles\{}"],
+
+    # Neovim
+    'vimrc_init': [r"vim\vimrc",
+                   r"%userprofile%\AppData\Local\nvim\init.vim"],
+
+    'ftplugin': [r"vim\{}",
+                 r"%userprofile%\AppData\Local\nvim\{}"],
+
+    'syntax': [r"vim\{}",
+               r"%userprofile%\AppData\Local\nvim\{}"],
+
+    'colors': [r"vim\{}",
+               r"%userprofile%\AppData\Local\nvim\{}"],
+
+    'snippets_folder': [r"vim\snippets",
+                        r"%userprofile%\AppData\Local\nvim\mysnippets"],
+
+    'after': [r"vim\{}",
+              r"%userprofile%\AppData\Local\nvim\{}"],
+
     }
 
 
