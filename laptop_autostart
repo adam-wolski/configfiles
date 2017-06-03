@@ -1,3 +1,4 @@
 #/bin/bash
 /home/miniu/.config/synaptic_settings
 compton --config ~/.config/compton.conf -b
+sudo updatedb
