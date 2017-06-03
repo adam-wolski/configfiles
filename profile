@@ -6,7 +6,7 @@ export TERMINAL=xterm
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=True
 
-export RUST_SRC_PATH=/usr/local/rust/rust/src
+export RUST_SRC_PATH=$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export CARGO_HOME=$HOME/.cargo
 
 export KEYTIMEOUT=1
