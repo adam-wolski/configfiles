@@ -401,8 +401,8 @@ endif
         if has('nvim')
 
         " Start/Exit
-        nnoremap <leader>' :vsp term://zsh<CR>
-        tnoremap <C-e> <C-\><C-n>
+        nnoremap <leader>' :call TerminalToggle()<CR>
+        tnoremap <C-e> <C-\><C-n>:call TerminalToggle()<CR>
 
         " window navigation
         tnoremap <C-h> <C-\><C-n><C-w>h
@@ -436,6 +436,23 @@ endif
       let sub = substitute(line, '"\|/\*\|\*/\|{{{\d\=\|}}}', '', 'g')
       return v:folddashes . sub
     endfunction
+
+    if has('nvim')
+        let g:terminal_buffer = 0
+        function TerminalToggle()
+            if bufnr("") == g:terminal_buffer
+                close
+            else
+                if bufexists(g:terminal_buffer)
+                    exec "vsp | b".g:terminal_buffer
+                else
+                    exec "vsp term://fish"
+                    let g:terminal_buffer = bufnr("")
+                endif
+                startinsert!
+            endif
+        endfunction
+    endif
 
 " }}}
 " Filetype Specific Settings {{{
