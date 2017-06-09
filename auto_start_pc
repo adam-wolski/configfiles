@@ -1,0 +1,4 @@
+#!/bin/bash
+
+setxkbmap -option caps:escape
+compton -b --config ~/.config/compton.conf
