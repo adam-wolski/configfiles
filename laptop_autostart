@@ -1,7 +1,6 @@
 #/bin/bash
 $HOME/.config/synaptic_settings
+$HOME/bin/swap_ctl_alt
 compton --config $HOME/.config/compton.conf -b
 sudo updatedb
-redshift-gtk
-# Swap ctrl with alt and make caps lock an esc key
-exec --no-startup-id $HOME/bin/swap_ctl_alt
+redshift-gtk &
