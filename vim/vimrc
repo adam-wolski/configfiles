@@ -168,7 +168,6 @@
     " }}}
     "   YouCompleteMe {{{
 
-        nnoremap gd :YcmCompleter GoTo<CR>
         let g:ycm_global_ycm_extra_conf = "~/.config/ycm_extra_conf.py"
         let g:ycm_confirm_extra_conf = 0                " Don't ask about ycm extra conf
         let g:ycm_complete_in_comments = 1              " Complete in comments
@@ -177,7 +176,6 @@
         let g:ycm_add_preview_to_completeopt = 1
         let g:ycm_filepath_completion_use_working_dir=1
         if has('unix')
-            let g:ycm_rust_src_path = '/usr/local/rust/rust/src'
             let g:ycm_python_binary_path = '/usr/bin/python'
         endif
 
@@ -409,6 +407,11 @@ endif
         nnoremap <leader>gw :Gwrite<CR>
 
     " }}}
+    " YouCompleteMe {{{
+        nnoremap <leader>yy :YcmCompleter GoTo<CR> 
+        nnoremap <leader>yt :YcmCompleter GetType<CR> 
+        nnoremap <leader>yd :YcmCompleter GetDoc<CR> 
+" }}}
 
 " }}}
 " Functions {{{
