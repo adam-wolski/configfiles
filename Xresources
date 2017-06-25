@@ -15,7 +15,8 @@ XTerm*locale: true
 XTerm*metaSendsEscape: true
 XTerm*visualBell: False
 XTerm*saveLines: 4096
-XTerm*faceName: Source Code Pro:style=ExtraLight:size=11:antialias=true
+! XTerm*faceName: Source Code Pro:style=ExtraLight:size=10:antialias=true
+XTerm*faceName: oxygen mono:size=11:antialias=true
 XTerm*font: 7x13
 XTerm.*backarrowKey: false
 
