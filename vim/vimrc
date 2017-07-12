@@ -46,6 +46,7 @@
     set grepprg=rg\ --vimgrep
     set undofile
     set undodir=~/tmp/vim               " Directory for undo files
+    set undolevels=10000                " Bigger undo size
     set dir=~/tmp/vim                   " Directory for .swp files
     if has('unix')
             set dict+=/usr/share/dict/words
