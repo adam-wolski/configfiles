@@ -223,7 +223,8 @@ bindsym $mod+XF86MonBrightnessDown exec --no-startup-id notifier "Backlight" "`x
 # }}}
 # Take a screenshot {{{
 
-bindsym Print exec --no-startup-id maim ~/Pictures/$(date +%F-%T).png
+bindsym Print exec --no-startup-id maim ~/tmp/$(date +%F-%T).png
+bindsym Shift+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 
 # }}}
 # Lock {{{
