@@ -417,6 +417,11 @@ exe "hi! rustStorage"   .s:bg0   .s:fa0   .s:gn
 exe "hi! rustReservedKeyword"   .s:bg0   .s:fa0   .s:gn
 
 " }}}
+" Python highlighting  {{{
+
+exe "hi! pythonComment"   .s:bg0   .s:fa0   .s:gb
+
+" }}}
 " ce_skin hightlighting {{{
 
 exe "hi! CEReplace"   .s:bg0   .s:fa4   .s:gn
