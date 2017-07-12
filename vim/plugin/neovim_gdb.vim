@@ -1,6 +1,6 @@
 if has('nvim')
-sign define GdbBreakpoint text=●
-sign define GdbCurrentLine text=⇒
+sign define GdbBreakpoint text=*
+sign define GdbCurrentLine text=>>
 
 " ================================================================
 "
