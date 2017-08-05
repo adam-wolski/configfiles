@@ -1,4 +1,5 @@
 #!/bin/bash
 
+xinput set-prop 8 "libinput Scroll Method Enabled" 0, 0, 1
 setxkbmap -option caps:escape
 compton -b --config ~/.config/compton.conf
