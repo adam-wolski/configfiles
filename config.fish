@@ -28,9 +28,9 @@ abbr -a pyvim 'PYTHONPATH=./ nvim'
 # }}}
 # cd {{{
 
-abbr -a cdbin 'cd ~/bin/'
-abbr -a cdb 'cd ~/builds/'
-abbr -a cdc 'cd ~/git/configfiles'
+abbr -a cdbin 'c ~/bin/'
+abbr -a cdb 'c ~/builds/'
+abbr -a cdc 'c ~/git/configfiles'
 
 # }}}
 # pacman {{{
@@ -90,6 +90,7 @@ abbr -a youtube-dl-allnighter 'youtube-dl -i --retries infinite'
 abbr -a i3-exit 'i3-msg exit'
 abbr -a set_backlight 'sudo tee /sys/class/backlight/intel_backlight/brightness <<< ' # Set backlight on laptopn goes from 0 to 999
 abbr -a hdmi 'xrandr --output HDMI-1 --auto'  # Enable HDMI on laptop
+abbr -a l 'exa --group-directories-first --links --long '
 
 # }}}
 
@@ -99,12 +100,7 @@ abbr -a hdmi 'xrandr --output HDMI-1 --auto'  # Enable HDMI on laptop
 # Change directory and print it's content
 function c
     cd $argv
-    ls
-end
-
-# Custom ls
-function l
-    ls -1 --size --human-readable --group-directories-first --color=auto --dereference -H $argv
+    exa
 end
 
 # }}}
