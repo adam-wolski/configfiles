@@ -46,6 +46,7 @@
     set grepprg=rg\ --vimgrep
     set undofile
     set undodir=~/tmp/vim               " Directory for undo files
+    set undolevels=10000                " Bigger undo size
     set dir=~/tmp/vim                   " Directory for .swp files
     if has('unix')
             set dict+=/usr/share/dict/words
@@ -290,6 +291,7 @@ endif
         vnoremap <Leader>P "+P
         " Paste last yanked
         nnoremap P "0p
+        vnoremap P "0p
 
         " Take cursor to end of pasted line
         vnoremap <silent> y y`]
@@ -307,6 +309,9 @@ endif
 
         " Handy shortcut for macro named q
         nnoremap QQ @q
+
+        " Repalce word under cursor
+        nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 
         " Ultisnips
         let g:UltiSnipsExpandTrigger='<c-s>'
