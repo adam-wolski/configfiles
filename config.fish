@@ -52,8 +52,7 @@ abbr -a pfilesupdate 'sudo pkgfile --update'
 # Synchronize with repositories and then upgrade packages that are out of date on the local system.
 abbr -a aurupg 'rm -rf ~/.cache/pacaur ; pacaur -Syu --noconfirm --noedit'                  
 abbr -a aur 'pacaur -S --noedit'              
-abbr -a aurs 'cower --sort votes -s'          # Search
-abbr -a aursearch 'cower --sort votes -s'     # Search
+# abbr -a aurs 'cower --sort votes -s'          # Search
 abbr -a aurclearcache 'rm -rf ~/.cache/pacaur'
 
 # }}}
@@ -105,6 +104,10 @@ end
 # Custom ls
 function l
     ls -1 --size --human-readable --group-directories-first --color=auto --dereference -H $argv
+end
+
+function aurs
+    curl -s "https://aur.archlinux.org/rpc/?v=5&type=search&arg=$argv" | jshon -e results -a -e Name -u
 end
 
 # }}}
