@@ -1,6 +1,6 @@
 # vim: fdm=marker foldenable ft=i3
 
-# i3 config file {{{
+# Config {{{
 
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -21,6 +21,34 @@ font pango:Open Sans 9
 # Use Mouse+$mod to drag floating windows to their wanted position {{{
 
 floating_modifier $mod
+
+# }}}
+# Createa workspace nr5 on display DVI-... {{{
+
+workspace 5 output DVI-I-0
+
+# }}}
+# Shortcuts {{{
+
+# splits {{{
+
+# split in horizontal orientation
+bindsym $mod+g split h
+# split in vertical orientation
+bindsym $mod+v split v
+
+# }}}
+# enter fullscreen mode for the focused container {{{
+
+bindsym $mod+f fullscreen
+
+# }}}
+# change container layout {{{
+
+# (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
 
 # }}}
 # start a terminal {{{
@@ -60,27 +88,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# }}}
-# splits {{{
-
-# split in horizontal orientation
-bindsym $mod+g split h
-# split in vertical orientation
-bindsym $mod+v split v
-
-# }}}
-# enter fullscreen mode for the focused container {{{
-
-bindsym $mod+f fullscreen
-
-# }}}
-# change container layout {{{
-
-# (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+t layout toggle split
 
 # }}}
 # toggle tiling / floating {{{
@@ -142,6 +149,13 @@ bindsym $mod+Shift+r restart
 # Use i3-msg exit
 
 # }}}
+# i3 control shortcuts {{{
+
+bindsym $mod+r mode "resize"
+bindsym $mod+shift+Left move workspace to output left
+bindsym $mod+shift+Right move workspace to output right
+
+# }}}
 # resize window {{{
 
 # (you can also use the mouse for that)
@@ -169,18 +183,9 @@ mode "resize" {
 }
 
 # }}}
-# Additional shortcuts {{{
-
-# i3 control shortcuts {{{
-
-bindsym $mod+r mode "resize"
-bindsym $mod+shift+Left move workspace to output left
-bindsym $mod+shift+Right move workspace to output right
-
-# }}}
 # Application shortcuts {{{
 
-bindsym $mod+space exec --no-startup-id chromium
+bindsym $mod+space exec --no-startup-id firefox
 bindsym $mod+e exec --no-startup-id thunar
 bindsym $mod+shift+e exec --no-startup-id "i3-sensible-terminal -e ranger"
 
@@ -293,11 +298,6 @@ bar {
             urgent_workspace        #d64937 #d64937 #f9f9f9          
             }
 }
-
-# }}}
-# Createa workspace nr5 on display DVI-... {{{
-
-workspace 5 output DVI-I-0
 
 # }}}
 
