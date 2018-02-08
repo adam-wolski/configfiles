@@ -212,7 +212,7 @@
 " }}}
     "   Grepper {{{
 
-        runtime plugin/grepper.vim    " initialize g:grepper with default values
+        let g:grepper = {}
         let g:grepper.tools = ['rg']
 
 " }}}
