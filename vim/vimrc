@@ -115,6 +115,7 @@
         if has('win32')
             Plug 'nfvs/vim-perforce'
         endif
+        Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-eunuch'
         Plug 'benekastah/neomake'
@@ -207,6 +208,12 @@
         nnoremap <F5> :Neomake<CR>
         let g:neomake_place_signs = 0
         let g:neomake_open_list = 2
+
+" }}}
+    "   Grepper {{{
+
+        runtime plugin/grepper.vim    " initialize g:grepper with default values
+        let g:grepper.tools = ['rg']
 
 " }}}
 
