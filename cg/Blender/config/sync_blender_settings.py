@@ -4,11 +4,13 @@ import shutil
 from platform import system
 from subprocess import Popen
 
+BLENDER_VERSION = "2.79"
+
 if system() == 'Windows':
     from win32file import CreateSymbolicLink
-    BLENDER_FOLDER = "~/AppData/Roaming/Blender Foundation/Blender/2.77/config/"
+    BLENDER_FOLDER = f'~/AppData/Roaming/Blender Foundation/Blender/{BLENDER_VERSION}/config/'
 else:
-    BLENDER_FOLDER = "~/.config/blender/2.77/config/"
+    BLENDER_FOLDER = f'~/.config/blender/{BLENDER_VERSION}/config/'
 
 
 def link(target, lnk, force=False):
@@ -64,5 +66,11 @@ if __name__ == "__main__":
         link(this_startup_file, blender_startup_file, True)
         link(this_prefs_file, blender_prefs_file, True)
     else:
-        shutil.copyfile(blender_startup_file, this_startup_file)
-        shutil.copyfile(blender_prefs_file, this_prefs_file)
+        try:
+            shutil.copyfile(blender_startup_file, this_startup_file)
+        except(shutil.SameFileError):
+            pass
+        try:
+            shutil.copyfile(blender_prefs_file, this_prefs_file)
+        except(shutil.SameFileError):
+            pass
