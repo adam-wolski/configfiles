@@ -185,7 +185,7 @@ mode "resize" {
 # }}}
 # Application shortcuts {{{
 
-bindsym $mod+space exec --no-startup-id firefox
+bindsym $mod+space exec --no-startup-id chromium
 bindsym $mod+e exec --no-startup-id thunar
 bindsym $mod+shift+e exec --no-startup-id "i3-sensible-terminal -e ranger"
 
