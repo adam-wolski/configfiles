@@ -481,5 +481,8 @@ endif
     " Shaders {{{
         au BufNewFile,BufRead *.shader set filetype=glsl
     " }}}
+    " Houdini {{{
+        au BufNewFile,BufRead *.vfl,*.vex set filetype=vfl
+    " }}}
 
 " }}}
