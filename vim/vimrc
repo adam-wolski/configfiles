@@ -446,7 +446,7 @@ endif
     function MyFoldText()
       let line = getline(v:foldstart)
       let sub = substitute(line, '"\|/\*\|\*/\|{{{\d\=\|}}}', '', 'g')
-      return v:folddashes . sub
+      return sub
     endfunction
 
     if has('nvim')
@@ -495,6 +495,9 @@ endif
     " }}}
     " Shaders {{{
         au BufNewFile,BufRead *.shader set filetype=glsl
+    " }}}
+    " Houdini {{{
+        au BufNewFile,BufRead *.vfl,*.vex set filetype=vfl
     " }}}
 
 " }}}
