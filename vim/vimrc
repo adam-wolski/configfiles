@@ -8,6 +8,12 @@
 " }}}
 " Init {{{
 
+    " XXX Temporary fix for python3.7 in vim
+    "  Initialize python in silent mode to eliminate warning
+    if has('python3')
+      silent! python3 1
+    endif
+
     let g:author='Adam Wolski'
     let g:email='miniukof@gmail.com'
     let g:github='https://github.com/miniukof'
@@ -64,13 +70,16 @@
         Plug 'junegunn/fzf.vim'
         Plug 'Lokaltog/vim-easymotion'
         Plug 'derekwyatt/vim-fswitch'
+        if has('win32')
+            Plug 'miniukof/FindEverything'
+        endif
 
     " }}}
     " Completation Plugins {{{
 
         Plug 'rdnetto/YCM-Generator', { 'branch': 'stable', 'for': ['c', 'cpp']}
         if has('win32')
-            Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --clang-completer'}
+            Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --clang-completer --racer-completer'}
         else
             Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py --clang-completer --racer-completer --system-libclang --system-boost'}
         endif
@@ -112,9 +121,6 @@
     " }}}
     " Other Plugins {{{
 
-        if has('win32')
-            Plug 'nfvs/vim-perforce'
-        endif
         Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-eunuch'
@@ -254,7 +260,7 @@ if has('gui_running') || has('nvim')
     if has('unix')
         :set guifont=Source\ Code\ Pro\ Ultra-Light\ 11
     else
-        :set guifont=Source_Code_Pro:h10:cEASTEUROPE
+        :set guifont=Consolas:h12
     endif
     colorscheme nugl
 else
@@ -337,6 +343,8 @@ endif
     " }}}
     " File {{{
 
+        nnoremap <leader>fa :FEA 
+        nnoremap <leader>fe :FEC 
         nnoremap <leader>fs :w<CR>
         nnoremap <leader>ff :Files<CR>
         nnoremap <leader>fS :FSHere<CR>
@@ -417,6 +425,13 @@ endif
         nnoremap <leader>gc :Gcommit<CR>
         nnoremap <leader>gs :Gstatus<CR>
         nnoremap <leader>gw :Gwrite<CR>
+        nnoremap <leader>ga :Git add -f %:p<CR><CR>
+
+    " }}}
+    " P4 {{{
+
+        nnoremap <leader>4a :!p4 add %:p<CR>
+        nnoremap <leader>4e :!p4 edit %:p<CR>
 
     " }}}
     " YouCompleteMe {{{
