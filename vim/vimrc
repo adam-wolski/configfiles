@@ -19,44 +19,46 @@
     let g:github='https://github.com/miniukof'
 
     if has('nvim')
-        set termguicolors               " True color in terminal
-        set inccommand=split            " Show incremental feedback for substitute
+        set termguicolors                       " True color in terminal
+        set inccommand=split                    " Show incremental feedback for substitute
     endif
     set encoding=utf-8
-    set statusline=[%n]\                " Buffer number
-    set statusline+=%f%m%r%h%w\         " Filename and modification
-    set statusline+=%=\                 " Bring rest to right
-    set statusline+=%Y\                 " Filetype"
-    set statusline+=%l,%v\ %p%%         " Line num col num and % of file
-    set laststatus=2                    " Show statusline always
-    set foldtext=MyFoldText()           " Set folding text to custom fn. (*Functions section)
-    set foldmethod=syntax               " Set foldmethod to one based on syntax
-    set softtabstop=4                   " Number of spaces that a <Tab> counts for while editing
-    set tabstop=4                       " Number of spaces that a <Tab> counts for
-    set shiftwidth=4                    " Number of spaces that << >> move by.
-    set exrc                            " Load vimrc from current dir
-    set hidden                          " Hide buffer instead of closing it
-    syntax on                           " Enable syntax highlighting
-    filetype on                         " Detect filetypes
-    filetype plugin indent on           " Enable loading indent file for filetype
-    set nonumber                        " Don't display line numbers
-    set title                           " Show title in console title bar
-    set mouse=a                         " Mouse, sometimes usefull
-    set timeoutlen=1000 ttimeoutlen=0   " Faster insert to normal jump
-    set nofoldenable                    " Disable folds on start, toggle with zi
-    set wildmenu                        " Menu completion in command mode on <Tab>
-    set wildmode=full                   " <Tab> cycles between all matching choices.
-    let mapleader="\<Space>"            " Set leader shortcut to spacebar
+    set statusline=[%n]\                        " Buffer number
+    set statusline+=%f%m%r%h%w\                 " Filename and modification
+    set statusline+=%=\                         " Bring rest to right
+    set statusline+=%Y\                         " Filetype"
+    set statusline+=%l,%v\ %p%%\                " Line num col num and % of file
+    set statusline+=%{FugitiveStatusline()}     " Git status
+    set laststatus=2                            " Show statusline always
+    set foldtext=MyFoldText()                   " Set folding text to custom fn. (*Functions section)
+    set foldmethod=syntax                       " Set foldmethod to one based on syntax
+    set softtabstop=4                           " Number of spaces that a <Tab> counts for while editing
+    set tabstop=4                               " Number of spaces that a <Tab> counts for
+    set shiftwidth=4                            " Number of spaces that << >> move by.
+    set exrc                                    " Load vimrc from current dir
+    set hidden                                  " Hide buffer instead of closing it
+    syntax on                                   " Enable syntax highlighting
+    filetype on                                 " Detect filetypes
+    filetype plugin indent on                   " Enable loading indent file for filetype
+    set nonumber                                " Don't display line numbers
+    set title                                   " Show title in console title bar
+    set mouse=a                                 " Mouse, sometimes usefull
+    set timeoutlen=1000 ttimeoutlen=0           " Faster insert to normal jump
+    set nofoldenable                            " Disable folds on start, toggle with zi
+    set wildmenu                                " Menu completion in command mode on <Tab>
+    set wildmode=full                           " <Tab> cycles between all matching choices.
+    let mapleader="\<Space>"                    " Set leader shortcut to spacebar
     set lazyredraw 
     set backspace=indent,eol,start
     set grepprg=rg\ --vimgrep
     set undofile
-    set undodir=~/tmp/vim               " Directory for undo files
-    set undolevels=10000                " Bigger undo size
-    set dir=~/tmp/vim                   " Directory for .swp files
+    set undodir=~/tmp/vim                       " Directory for undo files
+    set undolevels=10000                        " Bigger undo size
+    set dir=~/tmp/vim                           " Directory for .swp files
     if has('unix')
             set dict+=/usr/share/dict/words
     endif
+    set updatetime=100                          " Faster updates (help with git gutter)
 
 " }}}
 " Plugins {{{
@@ -124,6 +126,7 @@
         Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-eunuch'
+        " Plug 'airblade/vim-gitgutter'
         Plug 'benekastah/neomake'
         Plug 'Konfekt/FastFold'
 
@@ -220,6 +223,13 @@
 
         let g:grepper = {}
         let g:grepper.tools = ['rg']
+
+" }}}
+    "   Git Gutter {{{
+
+        " I don't like plugins overwritng my shortcuts
+        let g:gitgutter_map_keys = 0
+        let g:gitgutter_grep = 'rg'
 
 " }}}
 
@@ -426,12 +436,13 @@ endif
         nnoremap <leader>gs :Gstatus<CR>
         nnoremap <leader>gw :Gwrite<CR>
         nnoremap <leader>ga :Git add -f %:p<CR><CR>
+        nnoremap <leader>gk :!gitk --all<CR>
 
     " }}}
-    " P4 {{{
+    " Vcs {{{
 
-        nnoremap <leader>4a :!p4 add %:p<CR>
-        nnoremap <leader>4e :!p4 edit %:p<CR>
+        nnoremap <leader>va :!vcs --add %:p<CR>
+        nnoremap <leader>vt :!vcs --track %:p<CR>
 
     " }}}
     " YouCompleteMe {{{
