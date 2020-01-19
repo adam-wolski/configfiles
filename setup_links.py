@@ -36,11 +36,11 @@ LINKS = {
     'vtrgb': ["{}",
               "~/.config/{}"],
 
-    'i3pystatus_config.py': ["i3/{}",
-                             "~/.config/i3/{}"],
+    'i3status.conf': ["i3/{}",
+                      "~/.config/i3/{}"],
 
     'i3_config': ["i3/config",
-               "~/.config/i3/config"],
+                  "~/.config/i3/config"],
 
     'Xresources': ["{}",
                    "~/.{}"],
