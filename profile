@@ -2,7 +2,7 @@
 # Helps with .gitignore files.
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
-export TERMINAL=termite
+export TERMINAL=xterm
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=True
 
