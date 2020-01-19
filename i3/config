@@ -275,7 +275,8 @@ client.urgent           #d64937 #d64937 #dedede #2d2d2d
 # Bar {{{
 
 bar {
-        status_command "python ~/.config/i3/i3pystatus_config.py"
+        # status_command "python ~/.config/i3/i3pystatus_config.py"
+        status_command py3status
         workspace_buttons yes
         position bottom
     	mode dock
