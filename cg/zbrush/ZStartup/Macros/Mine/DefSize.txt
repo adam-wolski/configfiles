@@ -1,8 +1,0 @@
-//ZBRUSH MACRO - Recorded in ZBrush version 4.6
-[IButton,???,"Press to run this macro. Macros can be aborted by pressing the ëescí key.",
-[IShowActions,0]
-[IConfig,4.6]
-[ISet,Document:Width,1680]
-[ISet,Document:Height,1050]
-[IPress,Document:Resize]
-]

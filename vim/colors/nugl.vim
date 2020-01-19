@@ -138,7 +138,7 @@ let s:gs7 = " guisp=".s:c7
 
 exe "hi! Normal"   .s:gn   .s:fg0   .s:bg0
 
-exe "hi! Comment"   .s:gi   .s:fg2   .s:bgn
+exe "hi! Comment"   .s:gb   .s:fa1   .s:bgl
 "       *Comment         any comment
 
 exe "hi! Constant"   .s:gn   .s:fa6   .s:bgn
