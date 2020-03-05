@@ -18,6 +18,9 @@
     let g:email='miniukof@gmail.com'
     let g:github='https://github.com/miniukof'
 
+    set langmenu=en_US.UTF-8            " sets the language of the menu (gvim)
+    language en                         " sets the language of the messages / ui (vim)
+
     if has('nvim')
         set termguicolors                       " True color in terminal
         set inccommand=split                    " Show incremental feedback for substitute
