@@ -15,7 +15,9 @@ if !exists("python_autocmdloaded")
 
     au BufNewFile,BufRead SConstruct set filetype=python    " Recognize SConstruct file as python.
     
-    autocmd BufWritePost *.py Neomake
-    autocmd VimLeave * let g:neomake_verbose = 0
+    if exists(":Neomake")
+        autocmd BufWritePost *.py Neomake
+        autocmd VimLeave * let g:neomake_verbose = 0
+    endif
 endif
 
