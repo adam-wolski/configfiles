@@ -14,6 +14,7 @@ from subprocess import Popen
 
 if system() == 'Windows':
     from win32file import CreateSymbolicLink
+    import pywintypes
 
 
 LINKS = {
@@ -184,10 +185,14 @@ def link(target, lnk, force=False):
     if system() in ('Linux', 'MSYS_NT-6.1'):
         Popen(['ln', '-s', target, lnk]).wait()
     elif system() == 'Windows':
-        if isdir:
-            CreateSymbolicLink(lnk, target, 1)
-        else:
-            CreateSymbolicLink(lnk, target, 0)
+        try:
+            if isdir:
+                CreateSymbolicLink(lnk, target, 1)
+            else:
+                CreateSymbolicLink(lnk, target, 0)
+        except pywintypes.error:
+            print(f"Failed to create link for: {lnk} => {target}")
+            pass
 
 
 if __name__ == '__main__':
