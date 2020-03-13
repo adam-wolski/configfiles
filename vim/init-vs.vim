@@ -1,70 +1,28 @@
-" Plugins {{{
-    " Init {{{
-        call plug#begin()
+runtime init-core.vim
 
-        Plug 'adam-wolski/FindEverything'
-        Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+" Do not show incremental substitute changes, doesn't work in VS
+set inccommand=
 
-        call plug#end()
-    " }}}
-    " Config {{{
-        " Grepper {{{
-            let g:grepper = {}
-            let g:grepper.tools = {'rg'}
-        " }}}
-    " }}}
-" }}}
-" Shortcuts {{{
-    " Global {{{
-    
-        " Set leader shortcut to spacebar
-        let mapleader="\<Space>" 
+call plug#begin()
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    Plug 'miniukof/FindEverything'
+    Plug 'michaeljsmith/vim-indent-object'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-surround'
+    Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+    Plug 'Konfekt/FastFold'
+call plug#end()
 
-        " Line Navigation, so it moves line down/up even with wrapping
-        nnoremap j gj
-        nnoremap k gk
-        xnoremap j gj
-        xnoremap k gk
+let g:grepper = {}
+let g:grepper.tools = ['rg']
 
-        " tab navigation
-        nnoremap <leader>h :Tabprevious<CR>
-        nnoremap <leader>l :Tabnext<CR>
-        nnoremap <leader>q :Tabclose<CR>
+nnoremap <leader>fs :Write<CR>
+nnoremap <leader>ff :Find<CR>
+nnoremap <leader>fS :call VSCodeCall("C_Cpp.SwitchHeaderSource")<CR>
+nnoremap <leader>h :Tabprevious<CR>
+nnoremap <leader>l :Tabnext<CR>
+nnoremap <leader>q :Tabclose<CR>
 
-        " Paste from clipboard
-        vnoremap <Leader>y "+y
-        vnoremap <Leader>d "+d
-        nnoremap <Leader>p "+p
-        nnoremap <Leader>P "+P
-        vnoremap <Leader>p "+p
-        vnoremap <Leader>P "+P
-
-        " Paste last yanked
-        nnoremap P "0p
-        vnoremap P "0p
-
-        " Take cursor to end of pasted line
-        vnoremap <silent> y y`]
-        vnoremap <silent> p p`]
-        nnoremap <silent> p p`]
-
-        " hide matches on <leader>space
-        nnoremap <leader>/ :nohlsearch<cr>
-
-        " Add new line in insert mode
-        inoremap <C-O> <C-o>o
-
-        " Rebind macro playback
-        nnoremap Q @
-
-        " Handy shortcut for macro named q
-        nnoremap QQ @q
-    " }}}
-    " File {{{
-
-        nnoremap <leader>fs :Write<CR>
-        nnoremap <leader>ff :Find<CR>
-        nnoremap <leader>fS :call VSCodeCall("C_Cpp.SwitchHeaderSource")<CR>
-
-    " }}}
-" }}}
+nnoremap <leader>fa :FEA 
+nnoremap <leader>fe :FEC 
