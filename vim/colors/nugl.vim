@@ -205,7 +205,7 @@ exe "hi! SpecialKey"   .s:gb   .s:fa0   .s:bgn
 exe "hi! NonText"   .s:gb   .s:fgL   .s:bgn
 exe "hi! StatusLine"   .s:gn   .s:fg1   .s:bgn
 exe "hi! StatusLineNC"   .s:gn   .s:fg3   .s:bgn
-exe "hi! Visual"   .s:gs   .s:fg0   .s:bgn
+exe "hi! Visual"   .s:gr   .s:fg0   .s:bgn
 exe "hi! Directory"   .s:gn   .s:fa5   .s:bgn
 exe "hi! ErrorMsg"   .s:gr   .s:fa2   .s:bgn
 exe "hi! IncSearch"   .s:gs   .s:fa1   .s:bgn
