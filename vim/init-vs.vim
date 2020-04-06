@@ -2,6 +2,8 @@ runtime init-core.vim
 
 " Do not show incremental substitute changes, doesn't work in VS
 set inccommand=
+" Use tabs
+set noexpandtab
 
 call plug#begin()
     Plug 'junegunn/fzf'
@@ -11,7 +13,6 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
-    Plug 'Konfekt/FastFold'
 call plug#end()
 
 let g:grepper = {}
@@ -26,3 +27,10 @@ nnoremap <leader>q :Tabclose<CR>
 
 nnoremap <leader>fa :FEA 
 nnoremap <leader>fe :FEC 
+
+nnoremap <C-O> :call VSCodeCall("workbench.action.navigateBack")<CR>
+nnoremap <C-I> :call VSCodeCall("workbench.action.navigateForward")<CR>
+
+
+nnoremap u :call VSCodeCall("undo")<CR>
+nnoremap <C-r> :call VSCodeCall("redo")<CR>
