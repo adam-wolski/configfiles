@@ -1,0 +1,14 @@
+let mapleader = "\<Space>"
+
+nmap <C-j> 10j<CR>
+nmap <C-k> 10k<CR>
+
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>/ :nohl<CR>
+
+map <Leader>y "+y
+map <Leader>p "+p
+
+set ignorecase
+set backspace=indent,eol,start
