@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>New Unreal Test</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>testnew</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ClassName</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>FTest</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[#include "CoreMinimal.h"
+
+#include "Misc/AutomationTest.h"  // IMPLEMENT_SIMPLE_AUTOMATION_TEST
+
+namespace Pg
+{
+IMPLEMENT_SIMPLE_AUTOMATION_TEST($ClassName$, "$Name$", EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter);
+
+bool $ClassName$::RunTest(const FString&)
+{
+}
+
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

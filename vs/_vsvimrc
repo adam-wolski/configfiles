@@ -10,5 +10,7 @@ nmap <Leader>/ :nohl<CR>
 map <Leader>y "+y
 map <Leader>p "+p
 
+map <S-P> "0p
+
 set ignorecase
 set backspace=indent,eol,start
