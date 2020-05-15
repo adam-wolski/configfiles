@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>New Global Shader</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>shadernew</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>FShader</ID>
+          <ToolTip>Shader class name</ToolTip>
+          <Default>FShader</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ShaderName</ID>
+          <ToolTip>Shader draw event name</ToolTip>
+          <Default>ShaderName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Parameters</ID>
+          <ToolTip>Parameters</ToolTip>
+          <Default>/* SHADER_PARAMETER_UAV(RWTexture2D&lt;float&gt;, Out) */</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Permutations</ID>
+          <ToolTip>Permutations</ToolTip>
+          <Default>/* class FDefine : SHADER_PERMUTATION_BOOL("DEFINE"); using FPermutationDomain = TShaderPermutationDomain&lt;FDefine&gt;; */</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Api</ID>
+          <ToolTip>Export api</ToolTip>
+          <Default>EXPORT_API</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp" Delimiter="$"><![CDATA[#pragma once
+
+#include "CoreMinimal.h"
+
+#include "GlobalShader.h"			// FGlobalShader
+#include "PgShaderUtils.h"			// SHADER
+#include "PgRHI.h"					// RHI
+#include "ShaderParameterStruct.h"	// PARAMETER_STRUCT
+
+namespace Pg
+{
+struct $Api$ $FShader$ : public FGlobalShader
+{
+	DECLARE_GLOBAL_SHADER($FShader$);
+	SHADER_USE_PARAMETER_STRUCT($FShader$, FGlobalShader);
+	SHOULD_COMPILE_PERMUTATION(SM5);
+	MODIFY_COMPILATION_ENVIRONMENT_THREADS_XY(8, 8);
+	SHADER_DRAW_EVENT_NAME("$ShaderName$");
+
+	BEGIN_SHADER_PARAMETER_STRUCT(FParameters, $Api$)
+        $Parameters$
+	END_SHADER_PARAMETER_STRUCT();
+
+    $Permutations$
+};
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
