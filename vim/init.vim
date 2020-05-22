@@ -15,6 +15,7 @@ set hidden
 set scrolloff=15
 
 let mapleader = "\<Space>"
+let &grepprg = "rg --vimgrep"
 let g:rainbow_active = 1
 let g:fzf_preview_window = '' 	" Disable preview window
 
