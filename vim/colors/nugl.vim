@@ -488,7 +488,7 @@ exe "hi! LspCxxHlSymMacro"              .s:bg0 .s:fa2 .s:gn
 
 exe "hi! LspCxxHlSymNamespace"          .s:bg0 .s:fa7 .s:gn
 
-exe "hi! LspCxxHlSymVariable"           .s:ba4 .s:fa2 .s:gr
+exe "hi! LspCxxHlSymVariable"           .s:bg0 .s:fa3 .s:gb
 exe "hi! LspCxxHlSymParameter"          .s:bg0 .s:fg0 .s:gi
 exe "hi! LspCxxHlSymField"              .s:bg0 .s:fa1 .s:gi
 
