@@ -21,6 +21,7 @@ set foldtext=MyFoldText()
 set fillchars=fold:\  
 set foldmethod=syntax
 set foldlevel=2
+let &shellpipe="| wtee.exe"
 
 let &grepprg = "rg --vimgrep"
 let mapleader = "\<Space>"
