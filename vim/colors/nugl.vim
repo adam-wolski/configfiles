@@ -132,16 +132,25 @@ let s:gs6 = " guisp=".s:c6
 let s:gs7 = " guisp=".s:c7
 
 " }}}
-
 " }}}
+
 " Basic highlighting" {{{
 
-exe "hi! Normal"   .s:gn   .s:fg0   .s:bg0
+let s:f_normal = s:fg0
+let s:g_normal = s:gn
+let s:b_normal = s:bg0
+exe "hi! Normal"   .s:g_normal   .s:g_normal   .s:b_normal
 
-exe "hi! Comment"   .s:gb   .s:fa1   .s:bgl
+let s:g_comment = s:gi   
+let s:f_comment = s:fa6   
+let s:b_comment = s:bgn
+exe "hi! Comment"   .s:g_comment   .s:f_comment   .s:b_comment
 "       *Comment         any comment
 
-exe "hi! Constant"   .s:gn   .s:fa6   .s:bgn
+let s:g_constant = s:gn   
+let s:f_constant = s:fa6   
+let s:b_constant = s:bgn
+exe "hi! Constant"   .s:g_constant   .s:f_constant   .s:b_constant
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -149,11 +158,17 @@ exe "hi! Constant"   .s:gn   .s:fa6   .s:bgn
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
-exe "hi! Identifier"   .s:gn   .s:fa5   .s:bgn
+let s:g_identifier = s:gn   
+let s:f_identifier = s:fa5   
+let s:b_identifier = s:bgn
+exe "hi! Identifier"   .s:g_identifier   .s:f_identifier   .s:b_identifier
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"   .s:gn   .s:fa7   .s:bgn
+let s:g_statement = s:gn   
+let s:f_statement = s:fa7   
+let s:b_statement = s:bgn
+exe "hi! Statement"   .s:g_statement   .s:f_statement   .s:b_statement
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -162,38 +177,63 @@ exe "hi! Statement"   .s:gn   .s:fa7   .s:bgn
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"   .s:gn   .s:fa1   .s:bgn
+let s:g_preproc = s:gn   
+let s:f_preproc = s:fa1   
+let s:b_preproc = s:bgn
+exe "hi! PreProc"   .s:g_preproc   .s:f_preproc   .s:b_preproc
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
 "        Macro           same as Define
 "        PreCondit       preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"   .s:gn   .s:fa0   .s:bgn
+let s:g_type = s:gn   
+let s:f_type = s:fa0   
+let s:b_type = s:bgn
+exe "hi! Type"   .s:g_type   .s:f_type   .s:b_type
 "       *Type            int, long, char, etc.
 "        StorageClass    static, register, volatile, etc.
 "        Structure       struct, union, enum, etc.
 "        Typedef         A typedef
 
-exe "hi! Special"   .s:gn   .s:fa2   .s:bgn
+let s:g_special = s:gn   
+let s:f_special = s:fa2   
+let s:b_special = s:bgn
+exe "hi! Special"   .s:g_special   .s:f_special   .s:b_special
 "       *Special         any special symbol
 "        SpecialChar     special character in a constant
 "        Tag             you can use CTRL-] on this
 "        Delimiter       character that needs attention
 "        Debug           debugging statements
-exe "hi! SpecialComment"   .s:gi   .s:fa0   .s:bgn
+
+let s:g_specialcomment = s:gr   
+let s:f_specialcomment = s:f_comment   
+let s:b_specialcomment = s:b_comment
+exe "hi! SpecialComment"   .s:g_specialcomment   .s:f_specialcomment   .s:b_specialcomment
 "        SpecialComment  special things inside a comment
 
-exe "hi! Underlined"   .s:gn   .s:fa4   .s:bgn
+let s:g_underlined = s:gn   
+let s:f_underlined = s:fa4   
+let s:b_underlined = s:bgn
+exe "hi! Underlined"   .s:g_underlined   .s:f_underlined   .s:b_underlined
 "       *Underlined      text that stands out, HTML links
 
-exe "hi! Ignore"   .s:gn   .s:fgb   .s:bgn
+let s:g_ignore = s:gn   
+let s:f_ignore = s:fgb   
+let s:b_ignore = s:bgn
+exe "hi! Ignore"   .s:g_ignore   .s:f_ignore   .s:b_ignore
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
-exe "hi! Error"   .s:gb   .s:fa2   .s:bgn
+let s:g_error = s:gb   
+let s:f_error = s:fa2   
+let s:b_error = s:bgn
+exe "hi! Error"   .s:g_error   .s:f_error   .s:b_error
 "       *Error           any erroneous construct
 
-exe "hi! Todo"   .s:gb   .s:fa2   .s:bgn
+let s:g_todo = s:gb   
+let s:f_todo = s:fa2   
+let s:b_todo = s:bgn
+exe "hi! Todo"   .s:g_todo   .s:f_todo   .s:b_todo
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
@@ -253,6 +293,7 @@ hi! link lCursor Cursor
 exe "hi! MatchParen"   .s:gb   .s:fa2   .s:bgd
 
 " }}}
+
 " vim syntax highlighting " {{{
 
 "exe "hi! vimLineComment" . s:fg2   .s:bgn   .s:gi
@@ -422,10 +463,52 @@ exe "hi! rustReservedKeyword"   .s:bg0   .s:fa0   .s:gn
 exe "hi! pythonComment"   .s:bg0   .s:fa0   .s:gb
 
 " }}}
-" ce_skin hightlighting {{{
+" Cpp highlighting  {{{
 
-exe "hi! CEReplace"   .s:bg0   .s:fa4   .s:gn
-exe "hi! CEMat"   .s:bg0   .s:fa4   .s:gn
-exe "hi! CESkn"   .s:bg0   .s:fa3   .s:gn
+" exe "hi! LspCxxHlGroupMemberVariable"   .s:bg0 .s:fa2 .s:gn
+exe "hi! LspCxxHlSkippedRegion"         .s:ba2 .s:fa2 .s:gn
+" exe "hi! LspCxxHlGroupEnumConstant"     .s:bg0 .s:fa2 .s:gn
+" exe "hi! LspCxxHlGroupNamespace"        .s:bg0 .s:fa7 .s:gn
+
+exe "hi! LspCxxHlSymUnknown"            .s:ba2 .s:fa2 .s:gi
+exe "hi! LspCxxHlSymClass"              .s:bg0 .s:fa0 .s:gi
+exe "hi! LspCxxHlSymStruct"             .s:bg0 .s:fa0 .s:gi
+exe "hi! LspCxxHlSymEnum"               .s:bg0 .s:fa7 .s:gn
+exe "hi! LspCxxHlSymTypeAlias"          .s:ba7 .s:fa2 .s:gn
+exe "hi! LspCxxHlSymTypeParameter"      .s:ba6 .s:fa2 .s:gn
+
+exe "hi! LspCxxHlSymFunction"           .s:bg0 .s:fa5 .s:gn
+exe "hi! LspCxxHlSymMethod"             .s:bg0 .s:fa5 .s:gi
+exe "hi! LspCxxHlSymStaticMethod"       .s:bg0 .s:fa5 .s:gb
+exe "hi! LspCxxHlSymConstructor"        .s:bg0 .s:fa1 .s:gi
+
+exe "hi! LspCxxHlSymEnumMember"         .s:bg0 .s:fa2 .s:gn
+
+exe "hi! LspCxxHlSymMacro"              .s:bg0 .s:fa2 .s:gn
+
+exe "hi! LspCxxHlSymNamespace"          .s:bg0 .s:fa7 .s:gn
+
+exe "hi! LspCxxHlSymVariable"           .s:ba4 .s:fa2 .s:gr
+exe "hi! LspCxxHlSymParameter"          .s:bg0 .s:fg0 .s:gi
+exe "hi! LspCxxHlSymField"              .s:bg0 .s:fa1 .s:gi
+
+" Static only member
+exe "hi! LspCxxHlSymUnknownStaticField" .s:bg0 .s:fa1 .s:gb
+" Alias to primitive
+exe "hi! LspCxxHlSymPrimitive"          .s:bg0 .s:fa0 .s:gn
+" == TypeAlias
+exe "hi! LspCxxHlSymTypedef"            .s:ba2 .s:fa2 .s:gn
+" == TypeParamerer
+exe "hi! LspCxxHlSymTemplateParameter"  .s:bg0 .s:fa0 .s:gu
+" == EnumMember
+exe "hi! LspCxxHlSymEnumConstant"       .s:bg0 .s:fa6 .s:gn
+" A type dependent on a template
+" E.g. T::A, A would be a dependent type
+exe "hi! LspCxxHlSymDependentType"      .s:bg0 .s:fa0 .s:gu
+" A name dependent on a template, usually a function 
+" but can also be a variable?
+exe "hi! LspCxxHlSymDependentName"      .s:bg0 .s:fa1 .s:gu
+" C++20 concepts
+exe "hi! LspCxxHlSymConcept"            .s:ba0 .s:fa2 .s:gn
 
 " }}}
