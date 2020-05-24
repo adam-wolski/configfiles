@@ -17,6 +17,10 @@ set nowrap
 set ignorecase
 set hidden
 set scrolloff=15
+set foldtext=MyFoldText()
+set fillchars=fold:\  
+set foldmethod=syntax
+set foldlevel=2
 
 let &grepprg = "rg --vimgrep"
 let mapleader = "\<Space>"
@@ -48,3 +52,11 @@ nmap <Leader>/ :nohl<CR>
 nmap <C-p> :Files<CR>
 
 runtime init-coc.vim
+
+function MyFoldText()
+      let linestart = trim(getline(v:foldstart))
+      let lineend = trim(getline(v:foldend))
+      let indent = indent(v:foldstart)
+      let sub = repeat(" ", indent) . linestart[:1] . " ... " . lineend[-1:]
+      return sub
+endfunction
