@@ -259,7 +259,7 @@ exe "hi! Title"   .s:gb   .s:fa1   .s:bgn
 exe "hi! VisualNOS"   .s:gs   .s:fgn   .s:bgd
 exe "hi! WarningMsg"   .s:gb   .s:fa2   .s:bgn
 exe "hi! WildMenu"   .s:gn   .s:fg2   .s:bgl
-exe "hi! Folded"   .s:gn   .s:fg0   .s:bgn
+exe "hi! Folded"   .s:gi .",bold" .s:fg0   .s:bgn
 exe "hi! FoldColumn"   .s:gn   .s:fg0   .s:bgd
 exe "hi! DiffAdd"   .s:gb   .s:fa7   .s:bgd   .s:gs7
 exe "hi! DiffChange"   .s:gb   .s:fa0   .s:bgd   .s:gs0

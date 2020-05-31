@@ -39,9 +39,14 @@ nmap <C-p> :Files<CR>
 runtime init-coc.vim
 
 function MyFoldText()
-      let linestart = trim(getline(v:foldstart))
-      let lineend = trim(getline(v:foldend))
-      let indent = indent(v:foldstart)
-      let sub = repeat(" ", indent) . linestart[:1] . " ... " . lineend[-1:]
-      return sub
+	let linestart = trim(getline(v:foldstart))
+	let lineend = trim(getline(v:foldend))
+	let indent = indent(v:foldstart)
+
+	if linestart[0] == '(' || linestart[0] == '{' || linestart[0] == '['
+		return repeat(" ", indent) . linestart[:1] . " ... " . lineend[-1:]
+	else
+		return repeat(" ", indent) . linestart[:-3] . "..."
+	endif
+endfunction
 endfunction
