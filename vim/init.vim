@@ -22,6 +22,7 @@ set foldmethod=syntax
 set foldlevel=2
 set linebreak
 set breakindent
+set icm=nosplit
 let &breakat="),="
 let &shellpipe="| wtee.exe"
 let &grepprg = "rg --vimgrep"
