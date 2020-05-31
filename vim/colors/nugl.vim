@@ -497,7 +497,7 @@ exe "hi! LspCxxHlSymUnknownStaticField" .s:bg0 .s:fa1 .s:gb
 " Alias to primitive
 exe "hi! LspCxxHlSymPrimitive"          .s:bg0 .s:fa0 .s:gn
 " == TypeAlias
-exe "hi! LspCxxHlSymTypedef"            .s:ba2 .s:fa2 .s:gn
+exe "hi! LspCxxHlSymTypedef"            .s:bg0 .s:fa0 .s:gi
 " == TypeParamerer
 exe "hi! LspCxxHlSymTemplateParameter"  .s:bg0 .s:fa0 .s:gu
 " == EnumMember
