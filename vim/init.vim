@@ -22,9 +22,10 @@ set fillchars=fold:\
 set foldmethod=syntax
 set foldlevel=2
 let &shellpipe="| wtee.exe"
-
 let &grepprg = "rg --vimgrep"
+let &statusline = "%{GitStatus()} %f %{coc#status()} %h%w%m%r%=%-14.(%l,%c%V%) %P"
 let mapleader = "\<Space>"
+
 let g:rainbow_active = 1
 let g:fzf_preview_window = '' 	" Disable preview window
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
@@ -49,4 +50,22 @@ function MyFoldText()
 		return repeat(" ", indent) . linestart[:-3] . "..."
 	endif
 endfunction
+
+function GitStatus()
+	return getbufvar(bufnr('%'), 'LastGitStatus') 
 endfunction
+
+function UpdateGitStatus()
+	let status = system("git diff --shortstat " . expand('%'))
+	let matched = matchlist(status, '\W*\(\d*\) files\? changed, \(\d*\) insertions\?.*, \(\d*\) .*')
+	if len(matched)
+		let i = matched[2]
+		let d = matched[3]
+		return printf("+%d -%d", i, d)
+	else
+		return ''
+	endif
+endfunction
+
+au BufEnter * let b:LastGitStatus = UpdateGitStatus()
+au BufWritePost * let b:LastGitStatus = UpdateGitStatus()
