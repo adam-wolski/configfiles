@@ -36,6 +36,8 @@ nmap <Leader>ts :SemanticHighlightToggle<CR>
 nmap <Leader>s :SemanticHighlight<CR>
 nmap <Leader>/ :nohl<CR>
 nmap <C-p> :Files<CR>
+tnoremap <Esc> <C-\><C-n>  
+tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 runtime init-coc.vim
 
