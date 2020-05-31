@@ -61,11 +61,18 @@ function GitStatus()
 endfunction
 
 function UpdateGitStatus()
-	let status = system("git diff --shortstat " . expand('%'))
-	let matched = matchlist(status, '\W*\(\d*\) files\? changed, \(\d*\) insertions\?.*, \(\d*\) .*')
+	let filename = expand('%')
+	if !len(filename)
+		return ''
+	endif
+	let status = system("git diff --numstat " . filename)
+	let matched = matchlist(status, '^\W*\(\d*\)\W*\(\d*\).*$')
 	if len(matched)
-		let i = matched[2]
-		let d = matched[3]
+		let i = matched[1]
+		let d = matched[2]
+		if !i && !d
+			return ''
+		endif
 		return printf("+%d -%d", i, d)
 	else
 		return ''
