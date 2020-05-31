@@ -13,7 +13,6 @@ call plug#begin()
 call plug#end()
 
 set exrc
-set nowrap
 set ignorecase
 set hidden
 set scrolloff=15
@@ -21,6 +20,9 @@ set foldtext=MyFoldText()
 set fillchars=fold:\  
 set foldmethod=syntax
 set foldlevel=2
+set linebreak
+set breakindent
+let &breakat="),="
 let &shellpipe="| wtee.exe"
 let &grepprg = "rg --vimgrep"
 let &statusline = "%{GitStatus()} %f %{coc#status()} %h%w%m%r%=%-14.(%l,%c%V%) %P"
