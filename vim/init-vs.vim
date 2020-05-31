@@ -1,7 +1,3 @@
-call plug#begin()
-    Plug 'jiangmiao/auto-pairs'
-call plug#end()
-
 nnoremap <C-O> :call VSCodeCall("workbench.action.navigateBack")<CR>
 nnoremap <C-I> :call VSCodeCall("workbench.action.navigateForward")<CR>
 
